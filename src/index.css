@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Ultra-Premium Corporate Palette */
+  --color-primary-900: #0a1128;
+  --color-primary-800: #0f1c3f;
+  --color-primary: #1e3a8a;
+  /* Sophisticated Royal Blue */
+  --color-secondary: #008080;
+  /* Teal for scientific accent */
+  --color-accent: #D4AF37;
+  /* Gold for premier/legacy accents */
+
+  --color-surface-light: #ffffff;
+  --color-surface-muted: #f8fafc;
+  /* Slate 50 */
+  --color-surface-dark: #0f172a;
+  /* Slate 900 */
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-700 bg-surface-muted dark:bg-slate-950 dark:text-slate-300 transition-colors duration-500 tracking-wide;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight text-slate-900 dark:text-white transition-colors duration-500 font-semibold;
+  }
+}
