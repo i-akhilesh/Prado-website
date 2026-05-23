@@ -9,14 +9,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 /* ─── Dropdown data ─────────────────────────────────── */
 const facilitiesDropdown = [
     { name: 'Animal Research Facility (ARF)', path: '/facilities/arf' },
-    { name: 'Pathology Lab', path: '/facilities/pathology' },
+    { name: 'Pathology Lab (PATH)', path: '/facilities/pathology' },
     { name: 'Quality Assurance Unit (QAU)', path: '/facilities/qau' },
     { name: 'Test Item Control Office (TICO)', path: '/facilities/tico' },
-    { name: 'Environment, Health & Safety', path: '/facilities/ehs' },
-    { name: 'In Vitro Facility', path: '/facilities/in-vitro' },
-    { name: 'Analytical & Bioanalytical', path: '/facilities/analytical' },
-    { name: 'Information Technology', path: '/facilities/it' },
-    { name: 'Document Control', path: '/facilities/document-control' },
+    { name: 'Environment, Health & Safety (EHS)', path: '/facilities/ehs' },
+    { name: 'In Vitro Facility (IVF)', path: '/facilities/in-vitro' },
+    { name: 'Analytical & Bioanalytical (AB)', path: '/facilities/analytical' },
+    { name: 'Information Technology (IT)', path: '/facilities/it' },
+    { name: 'Document Control (DOC)', path: '/facilities/document-control' },
+    { name: 'Ecotoxicology (ECOTOX)', path: '/facilities/ecotox' },
+    { name: 'Archives (ARC)', path: '/facilities/archives' },
 ];
 
 const servicesDropdown = [
@@ -32,20 +34,12 @@ const servicesDropdown = [
     { name: 'Animal Clinical', path: '/services/animal-clinical' },
 ];
 
-const galleryDropdown = [
-    { name: 'All', path: '/gallery' },
-    { name: 'Events', path: '/gallery?filter=Events' },
-    { name: 'Facility Activities', path: '/gallery?filter=Facility+Activities' },
-    { name: 'Conferences', path: '/gallery?filter=Conferences' },
-];
-
-/* ─── Simple links (no dropdown) ───────────────────── */
-const simpleLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about-us' },
+const companyDropdown = [
     { name: 'Awards', path: '/awards' },
+    { name: 'Gallery', path: '/gallery' },
     { name: 'Events', path: '/events' },
-    { name: 'Contact', path: '/contact-us' },
+    { name: 'News', path: '/news' },
+    { name: 'Careers', path: '/careers' },
 ];
 
 /* ─── Dropdown component ────────────────────────────── */
@@ -53,7 +47,10 @@ function NavDropdown({ label, items, basePath }) {
     const [open, setOpen] = useState(false);
     const ref = useRef(null);
     const location = useLocation();
-    const isActive = location.pathname.startsWith(basePath);
+    
+    const isActive = basePath 
+        ? location.pathname.startsWith(basePath) 
+        : items.some(item => location.pathname === item.path.split('#')[0]);
 
     // Close on outside click
     useEffect(() => {
@@ -69,25 +66,22 @@ function NavDropdown({ label, items, basePath }) {
 
     return (
         <div ref={ref} className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-            <Link
-                to={basePath}
+            <button
+                onClick={(e) => {
+                    e.preventDefault();
+                    setOpen(!open);
+                }}
                 className={twMerge(clsx(
                     'flex items-center gap-1 text-sm font-semibold uppercase tracking-wider transition-all duration-300 relative group',
                     isActive ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'
                 ))}
             >
                 {label}
-                <button 
-                    onClick={(e) => {
-                        e.preventDefault();
-                        setOpen(!open);
-                    }}
-                    className="p-1 -mr-1"
-                >
+                <span className="p-1 -mr-1">
                     <HiChevronDown className={clsx('text-base transition-transform duration-300', open ? 'rotate-180' : '')} />
-                </button>
+                </span>
                 <span className={clsx('absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300', isActive ? 'w-full' : 'w-0 group-hover:w-full')} />
-            </Link>
+            </button>
 
             <AnimatePresence>
                 {open && (
@@ -183,44 +177,8 @@ export default function Navbar() {
                     {/* Services Dropdown */}
                     <NavDropdown label="Services" items={servicesDropdown} basePath="/services" />
 
-                    {/* Awards */}
-                    <Link
-                        to="/awards"
-                        className={twMerge(clsx(
-                            'text-sm font-semibold uppercase tracking-wider transition-all duration-300 relative group',
-                            location.pathname === '/awards' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'
-                        ))}
-                    >
-                        Awards
-                        <span className={clsx('absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300', location.pathname === '/awards' ? 'w-full' : 'w-0 group-hover:w-full')} />
-                    </Link>
-
-                    {/* Gallery Dropdown */}
-                    <NavDropdown label="Gallery" items={galleryDropdown} basePath="/gallery" />
-
-                    {/* Events */}
-                    <Link
-                        to="/events"
-                        className={twMerge(clsx(
-                            'text-sm font-semibold uppercase tracking-wider transition-all duration-300 relative group',
-                            location.pathname === '/events' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'
-                        ))}
-                    >
-                        Events
-                        <span className={clsx('absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300', location.pathname === '/events' ? 'w-full' : 'w-0 group-hover:w-full')} />
-                    </Link>
-
-                    {/* News */}
-                    <Link
-                        to="/news"
-                        className={twMerge(clsx(
-                            'text-sm font-semibold uppercase tracking-wider transition-all duration-300 relative group',
-                            location.pathname === '/news' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'
-                        ))}
-                    >
-                        News
-                        <span className={clsx('absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300', location.pathname === '/news' ? 'w-full' : 'w-0 group-hover:w-full')} />
-                    </Link>
+                    {/* Company Dropdown */}
+                    <NavDropdown label="Company" items={companyDropdown} basePath={null} />
 
                     <button
                         onClick={toggleTheme}
@@ -266,9 +224,6 @@ export default function Navbar() {
                             {[
                                 { name: 'Home', path: '/' },
                                 { name: 'About', path: '/about-us' },
-                                { name: 'Awards', path: '/awards' },
-                                { name: 'Events', path: '/events' },
-                                { name: 'News', path: '/news' },
                             ].map(link => (
                                 <Link key={link.name} to={link.path} className="text-lg font-bold uppercase py-3 border-b border-slate-100 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-secondary transition-colors">
                                     {link.name}
@@ -322,19 +277,19 @@ export default function Navbar() {
                                 </AnimatePresence>
                             </div>
 
-                            {/* Mobile Gallery */}
+                            {/* Mobile Company */}
                             <div className="border-b border-slate-100 dark:border-slate-800">
                                 <div className="flex w-full items-center justify-between py-3 text-lg font-bold uppercase text-slate-700 dark:text-slate-200">
-                                    <Link to="/gallery" className="hover:text-secondary transition-colors flex-grow">Gallery</Link>
-                                    <button onClick={() => toggleMobile('gallery')} className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
-                                        <HiChevronDown className={clsx('transition-transform', mobileExpanded === 'gallery' ? 'rotate-180' : '')} />
+                                    <span className="hover:text-secondary transition-colors flex-grow cursor-pointer" onClick={() => toggleMobile('company')}>Company</span>
+                                    <button onClick={() => toggleMobile('company')} className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                                        <HiChevronDown className={clsx('transition-transform', mobileExpanded === 'company' ? 'rotate-180' : '')} />
                                     </button>
                                 </div>
                                 <AnimatePresence>
-                                    {mobileExpanded === 'gallery' && (
+                                    {mobileExpanded === 'company' && (
                                         <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="overflow-hidden">
                                             <div className="flex flex-col gap-1 pb-4 pl-4">
-                                                {galleryDropdown.map((item, i) => (
+                                                {companyDropdown.map((item, i) => (
                                                     <Link key={i} to={item.path} className="py-2 text-base text-slate-500 dark:text-slate-400 hover:text-secondary transition-colors">
                                                         {item.name}
                                                     </Link>

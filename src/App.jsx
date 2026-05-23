@@ -13,6 +13,8 @@ import FacilityInVitro from './modules/facilities/pages/FacilityInVitro';
 import FacilityAnalytical from './modules/facilities/pages/FacilityAnalytical';
 import FacilityIT from './modules/facilities/pages/FacilityIT';
 import FacilityDocumentControl from './modules/facilities/pages/FacilityDocumentControl';
+import FacilityEcotox from './modules/facilities/pages/FacilityEcotox';
+import FacilityArchives from './modules/facilities/pages/FacilityArchives';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import DrWangikar from './modules/directors/pages/DrWangikar';
@@ -21,6 +23,7 @@ import Awards from './pages/Awards';
 import EventsPage from './modules/events/pages/EventsPage';
 import GalleryPage from './modules/gallery/pages/GalleryPage';
 import News from './pages/News';
+import Careers from './pages/Careers';
 
 // Service Detail Pages
 import ServiceToxicology from './modules/services/pages/ServiceToxicology';
@@ -53,6 +56,8 @@ function App() {
           <Route path="facilities/analytical" element={<FacilityAnalytical />} />
           <Route path="facilities/it" element={<FacilityIT />} />
           <Route path="facilities/document-control" element={<FacilityDocumentControl />} />
+          <Route path="facilities/ecotox" element={<FacilityEcotox />} />
+          <Route path="facilities/archives" element={<FacilityArchives />} />
           <Route path="awards" element={<Awards />} />
           <Route path="events" element={<EventsPage />} />
           <Route path="gallery" element={<GalleryPage />} />
@@ -60,6 +65,7 @@ function App() {
           <Route path="directors/dr-wangikar" element={<DrWangikar />} />
           <Route path="directors/mrs-wangikar" element={<MrsWangikar />} />
           <Route path="news" element={<News />} />
+          <Route path="careers" element={<Careers />} />
 
           {/* Services Routes */}
           <Route path="services" element={<Services />} />

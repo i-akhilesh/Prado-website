@@ -60,11 +60,14 @@ export default function About() {
             <section className="py-32 lg:py-48 relative overflow-hidden bg-white dark:bg-slate-900">
                 <div className="container mx-auto px-4 md:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                        <div className="lg:col-span-5 lg:sticky lg:top-40">
+                        <div className="lg:col-span-5 lg:sticky lg:top-32">
                             <motion.h2 variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-sm font-bold tracking-[0.3em] text-secondary uppercase mb-6">Who We Are</motion.h2>
                             <motion.h3 variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-5xl md:text-7xl font-heading font-bold text-slate-900 dark:text-white leading-none tracking-tight mb-8">
                                 Precision <br/> <span className="italic font-light">Defined.</span>
                             </motion.h3>
+                            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-12 h-[30vh] w-full rounded-[2rem] overflow-hidden relative">
+                                <motion.img style={{ y: yImg }} src="/src/assets/images/img-home-about.png" className="absolute top-[-10%] left-0 w-full h-[100%] object-cover scale-110" alt="Prado Labs" />
+                            </motion.div>
                         </div>
                         <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-12 mt-8 lg:mt-0 text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                             <motion.p variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -73,10 +76,6 @@ export default function About() {
                             <motion.p variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }}>
                                 We deliver end-to-end scientific services encompassing toxicology, pharmacokinetics, biocompatibility, and risk assessment entirely under one roof. Our GLP-certified infrastructure guarantees data fidelity that easily clears international regulatory scrutiny.
                             </motion.p>
-                            
-                            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-8 h-[50vh] w-full rounded-[2rem] overflow-hidden relative">
-                                <motion.img style={{ y: yImg }} src="/src/assets/images/img-home-about.png" className="absolute top-[-20%] left-0 w-full h-[140%] object-cover scale-110" alt="Prado Labs" />
-                            </motion.div>
                         </div>
                     </div>
                 </div>

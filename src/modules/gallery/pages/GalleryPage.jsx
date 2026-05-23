@@ -1,44 +1,106 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
-import { FaTimes, FaSearchPlus } from 'react-icons/fa';
-import { useSearchParams } from 'react-router-dom';
+import { FaTimes, FaSearchPlus, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
+
+const toTitleCase = (str) => str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+const categoriesMetadata = [
+    {
+        id: "facility-activities",
+        title: "Internal Facility Activities",
+        description: "Go behind the scenes at our state-of-the-art laboratories and research facilities, where our scientists maintain GLP standards and precision workflows."
+    },
+    {
+        id: "conferences",
+        title: "Scientific Conferences & Forums",
+        description: "Prado's active participation in global preclinical forums, toxicology conferences, and scientific summits, presenting research and collaborating with global partners."
+    },
+    {
+        id: "events",
+        title: "Events & Achievements",
+        description: "Key milestones, annual celebrations, team-building activities, and award ceremonies recognizing Prado's excellence in preclinical research."
+    }
+];
 
 export default function GalleryPage() {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
-    const [searchParams] = useSearchParams();
+    
+    // Parse directories
+    const modules = import.meta.glob('/src/assets/images/gallery/**/*.{png,jpg,jpeg,webp}', { eager: true });
+    
+    const parsedData = {};
+    Object.keys(modules).forEach((path) => {
+        const parts = path.split('/');
+        // Path example: /src/assets/images/gallery/facility-activities/toxicology-lab/cover.png
+        if (parts.length < 4) return;
+        
+        const categoryId = parts[parts.length - 3];
+        const albumId = parts[parts.length - 2];
+        const fileName = parts[parts.length - 1];
+        const imgUrl = modules[path].default || modules[path];
+
+        if (!parsedData[categoryId]) parsedData[categoryId] = {};
+        if (!parsedData[categoryId][albumId]) parsedData[categoryId][albumId] = [];
+        
+        if (fileName.toLowerCase().includes('cover')) {
+            parsedData[categoryId][albumId].unshift(imgUrl);
+        } else {
+            parsedData[categoryId][albumId].push(imgUrl);
+        }
+    });
+
+    const galleryData = categoriesMetadata.map(cat => {
+        const albumsDict = parsedData[cat.id] || {};
+        const albums = Object.keys(albumsDict).map(albumId => ({
+            id: albumId,
+            title: toTitleCase(albumId),
+            images: albumsDict[albumId],
+            cover: albumsDict[albumId][0]
+        }));
+        return { ...cat, albums };
+    });
+
+    const [selectedAlbum, setSelectedAlbum] = useState(null);
+    const [lightboxImageIndex, setLightboxImageIndex] = useState(null);
+    const location = useLocation();
 
     const fadeIn = {
         hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
     };
 
-    const categories = ["All", "Events", "Facility Activities", "Conferences"];
-    const [activeCategory, setActiveCategory] = useState("All");
-    const [selectedImage, setSelectedImage] = useState(null);
-
-    // Sync active filter from URL param (e.g. ?filter=Events)
     useEffect(() => {
-        const filterParam = searchParams.get('filter');
-        if (filterParam && categories.includes(filterParam)) {
-            setActiveCategory(filterParam);
-        } else {
-            setActiveCategory("All");
+        if (location.hash && !selectedAlbum) {
+            const id = location.hash.substring(1);
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
         }
-    }, [searchParams]);
+    }, [location.hash, selectedAlbum]);
 
-    const images = [
-        { id: 1, src: "/src/assets/images/img-home-about.png", category: "Facility Activities", alt: "Toxicology Lab" },
-        { id: 2, src: "/src/assets/images/img-facility-tox-1.png", category: "Facility Activities", alt: "Animal Facility Setup" },
-        { id: 3, src: "/src/assets/images/img-facility-animal-1.png", category: "Facility Activities", alt: "Analytical Instruments" },
-        { id: 4, src: "/src/assets/images/img-facility-analytical-1.png", category: "Events", alt: "Annual Conference" },
-        { id: 5, src: "/src/assets/images/img-home-strength-1.png", category: "Conferences", alt: "Global Summit 2023" },
-        { id: 6, src: "/src/assets/images/img-home-strength-2.png", category: "Conferences", alt: "Panel Discussion" },
-    ];
-
-    const filteredImages = activeCategory === "All" 
-        ? images 
-        : images.filter(img => img.category === activeCategory);
+    // Keyboard navigation for lightbox
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (lightboxImageIndex !== null && selectedAlbum) {
+                if (e.key === 'ArrowRight') {
+                    setLightboxImageIndex((prev) => (prev + 1) % selectedAlbum.images.length);
+                } else if (e.key === 'ArrowLeft') {
+                    setLightboxImageIndex((prev) => (prev - 1 + selectedAlbum.images.length) % selectedAlbum.images.length);
+                } else if (e.key === 'Escape') {
+                    setLightboxImageIndex(null);
+                }
+            } else if (selectedAlbum && e.key === 'Escape') {
+                setSelectedAlbum(null);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [lightboxImageIndex, selectedAlbum]);
 
     return (
         <div ref={containerRef} className="flex flex-col w-full bg-surface-muted dark:bg-slate-950 transition-colors duration-700 selection:bg-secondary selection:text-white min-h-screen">
@@ -60,98 +122,165 @@ export default function GalleryPage() {
                         className="flex flex-col gap-8 items-start mt-12 border-t border-white/20 pt-8 max-w-4xl"
                     >
                         <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
-                            A curated exhibition of Prado's state-of-the-art facilities and global participations.
+                            A curated exhibition of Prado's state-of-the-art facilities, conferences, and achievements.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Gallery Section */}
+            {/* Main Gallery View: Categories and their Albums */}
             <section className="py-24 lg:py-32 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
-                <div className="container mx-auto px-4 md:px-8">
-                    
-                    {/* Minimal Filters */}
-                    <div className="flex flex-wrap items-center gap-4 md:gap-8 mb-16 md:mb-24 pb-8 border-b border-slate-200 dark:border-slate-800">
-                        {categories.map((category, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setActiveCategory(category)}
-                                className={`text-sm md:text-base font-bold tracking-[0.2em] uppercase transition-all duration-300 relative ${
-                                    activeCategory === category 
-                                        ? 'text-secondary' 
-                                        : 'text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                                }`}
-                            >
-                                {category}
-                                {activeCategory === category && (
-                                    <motion.span layoutId="activeFilter" className="absolute -bottom-9 md:-bottom-9 left-0 right-0 h-[2px] bg-secondary" />
-                                )}
-                            </button>
-                        ))}
-                    </div>
+                <div className="container mx-auto px-4 md:px-8 space-y-32">
+                    {galleryData.map((category) => (
+                        <div key={category.id} id={category.id} className="scroll-mt-32">
+                            {/* Category Header */}
+                            <div className="border-b border-slate-100 dark:border-slate-800 pb-6 mb-12">
+                                <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white mb-3">
+                                    {category.title}
+                                </h2>
+                                <p className="text-slate-500 dark:text-slate-400 font-light text-base md:text-lg max-w-3xl">
+                                    {category.description}
+                                </p>
+                            </div>
 
-                    {/* Image Grid (Expansive layout) */}
-                    <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
-                        <AnimatePresence>
-                            {filteredImages.map((img, index) => (
-                                <motion.div
-                                    key={img.id}
-                                    layout
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 0.95 }}
-                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                    className={`group relative overflow-hidden cursor-pointer bg-slate-100 dark:bg-slate-800 ${index % 3 === 0 ? 'md:col-span-2 aspect-[21/9]' : 'aspect-square md:aspect-[4/5]'} rounded-[2rem] shadow-sm hover:shadow-2xl transition-shadow duration-700`}
-                                    onClick={() => setSelectedImage(img)}
-                                >
-                                    <img src={img.src} alt={img.alt} className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-[0.16,1,0.3,1]" />
-                                    
-                                    {/* Overlay */}
-                                    <div className="absolute inset-x-0 bottom-0 p-8 pt-24 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end">
-                                        <h3 className="text-white font-heading font-bold text-2xl md:text-3xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">{img.alt}</h3>
-                                        <p className="text-secondary font-bold tracking-[0.2em] uppercase text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out delay-75">{img.category}</p>
-                                    </div>
-                                    <div className="absolute top-8 right-8 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-500">
-                                        <FaSearchPlus className="text-white text-lg" />
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </AnimatePresence>
-                    </motion.div>
-
-                    {filteredImages.length === 0 && (
-                        <div className="text-center py-32 text-slate-500 font-light text-2xl">
-                            No visual records found in this category.
+                            {/* Albums Grid */}
+                            {category.albums.length > 0 ? (
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {category.albums.map((album) => (
+                                        <motion.div
+                                            key={album.id}
+                                            initial="hidden"
+                                            whileInView="visible"
+                                            viewport={{ once: true }}
+                                            variants={fadeIn}
+                                            className="group relative overflow-hidden cursor-pointer bg-slate-100 dark:bg-slate-800 aspect-[4/3] rounded-[2rem] shadow-sm hover:shadow-2xl transition-all duration-500"
+                                            onClick={() => setSelectedAlbum({ ...album, categoryName: category.title })}
+                                        >
+                                            <img 
+                                                src={album.cover} 
+                                                alt={album.title} 
+                                                className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-[0.16,1,0.3,1]" 
+                                            />
+                                            
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+                                            
+                                            <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
+                                                <h3 className="text-white font-heading font-bold text-2xl mb-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">{album.title}</h3>
+                                                <div className="flex items-center gap-3 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                                                    <span className="text-secondary font-bold tracking-widest uppercase text-xs">{category.title}</span>
+                                                    <span className="text-slate-300 text-sm bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">{album.images.length} Photos</span>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <div className="py-12 text-center border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-[2rem]">
+                                    <p className="text-slate-500 dark:text-slate-400">Photos coming soon for this category. (Add them to src/assets/images/gallery/{category.id}/)</p>
+                                </div>
+                            )}
                         </div>
-                    )}
+                    ))}
                 </div>
             </section>
 
-            {/* Lightbox Modal */}
+            {/* Album Modal Overlay */}
             <AnimatePresence>
-                {selectedImage && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-4 md:p-8 backdrop-blur-xl" onClick={() => setSelectedImage(null)}>
+                {selectedAlbum && lightboxImageIndex === null && (
+                    <motion.div 
+                        initial={{ opacity: 0, y: '100%' }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: '100%' }}
+                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                        className="fixed inset-0 z-[90] bg-white dark:bg-slate-950 overflow-y-auto"
+                    >
+                        <div className="sticky top-0 z-[95] w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 p-4 md:px-8 flex justify-between items-center shadow-sm">
+                            <div>
+                                <h2 className="text-2xl font-bold font-heading text-slate-900 dark:text-white">{selectedAlbum.title}</h2>
+                                <p className="text-sm text-secondary uppercase tracking-widest font-semibold mt-1">{selectedAlbum.categoryName} • {selectedAlbum.images.length} Photos</p>
+                            </div>
+                            <button 
+                                className="text-slate-500 hover:text-primary dark:hover:text-white transition-colors bg-slate-100 dark:bg-slate-800 p-3 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700"
+                                onClick={() => setSelectedAlbum(null)}
+                            >
+                                <FaTimes size={20} />
+                            </button>
+                        </div>
+                        
+                        <div className="container mx-auto px-4 md:px-8 py-12">
+                            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6">
+                                {selectedAlbum.images.map((imgUrl, idx) => (
+                                    <motion.div 
+                                        key={idx}
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ delay: idx * 0.05, duration: 0.4 }}
+                                        className="relative group cursor-pointer overflow-hidden rounded-2xl break-inside-avoid"
+                                        onClick={() => setLightboxImageIndex(idx)}
+                                    >
+                                        <img src={imgUrl} alt={`${selectedAlbum.title} ${idx + 1}`} className="w-full h-auto object-cover" loading="lazy" />
+                                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                            <FaSearchPlus className="text-white text-3xl opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-300" />
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Single Image Lightbox */}
+            <AnimatePresence>
+                {lightboxImageIndex !== null && selectedAlbum && (
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 md:p-8 backdrop-blur-xl"
+                    >
                         <button 
-                            className="absolute top-8 right-8 md:top-12 md:right-12 text-slate-400 hover:text-white transition-colors bg-white/5 p-4 rounded-full backdrop-blur-md border border-white/10 hover:bg-white/10"
-                            onClick={() => setSelectedImage(null)}
+                            className="absolute top-6 right-6 md:top-8 md:right-8 text-white/50 hover:text-white transition-colors bg-white/5 p-4 rounded-full backdrop-blur-md border border-white/10 hover:bg-white/10 z-[105]"
+                            onClick={() => setLightboxImageIndex(null)}
                         >
                             <FaTimes size={24} />
                         </button>
-                        <motion.div 
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                            className="relative max-w-6xl w-full flex flex-col items-center"
-                            onClick={(e) => e.stopPropagation()}
+
+                        {/* Navigation Arrows */}
+                        <button 
+                            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors bg-white/5 p-4 rounded-full backdrop-blur-md border border-white/10 hover:bg-white/10 z-[105]"
+                            onClick={(e) => { e.stopPropagation(); setLightboxImageIndex((prev) => (prev - 1 + selectedAlbum.images.length) % selectedAlbum.images.length); }}
                         >
-                            <img src={selectedImage.src} alt={selectedImage.alt} className="w-full h-auto max-h-[75vh] object-contain drop-shadow-2xl" />
-                            <div className="mt-8 text-center bg-black/50 px-8 py-4 rounded-full backdrop-blur-md border border-white/5">
-                                <h3 className="text-white font-heading font-bold text-2xl">{selectedImage.alt}</h3>
-                                <p className="text-secondary font-bold tracking-[0.3em] uppercase text-xs mt-2">{selectedImage.category}</p>
+                            <FaArrowLeft size={24} />
+                        </button>
+                        
+                        <button 
+                            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors bg-white/5 p-4 rounded-full backdrop-blur-md border border-white/10 hover:bg-white/10 z-[105]"
+                            onClick={(e) => { e.stopPropagation(); setLightboxImageIndex((prev) => (prev + 1) % selectedAlbum.images.length); }}
+                        >
+                            <FaArrowRight size={24} />
+                        </button>
+
+                        <motion.div 
+                            key={lightboxImageIndex}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.3 }}
+                            className="relative w-full max-w-6xl flex flex-col items-center justify-center h-full"
+                            onClick={() => setLightboxImageIndex(null)}
+                        >
+                            <img 
+                                src={selectedAlbum.images[lightboxImageIndex]} 
+                                alt={`${selectedAlbum.title} ${lightboxImageIndex + 1}`} 
+                                className="max-w-full max-h-[85vh] object-contain drop-shadow-2xl" 
+                                onClick={(e) => e.stopPropagation()}
+                            />
+                            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/60 px-6 py-2 rounded-full backdrop-blur-md border border-white/10 text-white text-sm tracking-widest font-semibold">
+                                {lightboxImageIndex + 1} / {selectedAlbum.images.length}
                             </div>
                         </motion.div>
-                    </div>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </div>

@@ -36,13 +36,13 @@ export default function Home() {
                         transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                         className="max-w-[90vw] lg:max-w-[70vw]"
                     >
-                        <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-bold font-heading leading-[0.9] tracking-tighter mb-8 text-white">
-                            Pioneering <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent bg-[length:200%_auto] animate-gradient">Precision</span>
+                        <h1 className="text-[10vw] md:text-[6vw] lg:text-[5vw] font-bold font-heading leading-[1.1] tracking-tighter mb-8 text-white">
+                            Prado Preclinical - <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent bg-[length:200%_auto] animate-gradient text-[8vw] md:text-[4vw] lg:text-[3.5vw]">Beyond Expectations in Scientific Research</span>
                         </h1>
                         <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16">
                             <p className="text-lg md:text-2xl text-slate-300 max-w-xl font-light leading-relaxed border-l-2 border-secondary pl-6">
-                                Uncompromising data integrity and ethical scientific excellence for global biopharma innovation.
+                                Supporting pharmaceuticals, biopharma, biotech, medical devices, agrochemicals, and research organizations with unmatched expertise.
                             </p>
                             <Link to="/services" className="group flex items-center gap-4 text-white hover:text-secondary transition-colors duration-300 mt-4 md:mt-0">
                                 <span className="text-sm font-bold uppercase tracking-[0.2em]">Explore Capabilities</span>
@@ -64,25 +64,21 @@ export default function Home() {
                                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
                                 className="text-sm font-bold tracking-[0.3em] text-secondary uppercase mb-6"
                             >
-                                The PRADO Standard
+                                What Is PRADO
                             </motion.h2>
-                            <motion.h3
+                            <motion.h2
                                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
-                                className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-slate-900 dark:text-white mb-8 leading-tight tracking-tight"
+                                className="text-2xl md:text-3xl lg:text-3xl font-heading font-semibold text-slate-900 dark:text-white mb-8 leading-snug tracking-tight"
                             >
-                                Science that <br /><span className="italic font-light text-slate-600 dark:text-slate-400">shapes tomorrow.</span>
-                            </motion.h3>
-                            <motion.p
+                                PRADO: Preclinical Research and Development Organization Pvt. Ltd. is a <span className="italic font-light text-slate-600 dark:text-slate-400">global preclinical research partner</span> helping healthcare innovations reach the market faster and safer.
+                            </motion.h2>
+                            <motion.div
                                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
-                                className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-12"
+                                className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-12 space-y-4"
                             >
-                                Founded in 2010, PRADO is an elite preclinical Contract Research Organization. From toxicology to biocompatibility, we deliver data that seamlessly clears international regulatory standards.
-                            </motion.p>
-                            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-                                <Link to="/about-us" className="inline-flex items-center gap-4 group">
-                                    <span className="text-lg font-semibold text-slate-900 dark:text-white group-hover:text-secondary transition-colors">Our Legacy</span>
-                                    <div className="w-10 h-[2px] bg-slate-300 dark:bg-slate-700 group-hover:bg-secondary group-hover:w-16 transition-all duration-500"></div>
-                                </Link>
+                                <p>From toxicology and pharmacokinetics to biocompatibility, animal model development, and pathology services, we deliver data that meets international regulatory standards with exceptional acceptance rates.</p>
+                                <p>Based in Pune, India, PRADO serves pharmaceutical, biotech, biopharma, medical device, agrochemical, food, vaccine, and animal health industries — providing cost-effective, high-quality, and timely results.</p>
+                                <p>With proven expertise and a client-first approach, PRADO is not just a service provider — we’re your strategic partner in preclinical excellence.</p>
                             </motion.div>
                         </div>
 

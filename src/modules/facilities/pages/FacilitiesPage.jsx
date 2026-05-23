@@ -22,7 +22,7 @@ export default function FacilitiesPage() {
             number: "01"
         },
         {
-            title: "Pathology",
+            title: "Pathology (PATH)",
             subtitle: "Disease & Tissue Analysis Lab",
             description: "Comprehensive evaluation of biological samples through expert histopathology, immunohistochemistry, and clinical pathology services.",
             // image: "/src/assets/images/img-facility-animal-1.png",
@@ -30,7 +30,7 @@ export default function FacilitiesPage() {
             number: "02"
         },
         {
-            title: "Quality Assurance Unit",
+            title: "Quality Assurance Unit (QAU)",
             subtitle: "GLP Compliance & Audit",
             description: "An independent body ensuring every study rigorously conforms to Good Laboratory Practice (GLP) principles and international regulatory guidelines.",
             // image: "/src/assets/images/img-home-strength-3.png",
@@ -38,7 +38,7 @@ export default function FacilitiesPage() {
             number: "03"
         },
         {
-            title: "Test Item Control Office",
+            title: "Test Item Control Office (TICO)",
             subtitle: "Receipt · Storage · Accountability",
             description: "Meticulous management of all test and reference items ensuring regulatory traceability, sample integrity, and complete accountability.",
             // image: "/src/assets/images/img-home-about.png",
@@ -46,7 +46,7 @@ export default function FacilitiesPage() {
             number: "04"
         },
         {
-            title: "Environment, Health & Safety",
+            title: "Environment, Health & Safety (EHS)",
             subtitle: "Safe · Sustainable · Compliant",
             description: "Ensuring every aspect of our operations is conducted safely, responsibly, and in full compliance with environmental and occupational safety regulations.",
             // image: "/src/assets/images/img-home-gallery-2.png",
@@ -54,7 +54,7 @@ export default function FacilitiesPage() {
             number: "05"
         },
         {
-            title: "In Vitro Facility",
+            title: "In Vitro Facility (IVF)",
             subtitle: "Cell-Based Research & Archives",
             description: "State-of-the-art cell biology laboratory supporting cytotoxicity, genotoxicity, and pharmacological studies.",
             // image: "/src/assets/images/img-home-gallery-3.png",
@@ -62,7 +62,7 @@ export default function FacilitiesPage() {
             number: "06"
         },
         {
-            title: "Analytical & Bioanalytical",
+            title: "Analytical & Bioanalytical (AB)",
             subtitle: "Method Development & Validation",
             description: "Cutting-edge instrumentation for the precise quantification of drugs and metabolites validated in full compliance with ICH and FDA guidelines.",
             // image: "/src/assets/images/img-facility-analytical-1.png",
@@ -70,7 +70,7 @@ export default function FacilitiesPage() {
             number: "07"
         },
         {
-            title: "Information Technology",
+            title: "Information Technology (IT)",
             subtitle: "Digital Infrastructure & Data Security",
             description: "Secure, validated digital infrastructure underpinning the integrity of preclinical research data in compliance with 21 CFR Part 11.",
             // image: "/src/assets/images/img-home-strength-2.png",
@@ -78,12 +78,28 @@ export default function FacilitiesPage() {
             number: "08"
         },
         {
-            title: "Document Control",
+            title: "Document Control (DOC)",
             subtitle: "Records Management & Traceability",
             description: "The backbone of regulatory compliance ensuring all controlled documents are managed, versioned, and traceable with absolute rigor.",
             // image: "/src/assets/images/img-home-strength-1.png",
             path: "/facilities/document-control",
             number: "09"
+        },
+        {
+            title: "Ecotoxicology (ECOTOX)",
+            subtitle: "Environmental Safety Testing",
+            description: "Conducting comprehensive environmental risk assessments on chemicals and agrochemicals, evaluating toxicity to aquatic and terrestrial organisms.",
+            // image: "/src/assets/images/img-home-strength-3.png",
+            path: "/facilities/ecotox",
+            number: "10"
+        },
+        {
+            title: "Archives (ARC)",
+            subtitle: "Secure Long-Term GLP Storage",
+            description: "Secure, climate-controlled storage for raw study records, tissue blocks, slides, and final reports protecting study integrity for 15+ years.",
+            // image: "/src/assets/images/img-home-strength-1.png",
+            path: "/facilities/archives",
+            number: "11"
         }
     ];
 

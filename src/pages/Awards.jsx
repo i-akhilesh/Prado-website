@@ -38,8 +38,8 @@ export default function Awards() {
         { year: "2021", title: "Inhalation Facility", icon: FaFlask, highlight: "from-purple-500 to-pink-500", description: "Further GLP Certification matched with the establishment of an advanced inhalation facility." },
         { year: "2022", title: "Top 10 CRO Award", icon: FaTrophy, highlight: "from-yellow-400 to-orange-400", description: "Ranked as Top 10 CRO globally and recognized as an elite BIRAC GLP consultant." },
         { year: "2023", title: "Advanced Assays", icon: FaFlask, highlight: "from-rose-500 to-red-500", description: "Spearheading EOGRT, Vaccine Immunogenicity studies, and complex Pig-a assay Nitrosamine." },
-        { year: "2024", title: "Ecotoxicology", icon: FaGlobe, highlight: "from-emerald-400 to-emerald-600", description: "Pioneering Analytical and Bioanalytical Ecotoxicology framework establishments." },
-        { year: "2025", title: "Future Innovations", icon: FaRocket, highlight: "from-fuchsia-500 to-purple-600", description: "Deploying Animal CT, novel Formulations, and Bird Sp Collaboration for Animal Alternatives." }
+        { year: "2024", title: "ABA & ECOTOX", icon: FaGlobe, highlight: "from-emerald-400 to-emerald-600", description: "Pioneering Analytical & Bioanalytical (ABA) and Ecotoxicology (ECOTOX) framework establishments." },
+        { year: "2025", title: "Future Innovations", icon: FaRocket, highlight: "from-fuchsia-500 to-purple-600", description: "Deploying Animal CT, novel Formulations, addition of Bird species and Collaboration for Animal Alternatives." }
     ];
 
     return (

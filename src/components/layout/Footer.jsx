@@ -20,6 +20,7 @@ const footerLinks = [
     { name: 'Gallery', path: '/gallery' },
     { name: 'News', path: '/news' },
     { name: 'Events', path: '/events' },
+    { name: 'Careers', path: '/careers' },
     { name: 'Contact Us', path: '/contact-us' },
 ];
 
