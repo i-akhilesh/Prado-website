@@ -43,10 +43,12 @@ const companyDropdown = [
 ];
 
 /* ─── Dropdown component ────────────────────────────── */
+import { useNavigate } from 'react-router-dom';
 function NavDropdown({ label, items, basePath }) {
     const [open, setOpen] = useState(false);
     const ref = useRef(null);
     const location = useLocation();
+    const navigate = useNavigate();
     
     const isActive = basePath 
         ? location.pathname.startsWith(basePath) 
@@ -66,22 +68,39 @@ function NavDropdown({ label, items, basePath }) {
 
     return (
         <div ref={ref} className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-            <button
-                onClick={(e) => {
-                    e.preventDefault();
-                    setOpen(!open);
-                }}
-                className={twMerge(clsx(
-                    'flex items-center gap-1 text-sm font-semibold uppercase tracking-wider transition-all duration-300 relative group',
-                    isActive ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'
-                ))}
-            >
-                {label}
-                <span className="p-1 -mr-1">
-                    <HiChevronDown className={clsx('text-base transition-transform duration-300', open ? 'rotate-180' : '')} />
-                </span>
-                <span className={clsx('absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300', isActive ? 'w-full' : 'w-0 group-hover:w-full')} />
-            </button>
+            {basePath ? (
+                <Link
+                    to={basePath}
+                    className={twMerge(clsx(
+                        'flex items-center gap-1 text-sm font-semibold uppercase tracking-wider transition-all duration-300 relative group',
+                        isActive ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'
+                    ))}
+                    onClick={() => setOpen(false)}
+                >
+                    {label}
+                    <span className="p-1 -mr-1">
+                        <HiChevronDown className={clsx('text-base transition-transform duration-300', open ? 'rotate-180' : '')} />
+                    </span>
+                    <span className={clsx('absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300', isActive ? 'w-full' : 'w-0 group-hover:w-full')} />
+                </Link>
+            ) : (
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        setOpen(!open);
+                    }}
+                    className={twMerge(clsx(
+                        'flex items-center gap-1 text-sm font-semibold uppercase tracking-wider transition-all duration-300 relative group',
+                        isActive ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'
+                    ))}
+                >
+                    {label}
+                    <span className="p-1 -mr-1">
+                        <HiChevronDown className={clsx('text-base transition-transform duration-300', open ? 'rotate-180' : '')} />
+                    </span>
+                    <span className={clsx('absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300', isActive ? 'w-full' : 'w-0 group-hover:w-full')} />
+                </button>
+            )}
 
             <AnimatePresence>
                 {open && (
