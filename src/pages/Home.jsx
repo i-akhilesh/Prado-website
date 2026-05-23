@@ -221,7 +221,7 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <DirectorCard
                             name="Dr. Pralhad Wangikar"
-                            designation="TFM"
+                            designation="TFM & CEO"
                             image="/images/img-director-dr.png"
                             profileLink="/directors/dr-wangikar"
                             delay={0.1}

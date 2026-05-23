@@ -20,7 +20,7 @@ export default function DrWangikar() {
                 <div className="absolute inset-0 z-0">
                     <img 
                         src="/images/img-home-about.png" // Realistic placeholder
-                        alt="Dr. P. B. Wangikar" 
+                        alt="Dr. Pralhad Wangikar" 
                         className="w-full h-full object-cover opacity-30 mix-blend-luminosity grayscale"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/80 to-transparent"></div>
@@ -33,10 +33,10 @@ export default function DrWangikar() {
                     </Link>
                     <motion.div initial="hidden" animate="visible" variants={fadeIn}>
                         <h1 className="text-[12vw] md:text-[8vw] font-bold font-heading leading-[0.85] tracking-tighter mb-6 text-white">
-                            Dr. P. B. <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-white">Wangikar.</span>
+                            Dr. Pralhad <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-white">Wangikar</span>
                         </h1>
                         <p className="text-xl md:text-3xl text-secondary font-medium tracking-wide flex items-center gap-6">
-                            <span className="w-16 h-[2px] bg-secondary inline-block"></span> Managing Director
+                            <span className="w-16 h-[2px] bg-secondary inline-block"></span> Test Facility Management & CEO
                         </p>
                     </motion.div>
                 </div>
