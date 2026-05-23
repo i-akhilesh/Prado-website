@@ -2,7 +2,7 @@ import { FaFlask } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityInVitro() {
-    const glob = import.meta.glob('/src/assets/images/facilities/in-vitro/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/images/facilities/in-vitro/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob);
 
     return (
@@ -11,7 +11,7 @@ export default function FacilityInVitro() {
             subtitle="Cell-Based Research & Archives"
             galleryImages={galleryImages}
             intro="PRADO's In Vitro Facility houses a state-of-the-art cell biology laboratory supporting a broad portfolio of in vitro assays for cytotoxicity, genotoxicity, efficacy, and pharmacological studies — alongside a GLP-compliant archives system for long-term data and sample retention."
-            image="/src/assets/images/img-home-gallery-3.png"
+            image="/images/img-home-gallery-3.png"
             icon={<FaFlask />}
             stats={[
                 { value: 'BSL-2', label: 'Biosafety Level' },

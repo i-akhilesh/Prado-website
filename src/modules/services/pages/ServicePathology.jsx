@@ -7,7 +7,7 @@ export default function ServicePathology() {
             title="Pathology"
             subtitle="Disease & Tissue Analysis"
             intro="Our Pathology Services provide comprehensive evaluation and interpretation of biological samples to support toxicology, pharmacology, and clinical studies. All interpretations are handled by board-certified veterinary and anatomic pathologists."
-            image="/src/assets/images/img-facility-path-1.png"
+            image="/images/img-facility-path-1.png"
             icon={<FaMicroscope />}
             subServices={[
                 {

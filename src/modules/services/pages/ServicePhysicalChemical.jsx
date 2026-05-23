@@ -7,7 +7,7 @@ export default function ServicePhysicalChemical() {
             title="Physical - Chemical Testing"
             subtitle="Comprehensive Testing Services"
             intro="PRADO provides extensive Physical-Chemical testing services complying with international guidelines including CIPAC, EEC, OECD, OPPTS, and ASTM for a wide range of test items."
-            image="/src/assets/images/img-facility-lab-1.png"
+            image="/images/img-facility-lab-1.png"
             icon={<FaVial />}
             subServices={[
                 {

@@ -7,7 +7,7 @@ export default function ServiceToxicology() {
             title="Toxicology"
             subtitle="Safety Assessment Studies"
             intro="We offer a full range of GLP-compliant toxicology studies to assess the safety of pharmaceuticals, chemicals, and medical devices. Delivering reliable, regulatory-accepted data since 2010."
-            image="/src/assets/images/img-facility-tox-1.png"
+            image="/images/img-facility-tox-1.png"
             icon={<FaVial />}
             subServices={[
                 {

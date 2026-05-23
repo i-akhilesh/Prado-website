@@ -84,7 +84,7 @@ export default function Home() {
 
                         <div className="lg:col-span-6 lg:col-start-7 relative h-[60vh] md:h-[80vh] w-full">
                             <motion.div style={{ y: y1 }} className="absolute inset-0 w-full h-full rounded-tr-[5rem] rounded-bl-[5rem] overflow-hidden">
-                                <img src="/src/assets/images/img-home-about.png" alt="Laboratory Operations" className="w-full h-[120%] object-cover object-center absolute top-[-10%]" />
+                                <img src="/images/img-home-about.png" alt="Laboratory Operations" className="w-full h-[120%] object-cover object-center absolute top-[-10%]" />
                             </motion.div>
                         </div>
                     </div>
@@ -162,9 +162,9 @@ export default function Home() {
                         {/* Scrolling Right Column (Cards) */}
                         <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-8 md:gap-16 mt-8 lg:mt-0">
                             {[
-                                { num: "01", title: "15+ Years of Expertise", desc: "Proven track record in delivering scientifically rigorous, reliable preclinical solutions globally.", img: "/src/assets/images/img-home-strength-3.png" },
-                                { num: "02", title: "Uncompromising Data", desc: "High fidelity analytical precision delivering data with exceptional regulatory acceptance rates worldwide.", img: "/src/assets/images/img-home-strength-2.png" },
-                                { num: "03", title: "GLP-Certified", desc: "World-class, audited infrastructure strictly compliant with international regulatory guidelines.", img: "/src/assets/images/img-home-strength-1.png" }
+                                { num: "01", title: "15+ Years of Expertise", desc: "Proven track record in delivering scientifically rigorous, reliable preclinical solutions globally.", img: "/images/img-home-strength-3.png" },
+                                { num: "02", title: "Uncompromising Data", desc: "High fidelity analytical precision delivering data with exceptional regulatory acceptance rates worldwide.", img: "/images/img-home-strength-2.png" },
+                                { num: "03", title: "GLP-Certified", desc: "World-class, audited infrastructure strictly compliant with international regulatory guidelines.", img: "/images/img-home-strength-1.png" }
                             ].map((item, idx) => (
                                 <motion.div
                                     key={idx}
@@ -195,9 +195,9 @@ export default function Home() {
 
                 <div className="flex w-[200vw] md:w-[150vw] gap-8 px-4 md:px-8 relative z-10 -ml-[10vw]">
                     <motion.div style={{ x: y2 }} className="flex gap-8 w-full">
-                        <img src="/src/assets/images/img-home-gallery-1.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 1" />
-                        <img src="/src/assets/images/img-home-gallery-2.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 2" />
-                        <img src="/src/assets/images/img-home-gallery-3.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 3" />
+                        <img src="/images/img-home-gallery-1.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 1" />
+                        <img src="/images/img-home-gallery-2.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 2" />
+                        <img src="/images/img-home-gallery-3.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 3" />
                     </motion.div>
                 </div>
             </section> */}
@@ -222,14 +222,14 @@ export default function Home() {
                         <DirectorCard
                             name="Dr. Pralhad Wangikar"
                             designation="TFM"
-                            image="/src/assets/images/img-director-dr.png"
+                            image="/images/img-director-dr.png"
                             profileLink="/directors/dr-wangikar"
                             delay={0.1}
                         />
                         <DirectorCard
                             name="Mrs. Ila Wangikar"
                             designation="Managing Director"
-                            image="/src/assets/images/img-director-mrs.png"
+                            image="/images/img-director-mrs.png"
                             profileLink="/directors/mrs-wangikar"
                             delay={0.3}
                         />

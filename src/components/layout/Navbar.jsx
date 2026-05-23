@@ -139,7 +139,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 flex-shrink-0">
                     <img
-                        src="/src/assets/images/WhatsApp_Image_2025-08-08_at_18.56.13_3374249e-removebg-preview.png"
+                        src="/images/WhatsApp_Image_2025-08-08_at_18.56.13_3374249e-removebg-preview.png"
                         alt="Prado Preclinical"
                         className="h-10 md:h-12 w-auto object-contain"
                     />

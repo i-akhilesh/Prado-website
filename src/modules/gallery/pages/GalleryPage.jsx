@@ -33,7 +33,7 @@ export default function GalleryPage() {
     const parsedData = {};
     Object.keys(modules).forEach((path) => {
         const parts = path.split('/');
-        // Path example: /src/assets/images/gallery/facility-activities/toxicology-lab/cover.png
+        // Path example: /images/gallery/facility-activities/toxicology-lab/cover.png
         if (parts.length < 4) return;
         
         const categoryId = parts[parts.length - 3];

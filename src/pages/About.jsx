@@ -27,7 +27,7 @@ export default function About() {
         { name: "Miss. Sai Prasanna", title: "Head of ECOTOX", degrees: "M.Tech", department: "ECOTOX", image: "" },
         { name: "Dr. Pranav Panzade", title: "Head of ARF", degrees: "M.V.Sc", department: "ARF", image: "" },
         { name: "Ms. Pallavi", title: "Head of TOX", degrees: "M.V.Sc", department: "TOX", image: "" }
-        // { name: "Dr. S. Kulkarni", title: "Head of Animal Facility", degrees: "M.V.Sc", department: "Animal Facility", image: "/src/assets/images/img-home-gallery-2.png" }
+        // { name: "Dr. S. Kulkarni", title: "Head of Animal Facility", degrees: "M.V.Sc", department: "Animal Facility", image: "/images/img-home-gallery-2.png" }
     ];
 
     return (
@@ -66,7 +66,7 @@ export default function About() {
                                 Precision <br/> <span className="italic font-light">Defined.</span>
                             </motion.h3>
                             <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-12 h-[30vh] w-full rounded-[2rem] overflow-hidden relative">
-                                <motion.img style={{ y: yImg }} src="/src/assets/images/img-home-about.png" className="absolute top-[-10%] left-0 w-full h-[100%] object-cover scale-110" alt="Prado Labs" />
+                                <motion.img style={{ y: yImg }} src="/images/img-home-about.png" className="absolute top-[-10%] left-0 w-full h-[100%] object-cover scale-110" alt="Prado Labs" />
                             </motion.div>
                         </div>
                         <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-12 mt-8 lg:mt-0 text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">

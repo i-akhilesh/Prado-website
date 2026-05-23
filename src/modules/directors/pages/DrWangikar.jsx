@@ -19,7 +19,7 @@ export default function DrWangikar() {
             <section className="relative w-full min-h-[70svh] flex flex-col justify-end pb-24 lg:pb-32 bg-primary-900 text-white overflow-hidden pt-40">
                 <div className="absolute inset-0 z-0">
                     <img 
-                        src="/src/assets/images/img-home-about.png" // Realistic placeholder
+                        src="/images/img-home-about.png" // Realistic placeholder
                         alt="Dr. P. B. Wangikar" 
                         className="w-full h-full object-cover opacity-30 mix-blend-luminosity grayscale"
                     />

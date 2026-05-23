@@ -2,7 +2,7 @@ import { FaMicroscope } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityPathology() {
-    const glob = import.meta.glob('/src/assets/images/facilities/pathology/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/images/facilities/pathology/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob);
 
     return (
@@ -11,7 +11,7 @@ export default function FacilityPathology() {
             subtitle="Disease & Tissue Analysis Lab"
             galleryImages={galleryImages}
             intro="PRADO's Pathology Laboratory delivers comprehensive evaluation of biological samples through expert histopathology, immunohistochemistry, and clinical pathology services — all interpreted by certified veterinary pathologists to support every toxicology and pharmacology study."
-            image="/src/assets/images/img-home-strength-2.png"
+            image="/images/img-home-strength-2.png"
             icon={<FaMicroscope />}
             stats={[
                 { value: 'GLP', label: 'Compliant' },

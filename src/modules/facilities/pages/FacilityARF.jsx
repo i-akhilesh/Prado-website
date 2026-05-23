@@ -2,7 +2,7 @@ import { FaPaw } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityARF() {
-    const glob = import.meta.glob('/src/assets/images/facilities/arf/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/images/facilities/arf/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob);
 
     return (
@@ -11,7 +11,7 @@ export default function FacilityARF() {
             subtitle="CPCSEA Approved · SPF-Grade"
             galleryImages={galleryImages}
             intro="PRADO's Animal Research Facility (ARF) is a CPCSEA-approved, SPF-grade environment built to the highest global standards for ethical and scientifically rigorous animal studies. Our infrastructure ensures precise environmental control, superior animal welfare, and uncompromised data integrity."
-            image="/src/assets/images/img-home-gallery-1.png"
+            image="/images/img-home-gallery-1.png"
             icon={<FaPaw />}
             stats={[
                 { value: 'CPCSEA', label: 'Approved' },

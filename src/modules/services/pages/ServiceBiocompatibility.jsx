@@ -7,7 +7,7 @@ export default function ServiceBiocompatibility() {
             title="Biocompatibility"
             subtitle="Medical Device Safety Testing"
             intro="ISO 10993 compliant biocompatibility testing for medical devices, ensuring absolute patient safety across global regulatory markets. PRADO delivers comprehensive testing programs that support CE marking, FDA 510(k), and PMA submissions."
-            image="/src/assets/images/img-facility-lab-2.png"
+            image="/images/img-facility-lab-2.png"
             icon={<FaShieldAlt />}
             subServices={[
                 {

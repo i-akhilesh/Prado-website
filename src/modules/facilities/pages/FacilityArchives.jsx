@@ -2,7 +2,7 @@ import { FaArchive } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityArchives() {
-    const glob = import.meta.glob('/src/assets/images/facilities/archives/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/images/facilities/archives/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob);
 
     return (
@@ -11,7 +11,7 @@ export default function FacilityArchives() {
             subtitle="Secure Long-Term GLP Storage"
             galleryImages={galleryImages}
             intro="PRADO's GLP Archive Facility (ARC) provides secure, controlled, and long-term storage of all study materials, including raw data, study protocols, specimen slides, wet tissues, and final reports. Engineered to protect study integrity for 15+ years in full compliance with OECD GLP and FDA regulations."
-            image="/src/assets/images/img-home-strength-1.png"
+            image="/images/img-home-strength-1.png"
             icon={<FaArchive />}
             stats={[
                 { value: '15+ Yrs', label: 'Retainment' },
