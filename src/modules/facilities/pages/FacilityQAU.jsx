@@ -2,8 +2,8 @@ import { FaClipboardCheck } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityQAU() {
-    const glob = import.meta.glob('/images/facilities/qau/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
-    const galleryImages = Object.values(glob);
+    const glob = import.meta.glob('/public/images/facilities/qau/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
         <FacilityDetailLayout
@@ -11,7 +11,7 @@ export default function FacilityQAU() {
             subtitle="GLP Compliance & Audit"
             galleryImages={galleryImages}
             intro="PRADO's Quality Assurance Unit (QAU) is an independent body that ensures every study conducted at our facility rigorously conforms to Good Laboratory Practice (GLP) principles and international regulatory requirements. Absolute data integrity starts here."
-            image="/images/img-home-strength-3.png"
+            image="/images/facilities/qau.png"
             icon={<FaClipboardCheck />}
             stats={[
                 { value: 'GLP', label: 'Certified' },

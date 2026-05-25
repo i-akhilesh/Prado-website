@@ -2,8 +2,8 @@ import { FaBoxOpen } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityTICO() {
-    const glob = import.meta.glob('/images/facilities/tico/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
-    const galleryImages = Object.values(glob);
+    const glob = import.meta.glob('/public/images/facilities/tico/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
         <FacilityDetailLayout
@@ -11,7 +11,7 @@ export default function FacilityTICO() {
             subtitle="Receipt · Storage · Accountability"
             galleryImages={galleryImages}
             intro="PRADO's Test Item Control Office (TICO) provides meticulous management of all test and reference items from initial receipt through final disposition — ensuring regulatory traceability, sample integrity, and complete accountability at every step."
-            image="/images/img-home-about.png"
+            image="/images/facilities/tico.png"
             icon={<FaBoxOpen />}
             stats={[
                 { value: '100%', label: 'Chain of Custody' },

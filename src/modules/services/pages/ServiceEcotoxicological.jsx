@@ -7,7 +7,7 @@ export default function ServiceEcotoxicological() {
             title="Ecotoxicological"
             subtitle="Environmental Safety Testing"
             intro="PRADO's Ecotoxicological Services evaluate the impact of pharmaceuticals, agrochemicals, and industrial chemicals on environmental organisms. Our studies meet OECD guideline requirements for global regulatory submissions."
-            image="/images/img-home-gallery-2.png"
+            image="/images/services/ecotox.png"
             icon={<FaLeaf />}
             subServices={[
                 {

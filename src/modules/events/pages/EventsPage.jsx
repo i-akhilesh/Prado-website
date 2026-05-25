@@ -18,7 +18,7 @@ export default function EventsPage() {
             location: "Prado Convention Center, Pune",
             description: "Join leading experts in toxicology and preclinical research as we discuss the latest regulatory updates and alternative in-vitro methodologies. Featuring keynote speakers from global pharma giants.",
             status: "Upcoming",
-            image: "/images/img-home-about.png" // Realistic placeholder
+            image: "/images/events/event-1.png" // Realistic placeholder
         },
         {
             title: "GLP Audit Readiness Workshop",
@@ -26,7 +26,7 @@ export default function EventsPage() {
             location: "Virtual Webinar",
             description: "A comprehensive half-day workshop focused on preparing QAU and technical staff for international regulatory audits. Learn directly from former FDA and OECD compliance officers.",
             status: "Upcoming",
-            image: "/images/img-facility-tox-1.png"
+            image: "/images/events/event-2.png"
         },
         {
             title: "Global CRO Partnership Summit",
@@ -34,7 +34,7 @@ export default function EventsPage() {
             location: "Dubai World Trade Centre",
             description: "Prado is exhibiting at Booth A45. Meeting with global partners to discuss expanding our service portfolio and establishing strategic alliances in the MENA region.",
             status: "Ongoing",
-            image: "/images/img-facility-animal-1.png"
+            image: "/images/events/event-3.png"
         }
     ];
 

@@ -2,8 +2,8 @@ import { FaLeaf } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityEcotox() {
-    const glob = import.meta.glob('/images/facilities/ecotox/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
-    const galleryImages = Object.values(glob);
+    const glob = import.meta.glob('/public/images/facilities/ecotox/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
         <FacilityDetailLayout
@@ -11,7 +11,7 @@ export default function FacilityEcotox() {
             subtitle="Environmental Safety Testing"
             galleryImages={galleryImages}
             intro="PRADO's Ecotoxicology Facility (ECOTOX) conducts comprehensive environmental risk assessments on pharmaceuticals, agrochemicals, and industrial chemicals. We evaluate potential hazards to aquatic and terrestrial ecosystems in strict compliance with GLP and OECD guidelines."
-            image="/images/img-home-strength-3.png"
+            image="/images/facilities/ecotox.png"
             icon={<FaLeaf />}
             stats={[
                 { value: '100%', label: 'GLP Compliant' },

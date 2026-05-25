@@ -37,12 +37,12 @@ export default function Home() {
                         className="max-w-[90vw] lg:max-w-[70vw]"
                     >
                         <h1 className="text-[10vw] md:text-[6vw] lg:text-[5vw] font-bold font-heading leading-[1.1] tracking-tighter mb-8 text-white">
-                            Prado Preclinical - <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent bg-[length:200%_auto] animate-gradient text-[8vw] md:text-[4vw] lg:text-[3.5vw]">Beyond Expectations in Scientific Research</span>
+                            PRADO Pvt. Ltd. - <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent bg-[length:200%_auto] animate-gradient text-[8vw] md:text-[4vw] lg:text-[3.5vw]">Beyond Expectations in Preclinical Research</span>
                         </h1>
                         <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16">
                             <p className="text-lg md:text-2xl text-slate-300 max-w-xl font-light leading-relaxed border-l-2 border-secondary pl-6">
-                                Supporting pharmaceuticals, biopharma, biotech, medical devices, agrochemicals, and research organizations with unmatched expertise.
+                                Supporting pharmaceuticals, Biopharma, Biotech, Medical Devices, Agrochemicals, Herbal, Food, Veterinary and Vaccine producing industries and Research Organizations with unmatched expertise
                             </p>
                             <Link to="/services" className="group flex items-center gap-4 text-white hover:text-secondary transition-colors duration-300 mt-4 md:mt-0">
                                 <span className="text-sm font-bold uppercase tracking-[0.2em]">Explore Capabilities</span>
@@ -70,13 +70,13 @@ export default function Home() {
                                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
                                 className="text-2xl md:text-3xl lg:text-3xl font-heading font-semibold text-slate-900 dark:text-white mb-8 leading-snug tracking-tight"
                             >
-                                PRADO: Preclinical Research and Development Organization Pvt. Ltd. is a <span className="italic font-light text-slate-600 dark:text-slate-400">global preclinical research partner</span> helping healthcare innovations reach the market faster and safer.
+                                PRADO: Preclinical Research and Development Organization Pvt. Ltd. is a <span className="italic font-light text-slate-600 dark:text-slate-400">global preclinical contract research partner</span> helping healthcare innovations reach the market faster and safer.
                             </motion.h2>
                             <motion.div
                                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
                                 className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-12 space-y-4"
                             >
-                                <p>From toxicology and pharmacokinetics to biocompatibility, animal model development, and pathology services, we deliver data that meets international regulatory standards with exceptional acceptance rates.</p>
+                                <p>From toxicology and pharmacokinetics to biocompatibility, animal model development, and pathology services, risk assessments and animal clinical trials we deliver data that meets international regulatory standards with exceptional acceptance rates.</p>
                                 <p>Based in Pune, India, PRADO serves pharmaceutical, biotech, biopharma, medical device, agrochemical, food, vaccine, and animal health industries — providing cost-effective, high-quality, and timely results.</p>
                                 <p>With proven expertise and a client-first approach, PRADO is not just a service provider — we’re your strategic partner in preclinical excellence.</p>
                             </motion.div>
@@ -84,7 +84,7 @@ export default function Home() {
 
                         <div className="lg:col-span-6 lg:col-start-7 relative h-[60vh] md:h-[80vh] w-full">
                             <motion.div style={{ y: y1 }} className="absolute inset-0 w-full h-full rounded-tr-[5rem] rounded-bl-[5rem] overflow-hidden">
-                                <img src="/images/img-home-about.png" alt="Laboratory Operations" className="w-full h-[120%] object-cover object-center absolute top-[-10%]" />
+                                <img src="/images/home/about.png" alt="Laboratory Operations" className="w-full h-[120%] object-cover object-center absolute top-[-10%]" />
                             </motion.div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@ export default function Home() {
                             { icon: FaUsers, title: "Diversified Customer Base", desc: "Mix of Pharmaceutical, Biotech, Medical Device, Pesticide, Herbal and Vaccine producing customers from across the globe." },
                             { icon: FaCogs, title: "Integrated Services", desc: "Offers a range of Preclinical Toxicology, Pharmacokinetics, Biology, Pathology, Biocompatibility Testing for Regulatory submission, Risk Assessment and Animal Clinical field Trials." },
                             { icon: FaStar, title: "Best-in-Class Talent", desc: "Experienced scientific and management team having worked with global pharmaceutical, biotech and other companies." },
-                            { icon: FaBuilding, title: "Delivery Infrastructure", desc: "CPCSEA Approved Facility (1723/PO/RcBiBt/13/CPCSEA) • GLP Certified (GLP/C-235/2024) • DSIR certified and Recognized." },
+                            { icon: FaBuilding, title: "Certificates", desc: "CCSEA Approved Facility (1723/PO/RcBiBt/13/CPCSEA) • GLP Certified (GLP/C-235A/2026) • DSIR certified and Recognized." },
                             { icon: FaTrophy, title: "Awards", desc: "‘Preclinical Research Excellence Award’ organized by DocRoSh Global Solutions, 2019 • ‘Indian Leadership Award for Industrial Development’ to Our CEO and Director, 2017." }
                         ].map((feature, idx) => (
                             <motion.div
@@ -154,7 +154,7 @@ export default function Home() {
                                     Why <br /> PRADO?
                                 </h3>
                                 <p className="text-xl text-slate-500 dark:text-slate-400 font-light max-w-md">
-                                    We combine 15+ years of clinical rigorousness with unmatched cost-effectiveness and strict GLP compliance.
+                                    We combine 15+ years of Pre-clinical rigorousness with unmatched cost-effectiveness and strict GLP compliance.
                                 </p>
                             </div>
                         </div>
@@ -162,9 +162,10 @@ export default function Home() {
                         {/* Scrolling Right Column (Cards) */}
                         <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-8 md:gap-16 mt-8 lg:mt-0">
                             {[
-                                { num: "01", title: "15+ Years of Expertise", desc: "Proven track record in delivering scientifically rigorous, reliable preclinical solutions globally.", img: "/images/img-home-strength-3.png" },
-                                { num: "02", title: "Uncompromising Data", desc: "High fidelity analytical precision delivering data with exceptional regulatory acceptance rates worldwide.", img: "/images/img-home-strength-2.png" },
-                                { num: "03", title: "GLP-Certified", desc: "World-class, audited infrastructure strictly compliant with international regulatory guidelines.", img: "/images/img-home-strength-1.png" }
+                                { num: "01", title: "GLP-Certified", desc: "Ensuring strict compliance with OECD Good Laboratory Practices (GLP) and other international regulatory guidelines. Accurate and reliable data generation.", img: "/images/home/strength-1.png" },
+                                { num: "02", title: "Uncompromising Data", desc: "High fidelity analytical precision delivering data with exceptional regulatory acceptance rates worldwide.", img: "/images/home/strength-2.png" },
+                                { num: "03", title: "15+ Years of Expertise", desc: "Proven track record in delivering scientifically, reliable preclinical solutions globally.", img: "/images/home/strength-1.png" },
+
                             ].map((item, idx) => (
                                 <motion.div
                                     key={idx}
@@ -195,9 +196,9 @@ export default function Home() {
 
                 <div className="flex w-[200vw] md:w-[150vw] gap-8 px-4 md:px-8 relative z-10 -ml-[10vw]">
                     <motion.div style={{ x: y2 }} className="flex gap-8 w-full">
-                        <img src="/images/img-home-gallery-1.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 1" />
-                        <img src="/images/img-home-gallery-2.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 2" />
-                        <img src="/images/img-home-gallery-3.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 3" />
+                        <img src="/images/home/gallery-1.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 1" />
+                        <img src="/images/home/gallery-2.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 2" />
+                        <img src="/images/home/gallery-3.png" className="w-1/3 h-[40vh] md:h-[50vh] object-cover rounded-[2rem] shadow-2xl" alt="Facility 3" />
                     </motion.div>
                 </div>
             </section> */}
@@ -222,14 +223,14 @@ export default function Home() {
                         <DirectorCard
                             name="Dr. Pralhad Wangikar"
                             designation="TFM & CEO"
-                            image="/images/img-director-dr.png"
+                            image="/images/directors/dr-wangikar.png"
                             profileLink="/directors/dr-wangikar"
                             delay={0.1}
                         />
                         <DirectorCard
                             name="Mrs. Ila Wangikar"
                             designation="Managing Director"
-                            image="/images/img-director-mrs.png"
+                            image="/images/directors/ila-wangikar.png"
                             profileLink="/directors/mrs-wangikar"
                             delay={0.3}
                         />

@@ -7,7 +7,7 @@ export default function ServiceAnimalClinical() {
             title="Animal Clinical"
             subtitle="Veterinary Product Evaluation"
             intro="PRADO conducts dedicated field clinical trials for veterinary products, assessing their efficacy and safety in real-world conditions. Our collaborative network and diverse species capabilities make us a trusted partner for veterinary pharma and agri-biotech companies."
-            image="/images/img-home-gallery-3.png"
+            image="/images/services/animal-clinical.png"
             icon={<FaPaw />}
             subServices={[
                 {

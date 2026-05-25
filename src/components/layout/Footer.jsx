@@ -60,7 +60,7 @@ export default function Footer() {
                     <div className="lg:col-span-4 flex flex-col gap-7">
                         <Link to="/" className="inline-block bg-white px-4 py-2 rounded-xl w-fit">
                             <img
-                                src="/images/WhatsApp_Image_2025-08-08_at_18.56.13_3374249e-removebg-preview.png"
+                                src="/images/logo/logo.png"
                                 alt="Prado Preclinical"
                                 className="h-10 w-auto object-contain"
                             />

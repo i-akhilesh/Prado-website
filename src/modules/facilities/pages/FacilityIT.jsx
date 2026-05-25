@@ -2,8 +2,8 @@ import { FaServer } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityIT() {
-    const glob = import.meta.glob('/images/facilities/it/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
-    const galleryImages = Object.values(glob);
+    const glob = import.meta.glob('/public/images/facilities/it/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
         <FacilityDetailLayout
@@ -11,7 +11,7 @@ export default function FacilityIT() {
             subtitle="Digital Infrastructure & Data Security"
             galleryImages={galleryImages}
             intro="PRADO's Information Technology department provides a secure, validated, and reliable digital infrastructure that underpins the integrity of all preclinical research data across the organization — from laboratory instruments to regulatory submission systems."
-            image="/images/img-home-strength-2.png"
+            image="/images/facilities/it.png"
             icon={<FaServer />}
             stats={[
                 { value: '99.9%', label: 'System Uptime' },

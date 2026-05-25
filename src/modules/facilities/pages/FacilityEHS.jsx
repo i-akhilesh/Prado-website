@@ -2,8 +2,8 @@ import { FaLeaf } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityEHS() {
-    const glob = import.meta.glob('/images/facilities/ehs/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
-    const galleryImages = Object.values(glob);
+    const glob = import.meta.glob('/public/images/facilities/ehs/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
         <FacilityDetailLayout
@@ -11,7 +11,7 @@ export default function FacilityEHS() {
             subtitle="Safe · Sustainable · Compliant"
             galleryImages={galleryImages}
             intro="PRADO's Environment, Health & Safety (EHS) department ensures that every aspect of our operations is conducted safely, responsibly, and in full compliance with applicable environmental and occupational safety regulations."
-            image="/images/img-home-gallery-2.png"
+            image="/images/facilities/ehs.png"
             icon={<FaLeaf />}
             stats={[
                 { value: '0', label: 'LTI Incidents' },

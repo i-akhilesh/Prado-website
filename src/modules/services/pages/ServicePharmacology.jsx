@@ -7,7 +7,7 @@ export default function ServicePharmacology() {
             title="Pharmacology"
             subtitle="Efficacy & Biology Studies"
             intro="PRADO's Pharmacology & Efficacy Biology services provide rigorous in vivo and in vitro studies to characterize the efficacy, mechanism of action, and pharmacodynamic profile of new chemical and biological entities."
-            image="/images/img-home-about.png"
+            image="/images/services/pharmacology.png"
             icon={<FaHeartbeat />}
             subServices={[
                 {

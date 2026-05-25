@@ -2,8 +2,8 @@ import { FaFolderOpen } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityDocumentControl() {
-    const glob = import.meta.glob('/images/facilities/document-control/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
-    const galleryImages = Object.values(glob);
+    const glob = import.meta.glob('/public/images/facilities/document-control/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
         <FacilityDetailLayout
@@ -11,7 +11,7 @@ export default function FacilityDocumentControl() {
             subtitle="Records Management & Traceability"
             galleryImages={galleryImages}
             intro="PRADO's Document Control department is the backbone of the organization's regulatory compliance infrastructure. It ensures that all controlled documents — from study plans and raw data to final reports and SOPs — are managed, versioned, and traceable with absolute rigor."
-            image="/images/img-home-strength-3.png"
+            image="/images/facilities/document-control.png"
             icon={<FaFolderOpen />}
             stats={[
                 { value: 'GLP', label: 'Compliant' },

@@ -19,7 +19,7 @@ export default function DrWangikar() {
             <section className="relative w-full min-h-[70svh] flex flex-col justify-end pb-24 lg:pb-32 bg-primary-900 text-white overflow-hidden pt-40">
                 <div className="absolute inset-0 z-0">
                     <img 
-                        src="/images/img-home-about.png" // Realistic placeholder
+                        src="/images/directors/dr-wangikar-bg.png" // Realistic placeholder
                         alt="Dr. Pralhad Wangikar" 
                         className="w-full h-full object-cover opacity-30 mix-blend-luminosity grayscale"
                     />
@@ -51,17 +51,24 @@ export default function DrWangikar() {
                         {/* Leadership Message */}
                         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}>
                             <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-8 flex items-center gap-4">
-                                <FaQuoteLeft className="text-xl" /> Message to Stakeholders
+                                <FaQuoteLeft className="text-xl" /> Message to CEO
                             </h2>
                             <div className="prose prose-xl md:prose-2xl prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 font-light leading-relaxed">
                                 <p className="text-2xl md:text-3xl font-medium text-slate-800 dark:text-slate-200 mb-8 leading-snug">
                                     "Our journey over the past 15 years has been driven by a singular commitment: advancing healthcare through uncompromising quality in preclinical research."
                                 </p>
                                 <p className="mb-8">
-                                    "From our inception, Prado was envisioned not just as a service provider, but as a critical partner in the drug development pipeline. Navigating the complex regulatory landscape requires more than just infrastructure; it demands deep scientific acumen and integrity."
+                                    "From our inception, PRADO was envisioned not just as a service provider, but as a critical partner in the drug development pipeline. Navigating the complex regulatory landscape requires more than just infrastructure; it demands deep scientific acumen and integrity."
                                 </p>
                                 <p className="mb-8">
-                                    "We continue to invest in our people and technology to ensure that every molecule entrusted to us is evaluated with the highest scientific rigor."
+                                    "We consistently focus on scientific integration and current regulatory requirements towards collaborative, long-term partnerships with our esteemed sponsors. Our continuous efforts towards providing cost effective, quality services with compressed timelines, and supporting of our sponsors towards accelerating novel therapies for Mankind."
+                                </p>
+                                <p className="mb-8">
+                                    "Proud to partner in the advancement of modern drug development! Together, we are successfully building predictive, human-relevant programs that integrate advanced New Approach Methodologies (NAMs). By aligning with the FDA Modernization Act 2.0, we are ensuring a seamless clinical trial transition and paving the way toward a future with reduced animal testing."
+                                </p>
+                                <p className="mb-8">
+                                    "We work closely with our clients to understand their preclinical needs and develop tailored 
+                                    programs to meet their goals in a timely manner."
                                 </p>
                                 <p>
                                     "As we look to the future, our focus remains steadfast on expanding our capabilities while adhering to the core values of transparency, accuracy, and timeliness that have defined our legacy."
@@ -78,7 +85,7 @@ export default function DrWangikar() {
                             
                             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-8 font-heading tracking-tight relative z-10">Institutional Vision.</h2>
                             <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-12 font-light relative z-10">
-                                To establish Prado as the premier global destination for preclinical research, synonymous with scientific excellence, ethical practices, and regulatory mastery, thereby accelerating global access to safe and effective healthcare solutions.
+                                To establish PRADO as the premier global destination for preclinical research, synonymous with scientific excellence, ethical practices, and regulatory mastery, thereby accelerating global access to safe and effective healthcare solutions.
                             </p>
                             
                             <div className="w-full h-[1px] bg-slate-200 dark:bg-slate-800 mb-12 relative z-10"></div>

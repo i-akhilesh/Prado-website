@@ -7,7 +7,7 @@ export default function ServiceAnalytical() {
             title="Analytical"
             subtitle="Bioanalytical Services"
             intro="We offer comprehensive analytical and bioanalytical testing to support toxicokinetic, pharmacokinetic, and drug development studies for small and large molecules. Our capabilities span from early pre-formulation to product lifecycle support."
-            image="/images/img-facility-lab-3.png"
+            image="/images/services/analytical.png"
             icon={<FaAtom />}
             subServices={[
                 {
