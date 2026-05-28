@@ -71,10 +71,10 @@ export default function About() {
                         </div>
                         <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-12 mt-8 lg:mt-0 text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                             <motion.p variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                                Headquartered in Pune, India, PRADO (Preclinical Research and Development Organization Pvt. Ltd.) stands as one of the fastest-growing CROs worldwide. 
+                                Headquartered in Pune, India, PRADO - Preclinical Research and Development Organization Pvt. Ltd. stands as one of the fastest-growing CROs. 
                             </motion.p>
                             <motion.p variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                                We deliver end-to-end scientific services encompassing toxicology, pharmacokinetics, biocompatibility, and risk assessment entirely under one roof. Our GLP-certified infrastructure guarantees data fidelity that easily clears international regulatory scrutiny.
+                                We deliver end-to-end preclinical services encompassing toxicology, pharmacokinetics, biocompatibility, and risk assessment entirely under one roof. The Quality and GLP compliance guarantees our clients to confidently submit their preclinical data packages to regulatory authorities, accelerating approval timelines.
                             </motion.p>
                         </div>
                     </div>

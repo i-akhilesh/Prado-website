@@ -186,6 +186,156 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* 3.5 Accreditations & Certifications Section */}
+            <section className="py-32 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors duration-700 relative z-10">
+                <div className="container mx-auto px-4 md:px-8">
+                    <div className="max-w-full lg:max-w-[70vw] mx-auto text-center mb-20">
+                        <motion.h2
+                            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}
+                            className="text-sm font-bold tracking-[0.3em] text-secondary uppercase mb-6"
+                        >
+                            Accreditations & Compliance
+                        </motion.h2>
+                        <motion.h3
+                            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}
+                            className="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-8 tracking-tight"
+                        >
+                            Global Quality Standards
+                        </motion.h3>
+                        <motion.p
+                            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}
+                            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto leading-relaxed"
+                        >
+                            PRADO operations adhere to international regulatory frameworks, ensuring verified business identity and strict compliance with preclinical testing standards.
+                        </motion.p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                        {/* GLP Certification */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="bg-white dark:bg-slate-950 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                        >
+                            <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                                <FaBuilding className="text-3xl text-secondary" />
+                            </div>
+                            <div>
+                                <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-3">GLP Certified</h4>
+                                <p className="text-sm text-slate-500 dark:text-slate-400 font-light mb-6">
+                                    OECD Good Laboratory Practice compliance certified for preclinical regulatory safety studies (GLP/C-235A/2026).
+                                </p>
+                            </div>
+                            <span className="text-xs font-semibold px-3 py-1 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 rounded-full border border-emerald-100 dark:border-emerald-900/55">
+                                Certified
+                            </span>
+                        </motion.div>
+
+                        {/* CCSEA Approved */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="bg-white dark:bg-slate-950 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                        >
+                            <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                                <FaBuilding className="text-3xl text-secondary" />
+                            </div>
+                            <div>
+                                <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-3">CCSEA Approved</h4>
+                                <p className="text-sm text-slate-500 dark:text-slate-400 font-light mb-6">
+                                    Approved Animal Breeding and Trading facility under CPCSEA India guidelines (1723/PO/RcBiBt/13/CPCSEA).
+                                </p>
+                            </div>
+                            <span className="text-xs font-semibold px-3 py-1 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 rounded-full border border-emerald-100 dark:border-emerald-900/55">
+                                Approved
+                            </span>
+                        </motion.div>
+
+                        {/* DSIR Recognized */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="bg-white dark:bg-slate-950 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                        >
+                            <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                                <FaBuilding className="text-3xl text-secondary" />
+                            </div>
+                            <div>
+                                <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-3">DSIR Recognized</h4>
+                                <p className="text-sm text-slate-500 dark:text-slate-400 font-light mb-6">
+                                    Officially certified and recognized by the Department of Scientific and Industrial Research, Govt of India.
+                                </p>
+                            </div>
+                            <span className="text-xs font-semibold px-3 py-1 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 rounded-full border border-emerald-100 dark:border-emerald-900/55">
+                                Recognized
+                            </span>
+                        </motion.div>
+
+                        {/* D-U-N-S Registered */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            className="bg-white dark:bg-slate-950 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                        >
+                            <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                                <FaStar className="text-3xl text-secondary" />
+                            </div>
+                            <div className="flex flex-col items-center">
+                                <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-4">D-U-N-S® Registered</h4>
+                                
+                                <div className="relative w-[114px] h-[97px] bg-white rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-inner mb-3">
+                                    {/* Beautiful Underlaid SVG Fallback */}
+                                    <div className="absolute inset-0 z-0 flex items-center justify-center bg-white">
+                                        <svg width="114" height="97" viewBox="0 0 114 97" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full select-none pointer-events-none">
+                                            <rect x="1" y="1" width="112" height="95" rx="8" fill="white" stroke="#0F62AC" strokeWidth="2"/>
+                                            <path d="M1 9C1 4.58172 4.58172 1 9 1H105C109.418 1 113 4.58172 113 9V28H1V9Z" fill="#0F62AC"/>
+                                            <text x="57" y="18" fill="white" fontSize="9" fontFamily="Arial, Helvetica, sans-serif" fontWeight="bold" textAnchor="middle" letterSpacing="0.5">
+                                                DUN &amp; BRADSTREET
+                                            </text>
+                                            <text x="57" y="48" fill="#0F62AC" fontSize="12" fontFamily="Arial, Helvetica, sans-serif" fontWeight="black" textAnchor="middle">
+                                                D-U-N-S®
+                                            </text>
+                                            <text x="57" y="64" fill="#0F62AC" fontSize="10" fontFamily="Arial, Helvetica, sans-serif" fontWeight="bold" textAnchor="middle" letterSpacing="0.5">
+                                                REGISTERED
+                                            </text>
+                                            <path d="M1 78H113V88C113 92.4183 109.418 96 105 96H9C4.58172 96 1 92.4183 1 88V78Z" fill="#F0F4F8"/>
+                                            <line x1="1" y1="78" x2="113" y2="78" stroke="#0F62AC" strokeWidth="1"/>
+                                            <text x="57" y="90" fill="#0F62AC" fontSize="9" fontFamily="Arial, Helvetica, sans-serif" fontWeight="bold" textAnchor="middle">
+                                                ✓ ACTIVE
+                                            </text>
+                                        </svg>
+                                    </div>
+
+                                    {/* Interactive D&B Iframe Seal */}
+                                    <iframe 
+                                        id="Iframe1" 
+                                        src="https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1" 
+                                        width="114" 
+                                        height="97" 
+                                        frameBorder="0" 
+                                        scrolling="no" 
+                                        allowTransparency="true"
+                                        title="D&B D-U-N-S Registered Seal"
+                                        className="relative z-10 bg-transparent w-full h-full overflow-hidden"
+                                    ></iframe>
+                                </div>
+                            </div>
+                            <span className="text-xs font-semibold px-3 py-1 bg-blue-50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 rounded-full border border-blue-100 dark:border-blue-900/55">
+                                Verified
+                            </span>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
             {/* 4. Elegant Full-Width Gallery Teaser
             <section className="py-40 bg-slate-900 dark:bg-black text-white overflow-hidden relative">
                 <div className="container mx-auto px-4 md:px-8 mb-20 text-center relative z-10">

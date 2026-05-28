@@ -51,7 +51,7 @@ export default function MrsWangikar() {
                         {/* Leadership Message */}
                         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}>
                             <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-8 flex items-center gap-4">
-                                <FaQuoteLeft className="text-xl" /> Message to Stakeholders
+                                <FaQuoteLeft className="text-xl" /> Message from Managing Director
                             </h2>
                             <div className="prose prose-xl md:prose-2xl prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 font-light leading-relaxed">
                                 <p className="text-2xl md:text-3xl font-medium text-slate-800 dark:text-slate-200 mb-8 leading-snug">

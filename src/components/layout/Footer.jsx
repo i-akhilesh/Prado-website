@@ -135,7 +135,7 @@ export default function Footer() {
                             </div>
                             <div className="flex flex-col gap-1">
                                 <a href="mailto:admin@pradopreclinical.com" className="text-sm hover:text-white transition-colors">admin@pradopreclinical.com</a>
-                                <a href="mailto:pralhad.wangikar@pradopreclinical.com" className="text-sm hover:text-white transition-colors text-slate-500">pralhad.wangikar@pradopreclinical.com</a>
+                                <a href="mailto:pralhad.wangikar@pradopreclinical.com" className="text-sm hover:text-white transition-colors">pralhad.wangikar@pradopreclinical.com</a>
                             </div>
                         </div>
 
@@ -160,6 +160,8 @@ export default function Footer() {
                         <span>CPCSEA Approved</span>
                         <span className="text-white/20">|</span>
                         <span>OECD Compliant</span>
+                        <span className="text-white/20">|</span>
+                        <span>DUNS Registered</span>
                     </div>
                 </div>
             </div>
