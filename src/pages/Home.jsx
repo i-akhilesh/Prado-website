@@ -291,42 +291,7 @@ export default function Home() {
                             <div className="flex flex-col items-center">
                                 <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-4">D-U-N-S® Registered</h4>
                                 
-                                <div className="relative w-[114px] h-[97px] bg-white rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-inner mb-3">
-                                    {/* Beautiful Underlaid SVG Fallback */}
-                                    <div className="absolute inset-0 z-0 flex items-center justify-center bg-white">
-                                        <svg width="114" height="97" viewBox="0 0 114 97" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full select-none pointer-events-none">
-                                            <rect x="1" y="1" width="112" height="95" rx="8" fill="white" stroke="#0F62AC" strokeWidth="2"/>
-                                            <path d="M1 9C1 4.58172 4.58172 1 9 1H105C109.418 1 113 4.58172 113 9V28H1V9Z" fill="#0F62AC"/>
-                                            <text x="57" y="18" fill="white" fontSize="9" fontFamily="Arial, Helvetica, sans-serif" fontWeight="bold" textAnchor="middle" letterSpacing="0.5">
-                                                DUN &amp; BRADSTREET
-                                            </text>
-                                            <text x="57" y="48" fill="#0F62AC" fontSize="12" fontFamily="Arial, Helvetica, sans-serif" fontWeight="black" textAnchor="middle">
-                                                D-U-N-S®
-                                            </text>
-                                            <text x="57" y="64" fill="#0F62AC" fontSize="10" fontFamily="Arial, Helvetica, sans-serif" fontWeight="bold" textAnchor="middle" letterSpacing="0.5">
-                                                REGISTERED
-                                            </text>
-                                            <path d="M1 78H113V88C113 92.4183 109.418 96 105 96H9C4.58172 96 1 92.4183 1 88V78Z" fill="#F0F4F8"/>
-                                            <line x1="1" y1="78" x2="113" y2="78" stroke="#0F62AC" strokeWidth="1"/>
-                                            <text x="57" y="90" fill="#0F62AC" fontSize="9" fontFamily="Arial, Helvetica, sans-serif" fontWeight="bold" textAnchor="middle">
-                                                ✓ ACTIVE
-                                            </text>
-                                        </svg>
-                                    </div>
-
-                                    {/* Interactive D&B Iframe Seal */}
-                                    <iframe 
-                                        id="Iframe1" 
-                                        src="https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1" 
-                                        width="114" 
-                                        height="97" 
-                                        frameBorder="0" 
-                                        scrolling="no" 
-                                        allowTransparency="true"
-                                        title="D&B D-U-N-S Registered Seal"
-                                        className="relative z-10 bg-transparent w-full h-full overflow-hidden"
-                                    ></iframe>
-                                </div>
+                                <iframe id='Iframe1' src='https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1' width='114px' height='97px' frameBorder='0' scrolling='no' allowTransparency='true' ></iframe>
                             </div>
                             <span className="text-xs font-semibold px-3 py-1 bg-blue-50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 rounded-full border border-blue-100 dark:border-blue-900/55">
                                 Verified
