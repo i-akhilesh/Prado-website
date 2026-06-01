@@ -15,7 +15,7 @@ export default function FacilitiesPage() {
     const departments = [
         {
             title: "Animal Research Facility (ARF)",
-            subtitle: "CPCSEA Approved · SPF-Grade",
+            subtitle: "CCSEA Approved · SPF-Grade",
             description: "A meticulously controlled environment designed for ethical research. Equipped with fully automated Individually Ventilated Cages (IVC) systems.",
             image: "/images/facilities/arf.png",
             path: "/facilities/arf",

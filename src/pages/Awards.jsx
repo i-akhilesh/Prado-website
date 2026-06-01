@@ -28,7 +28,7 @@ export default function Awards() {
 
     const journey = [
         { year: "2010", title: "Company Incorporation", icon: FaBuilding, highlight: "from-blue-500 to-cyan-400", description: "Company incorporated with modest and personal investment, laying the foundations for an era of scientific excellence." },
-        { year: "2013", title: "Facility Establishment", icon: FaBuilding, highlight: "from-indigo-500 to-purple-500", description: "First state-of-the-art facility establishment alongside pivotal CPCSEA Approval of Animal Facility." },
+        { year: "2013", title: "Facility Establishment", icon: FaBuilding, highlight: "from-indigo-500 to-purple-500", description: "First state-of-the-art facility establishment alongside pivotal CCSEA Approval of Animal Facility." },
         { year: "2015", title: "Standardization", icon: FaFlask, highlight: "from-emerald-500 to-teal-400", description: "Standardization of rigorous Toxicity studies and foundational implementation of GLP systems." },
         { year: "2016", title: "Animal Breeding", icon: FaLeaf, highlight: "from-orange-500 to-amber-400", description: "Officially secured Animal Breeding and Trading permission, expanding operational autonomy." },
         { year: "2017", title: "Sustainable Energy", icon: FaSun, highlight: "from-yellow-400 to-orange-500", description: "Committing to a greener future with the massive installation of a dedicated Solar plant." },
@@ -101,7 +101,7 @@ export default function Awards() {
             </motion.section>
 
             {/* Interactive Journey Timeline */}
-            <section className="py-24 md:py-48 relative z-10">
+            <section className="py-16 md:py-32 relative z-10">
                 <div className="container mx-auto px-4 sm:px-8 max-w-5xl relative" ref={timelineRef}>
                     
                     {/* The Active Glowing Line */}
@@ -112,7 +112,7 @@ export default function Awards() {
                         />
                     </div>
                     
-                    <div className="space-y-40 md:space-y-64 pb-32">
+                    <div className="space-y-20 md:space-y-32 pb-32">
                         {journey.map((item, index) => {
                             const isEven = index % 2 === 0;
                             return (

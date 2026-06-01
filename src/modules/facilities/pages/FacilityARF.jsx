@@ -8,13 +8,13 @@ export default function FacilityARF() {
     return (
         <FacilityDetailLayout
             title="Animal Research Facility"
-            subtitle="CPCSEA Approved · SPF-Grade"
+            subtitle="CCSEA Approved · SPF-Grade"
             galleryImages={galleryImages}
-            intro="PRADO's Animal Research Facility (ARF) is a CPCSEA-approved, SPF-grade environment built to the highest global standards for ethical and scientifically rigorous animal studies. Our infrastructure ensures precise environmental control, superior animal welfare, and uncompromised data integrity."
+            intro="PRADO's Animal Research Facility (ARF) is a CCSEA-approved, SPF-grade environment built to the highest global standards for ethical and scientifically rigorous animal studies. Our infrastructure ensures precise environmental control, superior animal welfare, and uncompromised data integrity."
             image="/images/facilities/arf.png"
             icon={<FaPaw />}
             stats={[
-                { value: 'CPCSEA', label: 'Approved' },
+                { value: 'CCSEA', label: 'Approved' },
                 { value: 'SPF', label: 'Grade Animals' },
                 { value: 'IVC', label: 'Cage Systems' },
                 { value: '24/7', label: 'Monitoring' },
@@ -49,7 +49,7 @@ export default function FacilityARF() {
                 },
                 {
                     title: 'Environmental Control',
-                    description: 'Precision climate systems maintain temperature (22 ± 3°C), humidity (50 ± 20%), and 12:12 hr light-dark cycles across all housing zones, meeting CPCSEA and ICH guideline requirements.',
+                    description: 'Precision climate systems maintain temperature (22 ± 3°C), humidity (50 ± 20%), and 12:12 hr light-dark cycles across all housing zones, meeting CCSEA and ICH guideline requirements.',
                 },
                 {
                     title: 'Health Monitoring Program',

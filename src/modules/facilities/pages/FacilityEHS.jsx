@@ -49,7 +49,7 @@ export default function FacilityEHS() {
                     bullets: [
                         'Segregated biomedical, chemical, and general waste streams',
                         'Authorized hazardous waste disposal vendors',
-                        'Animal carcass incineration in compliance with CPCSEA norms',
+                        'Animal carcass incineration in compliance with CCSEA norms',
                     ]
                 },
                 {

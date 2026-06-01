@@ -158,7 +158,7 @@ function FloatingMolecules() {
 
 export default function Hero3D() {
     return (
-        <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-primary-900 pointer-events-none">
+        <div className="w-full h-full relative z-0 overflow-hidden pointer-events-none bg-transparent">
             <Canvas 
                 camera={{ position: [0, 0, 10], fov: 45 }} 
                 gl={{ antialias: false, powerPreference: "high-performance" }}

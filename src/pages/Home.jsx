@@ -25,38 +25,62 @@ export default function Home() {
         <div ref={containerRef} className="flex flex-col w-full bg-surface-muted dark:bg-slate-950 transition-colors duration-700 selection:bg-secondary selection:text-white">
 
             {/* 1. Cinematic Hero Section */}
-            <section className="relative w-full h-[100svh] flex items-end pb-24 lg:pb-32 bg-primary-900 text-white overflow-hidden">
-                <Hero3D />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/40 to-transparent z-0 pointer-events-none"></div>
+            <section className="relative w-full min-h-[100svh] flex items-center bg-primary-900 text-white overflow-hidden py-24 lg:py-0">
+                {/* Background effects */}
+                <div className="absolute inset-0 bg-gradient-to-b from-primary-950 via-primary-900 to-primary-950/80 z-0"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-secondary/15 via-transparent to-transparent pointer-events-none z-0"></div>
+                
+                <div className="container mx-auto px-4 md:px-8 relative z-10 w-full">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                        
+                        {/* Left Column: Text Content */}
+                        <div className="lg:col-span-7 flex flex-col items-start justify-center text-left">
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                            >
+                                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 shadow-sm">
+                                    <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-300">Asia's Growing Preclinical CRO</span>
+                                </span>
+                                
+                                <h1 className="text-[8.5vw] md:text-[6vw] lg:text-[4vw] font-bold font-heading leading-[1.1] tracking-tighter mb-8 text-white">
+                                    PRADO Pvt. Ltd. <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-accent to-secondary bg-[length:200%_auto] animate-gradient">
+                                        Beyond Expectations <br className="hidden lg:block"/> in Preclinical Research
+                                    </span>
+                                </h1>
 
-                <div className="container relative z-10 mx-auto px-4 md:px-8 flex flex-col items-start w-full">
-                    <motion.div
-                        initial={{ opacity: 0, y: 100 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="max-w-[90vw] lg:max-w-[70vw]"
-                    >
-                        <h1 className="text-[10vw] md:text-[6vw] lg:text-[5vw] font-bold font-heading leading-[1.1] tracking-tighter mb-8 text-white">
-                            PRADO Pvt. Ltd. - <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent bg-[length:200%_auto] animate-gradient text-[8vw] md:text-[4vw] lg:text-[3.5vw]">Beyond Expectations in Preclinical Research</span>
-                        </h1>
-                        <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16">
-                            <p className="text-lg md:text-2xl text-slate-300 max-w-xl font-light leading-relaxed border-l-2 border-secondary pl-6">
-                                Supporting pharmaceuticals, Biopharma, Biotech, Medical Devices, Agrochemicals, Herbal, Food, Veterinary and Vaccine producing industries and Research Organizations with unmatched expertise
-                            </p>
-                            <Link to="/services" className="group flex items-center gap-4 text-white hover:text-secondary transition-colors duration-300 mt-4 md:mt-0">
-                                <span className="text-sm font-bold uppercase tracking-[0.2em]">Explore Capabilities</span>
-                                <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:border-secondary transition-all duration-300 relative overflow-hidden">
-                                    <FaArrowRight className="relative z-10 transform -translate-x-1 group-hover:translate-x-0 transition-transform duration-300" />
+                                <p className="text-base md:text-xl text-slate-300 max-w-xl font-light leading-relaxed border-l-2 border-secondary pl-6 mb-8">
+                                    Supporting pharmaceuticals, Biopharma, Biotech, Medical Devices, Agrochemicals, Herbal, Food, Veterinary, and Vaccine industries globally with unmatched compliance and scientific expertise.
+                                </p>
+
+                                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                                    <Link to="/contact-us" className="relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-secondary rounded-full hover:bg-white hover:text-primary-900 group">
+                                        <span className="relative text-sm tracking-wider uppercase">Partner With Us</span>
+                                    </Link>
+                                    <Link to="/services" className="group flex items-center gap-4 text-white hover:text-secondary transition-colors duration-300 py-3">
+                                        <span className="text-xs font-bold uppercase tracking-[0.2em]">Explore Capabilities</span>
+                                        <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-secondary transition-all duration-300 relative overflow-hidden">
+                                            <FaArrowRight className="relative z-10 transform -translate-x-0.5 group-hover:translate-x-0 transition-transform duration-300" />
+                                        </div>
+                                    </Link>
                                 </div>
-                            </Link>
+                            </motion.div>
                         </div>
-                    </motion.div>
+
+                        {/* Right Column: 3D DNA Helix */}
+                        <div className="lg:col-span-5 relative h-[50vh] lg:h-[75vh] w-full flex items-center justify-center">
+                            <Hero3D />
+                        </div>
+
+                    </div>
                 </div>
             </section>
 
             {/* 2. Editorial About Section (Asymmetric) */}
-            <section className="py-32 lg:py-48 relative overflow-hidden bg-white dark:bg-slate-950">
+            <section className="py-24 lg:py-32 relative overflow-hidden bg-white dark:bg-slate-950">
                 <div className="container mx-auto px-4 md:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
                         <div className="lg:col-span-5 relative">
@@ -92,9 +116,9 @@ export default function Home() {
             </section>
 
             {/* 2.5 Corporate Overview Section */}
-            <section className="py-32 lg:py-48 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 relative z-10 transition-colors duration-700">
+            <section className="py-24 lg:py-32 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 relative z-10 transition-colors duration-700">
                 <div className="container mx-auto px-4 md:px-8">
-                    <div className="max-w-full lg:max-w-[70vw] mx-auto text-center mb-20 lg:mb-32">
+                    <div className="max-w-full lg:max-w-[70vw] mx-auto text-center mb-16 lg:mb-24">
                         <motion.h2
                             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}
                             className="text-sm font-bold tracking-[0.3em] text-secondary uppercase mb-6"
@@ -121,7 +145,7 @@ export default function Home() {
                             { icon: FaUsers, title: "Diversified Customer Base", desc: "Mix of Pharmaceutical, Biotech, Medical Device, Pesticide, Herbal and Vaccine producing customers from across the globe." },
                             { icon: FaCogs, title: "Integrated Services", desc: "Offers a range of Preclinical Toxicology, Pharmacokinetics, Biology, Pathology, Biocompatibility Testing for Regulatory submission, Risk Assessment and Animal Clinical field Trials." },
                             { icon: FaStar, title: "Best-in-Class Talent", desc: "Experienced scientific and management team having worked with global pharmaceutical, biotech and other companies." },
-                            { icon: FaBuilding, title: "Certificates", desc: "CCSEA Approved Facility (1723/PO/RcBiBt/13/CPCSEA) • GLP Certified (GLP/C-235A/2026) • DSIR certified and Recognized." },
+                            { icon: FaBuilding, title: "Certificates", desc: "CCSEA Approved Facility (1723/PO/RcBiBt/13/CCSEA) • GLP Certified (GLP/C-235A/2026) • DSIR certified and Recognized." },
                             { icon: FaTrophy, title: "Awards", desc: "‘Preclinical Research Excellence Award’ organized by DocRoSh Global Solutions, 2019 • ‘Indian Leadership Award for Industrial Development’ to Our CEO and Director, 2017." }
                         ].map((feature, idx) => (
                             <motion.div
@@ -143,7 +167,7 @@ export default function Home() {
             </section>
 
             {/* 3. Sticky Scroll Strengths Section */}
-            <section className="py-32 lg:py-48 bg-white dark:bg-slate-900 relative border-y border-slate-200 dark:border-slate-800">
+            <section className="py-24 lg:py-32 bg-white dark:bg-slate-900 relative border-y border-slate-200 dark:border-slate-800">
                 <div className="container mx-auto px-4 md:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                         {/* Sticky Left Column */}
@@ -187,9 +211,9 @@ export default function Home() {
             </section>
 
             {/* 3.5 Accreditations & Certifications Section */}
-            <section className="py-32 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors duration-700 relative z-10">
+            <section className="py-24 lg:py-32 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors duration-700 relative z-10">
                 <div className="container mx-auto px-4 md:px-8">
-                    <div className="max-w-full lg:max-w-[70vw] mx-auto text-center mb-20">
+                    <div className="max-w-full lg:max-w-[70vw] mx-auto text-center mb-16">
                         <motion.h2
                             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}
                             className="text-sm font-bold tracking-[0.3em] text-secondary uppercase mb-6"
@@ -247,7 +271,7 @@ export default function Home() {
                             <div>
                                 <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-3">CCSEA Approved</h4>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 font-light mb-6">
-                                    Approved Animal Breeding and Trading facility under CPCSEA India guidelines (1723/PO/RcBiBt/13/CPCSEA).
+                                    Approved Animal Breeding and Trading facility under CCSEA India guidelines (1723/PO/RcBiBt/13/CCSEA).
                                 </p>
                             </div>
                             <span className="text-xs font-semibold px-3 py-1 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 rounded-full border border-emerald-100 dark:border-emerald-900/55">
@@ -321,9 +345,9 @@ export default function Home() {
 
 
             {/* Leadership Section */}
-            <section className="py-32 lg:py-48 bg-surface-muted dark:bg-slate-950 transition-colors duration-500">
+            <section className="py-24 lg:py-32 bg-surface-muted dark:bg-slate-950 transition-colors duration-500">
                 <div className="container mx-auto px-4 md:px-8">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                         <div>
                             <h2 className="text-sm font-bold tracking-[0.3em] text-secondary uppercase mb-6">Our Leadership</h2>
                             <h3 className="text-5xl lg:text-7xl font-heading font-bold text-slate-900 dark:text-white tracking-tight">Visionary <br /> Guidance</h3>
@@ -334,7 +358,7 @@ export default function Home() {
                         </Link>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
                         <DirectorCard
                             name="Dr. Pralhad Wangikar"
                             designation="TFM & CEO"
@@ -354,7 +378,7 @@ export default function Home() {
             </section>
 
             {/* Quick CTA */}
-            <section className="py-32 lg:py-48 bg-primary-900 text-white relative overflow-hidden flex items-center justify-center">
+            <section className="py-24 lg:py-32 bg-primary-900 text-white relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary to-transparent pointer-events-none"></div>
 
                 <div className="container relative z-10 mx-auto px-4 text-center flex flex-col items-center">

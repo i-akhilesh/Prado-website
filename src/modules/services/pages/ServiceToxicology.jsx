@@ -6,7 +6,7 @@ export default function ServiceToxicology() {
         <ServiceDetailLayout
             title="Toxicology"
             subtitle="Safety Assessment Studies"
-            intro="We offer a full range of GLP-compliant toxicology studies to assess the safety of pharmaceuticals, chemicals, and medical devices. Delivering reliable, regulatory-accepted data since 2010."
+            intro="We offer a full range of GLP-compliant toxicology studies to assess the safety of pharmaceuticals, chemicals, and medical devices."
             image="/images/services/toxicology.png"
             icon={<FaVial />}
             subServices={[

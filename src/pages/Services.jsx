@@ -127,7 +127,7 @@ export default function Services() {
                         className="flex flex-col md:flex-row gap-8 items-start mt-12 border-t border-white/20 pt-8 max-w-4xl"
                     >
                         <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
-                            End-to-end preclinical science. GLP-certified, globally compliant, and driven by 14+ years of scientific excellence.
+                            End-to-end preclinical research services. GLP-certified and driven by 15+ years of scientific excellence.
                         </p>
                     </motion.div>
                 </div>

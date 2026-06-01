@@ -157,7 +157,7 @@ export default function Footer() {
                     <div className="flex items-center gap-6">
                         <span>GLP Certified</span>
                         <span className="text-white/20">|</span>
-                        <span>CPCSEA Approved</span>
+                        <span>CCSEA Approved</span>
                         <span className="text-white/20">|</span>
                         <span>OECD Compliant</span>
                         <span className="text-white/20">|</span>

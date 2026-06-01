@@ -57,7 +57,7 @@ export default function About() {
             </section>
 
             {/* Asymmetric Overview Setup */}
-            <section className="py-32 lg:py-48 relative overflow-hidden bg-white dark:bg-slate-900">
+            <section className="py-24 lg:py-32 relative overflow-hidden bg-white dark:bg-slate-900">
                 <div className="container mx-auto px-4 md:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
                         <div className="lg:col-span-5 lg:sticky lg:top-32">
@@ -74,7 +74,7 @@ export default function About() {
                                 Headquartered in Pune, India, PRADO - Preclinical Research and Development Organization Pvt. Ltd. stands as one of the fastest-growing CROs. 
                             </motion.p>
                             <motion.p variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                                We deliver end-to-end preclinical services encompassing toxicology, pharmacokinetics, biocompatibility, and risk assessment entirely under one roof. The Quality and GLP compliance guarantees our clients to confidently submit their preclinical data packages to regulatory authorities, accelerating approval timelines.
+                                We deliver end-to-end preclinical services encompassing Toxicology, Pharmacology & Efficacy, Pharmacokinetic, Pathology, Biocompatibility, Analytical-Bioanalytical, Ecotoxicological, Risk Assessment Services, Consultancy & Training and Animal Clinical entirely under one roof. The Quality and GLP compliance guarantees our clients to confidently submit their preclinical data packages to regulatory authorities, accelerating approval timelines.
                             </motion.p>
                         </div>
                     </div>
@@ -82,7 +82,7 @@ export default function About() {
             </section>
 
             {/* Massive Sticky Scroll Principles */}
-            <section className="py-32 lg:py-48 bg-surface-muted dark:bg-slate-950 border-y border-slate-200 dark:border-slate-800 relative">
+            <section className="py-24 lg:py-32 bg-surface-muted dark:bg-slate-950 border-y border-slate-200 dark:border-slate-800 relative">
                 <div className="container mx-auto px-4 md:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                         <div className="lg:col-span-5 relative">
@@ -94,9 +94,9 @@ export default function About() {
                             </div>
                         </div>
 
-                        <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-24 mt-16 lg:mt-0">
+                        <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-20 mt-16 lg:mt-0">
                             {/* Vision Block */}
-                            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-8 md:pl-16 border-l pointer-events-none border-slate-300 dark:border-slate-700">
+                            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-16 md:pl-24 border-l pointer-events-none border-slate-300 dark:border-slate-700">
                                 <span className="absolute -left-[32px] top-0 text-[4rem] text-slate-300 dark:text-slate-800 font-heading font-bold leading-none select-none">V</span>
                                 <h4 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Vision</h4>
                                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
@@ -105,7 +105,7 @@ export default function About() {
                             </motion.div>
 
                             {/* Mission Block */}
-                            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-8 md:pl-16 border-l pointer-events-none border-slate-300 dark:border-slate-700">
+                            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-16 md:pl-24 border-l pointer-events-none border-slate-300 dark:border-slate-700">
                                 <span className="absolute -left-[32px] top-0 text-[4rem] text-slate-300 dark:text-slate-800 font-heading font-bold leading-none select-none">M</span>
                                 <h4 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Mission</h4>
                                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
@@ -114,7 +114,7 @@ export default function About() {
                             </motion.div>
 
                             {/* Value Block */}
-                            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-8 md:pl-16 border-l pointer-events-none border-slate-300 dark:border-slate-700">
+                            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-16 md:pl-24 border-l pointer-events-none border-slate-300 dark:border-slate-700">
                                 <span className="absolute -left-[32px] top-0 text-[4rem] text-slate-300 dark:text-slate-800 font-heading font-bold leading-none select-none">V</span>
                                 <h4 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Value</h4>
                                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
@@ -123,7 +123,7 @@ export default function About() {
                             </motion.div>
 
                             {/* Quality Policy Block */}
-                            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-8 md:pl-16 border-l pointer-events-none border-slate-300 dark:border-slate-700">
+                            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-16 md:pl-24 border-l pointer-events-none border-slate-300 dark:border-slate-700">
                                 <span className="absolute -left-[32px] top-0 text-[4rem] text-slate-300 dark:text-slate-800 font-heading font-bold leading-none select-none">Q</span>
                                 <h4 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Quality Policy</h4>
                                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
@@ -148,11 +148,11 @@ export default function About() {
             </section>
 
             {/* Department Heads Editorial Grid */}
-            <section className="py-32 lg:py-48 bg-white dark:bg-slate-900">
+            <section className="py-24 lg:py-32 bg-white dark:bg-slate-900">
                 <div className="container mx-auto px-4 md:px-8">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
                         <div>
-                            <h2 className="text-sm font-bold tracking-[0.3em] text-secondary uppercase mb-6">The Minds Behind PRADO</h2>
+                            <h2 className="text-sm font-bold tracking-[0.3em] text-secondary uppercase mb-6">Operational Backbone of PRADO</h2>
                             <h3 className="text-5xl lg:text-7xl font-heading font-bold text-slate-900 dark:text-white tracking-tight">Expertise <br/><span className="italic font-light">Personified.</span></h3>
                         </div>
                     </div>
