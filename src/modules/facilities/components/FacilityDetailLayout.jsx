@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaArrowRight, FaCheckCircle } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaTimes, FaSearchPlus, FaPlay } from 'react-icons/fa';
 
 /**
  * FacilityDetailLayout – Reusable shell for every facility detail page.
@@ -13,17 +13,36 @@ import { FaArrowLeft, FaArrowRight, FaCheckCircle } from 'react-icons/fa';
  *  - icon: ReactNode
  *  - features: [{ title, description, bullets?: string[] }]
  *  - stats?: [{ value, label }]
- *  - galleryImages?: string[] - Array of image URLs to display in an auto-fetching gallery
+ *  - galleryImages?: string[] - Array of image/video URLs
+ *  - children: ReactNode - Custom rich content (replaces features)
  */
-export default function FacilityDetailLayout({ title, subtitle, intro, image, icon, features = [], stats = [], galleryImages = [] }) {
+export default function FacilityDetailLayout({ title, subtitle, intro, image, icon, features = [], stats = [], galleryImages = [], children }) {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end end'] });
     const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+    const [lightboxIndex, setLightboxIndex] = useState(null);
 
     const fadeIn = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
     };
+
+    // Keyboard navigation for lightbox
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (lightboxIndex !== null) {
+                if (e.key === 'ArrowRight') {
+                    setLightboxIndex((prev) => (prev + 1) % galleryImages.length);
+                } else if (e.key === 'ArrowLeft') {
+                    setLightboxIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+                } else if (e.key === 'Escape') {
+                    setLightboxIndex(null);
+                }
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [lightboxIndex, galleryImages]);
 
     return (
         <div ref={containerRef} className="w-full bg-surface-muted dark:bg-slate-950 font-sans transition-colors duration-700 selection:bg-secondary selection:text-white">
@@ -75,57 +94,47 @@ export default function FacilityDetailLayout({ title, subtitle, intro, image, ic
                 </section>
             )}
 
-            {/* ── Feature Cards ── */}
-            <section className="py-24 lg:py-36 container mx-auto px-4 md:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-                    {features.map((f, i) => (
-                        <motion.div
-                            key={i}
-                            initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={fadeIn}
-                            transition={{ delay: i * 0.08 }}
-                            className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 md:p-12 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
-                        >
-                            <span className="absolute top-6 right-8 text-7xl font-bold text-slate-100 dark:text-slate-800 select-none group-hover:text-slate-200 dark:group-hover:text-slate-700 transition-colors">
-                                {String(i + 1).padStart(2, '0')}
-                            </span>
-                            <div className="w-12 h-[3px] bg-secondary mb-8 group-hover:w-20 transition-all duration-500" />
-                            <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 dark:text-white mb-5 tracking-tight relative z-10">
-                                {f.title}
-                            </h3>
-                            <p className="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-6 relative z-10">
-                                {f.description}
-                            </p>
-                            {f.bullets && f.bullets.length > 0 && (
-                                <ul className="space-y-3 relative z-10">
-                                    {f.bullets.map((b, bi) => (
-                                        <li key={bi} className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
-                                            <FaCheckCircle className="text-secondary mt-1 flex-shrink-0" />
-                                            <span className="font-light leading-snug">{b}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
+            {/* ── Content Section ── */}
+            <section className="py-20 lg:py-28 bg-white dark:bg-slate-900">
+                <div className="container mx-auto px-4 md:px-8 max-w-4xl space-y-16">
+                    {children && (
+                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
+                            {children}
                         </motion.div>
-                    ))}
+                    )}
+                    {features && features.length > 0 && (
+                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="space-y-8">
+                            {features.map((f, i) => (
+                                <div key={i} className="pb-0 last:pb-0">
+                                    <div className="flex flex-col md:flex-row md:gap-8 items-start">
+                                        {/* <div className="text-xs font-bold tracking-[0.3em] uppercase text-secondary mb-4 md:mb-0 md:w-32 flex-shrink-0 pt-2">
+                                            Feature {String(i + 1).padStart(2, '0')}
+                                        </div> */}
+                                        <div className="flex-grow space-y-4">
+                                            <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">
+                                                {f.title}
+                                            </h3>
+                                            <p className="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                                                {f.description}
+                                            </p>
+                                            {/* {f.bullets && f.bullets.length > 0 && (
+                                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+                                                    {f.bullets.map((b, bi) => (
+                                                        <li key={bi} className="flex items-start gap-2 text-slate-600 dark:text-slate-400 font-light text-base">
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 flex-shrink-0" />
+                                                            <span>{b}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )} */}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </motion.div>
+                    )}
                 </div>
             </section>
-
-            {/* ── Hero Image Showcase ── */}
-            {image && (
-                <section className="pb-24 container mx-auto px-4 md:px-8">
-                    <motion.div
-                        initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
-                        className="w-full h-[50vh] md:h-[65vh] rounded-[3rem] overflow-hidden shadow-2xl relative group"
-                    >
-                        <img src={image} alt={title} className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[1.5s]" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary-900/60 to-transparent" />
-                        <div className="absolute bottom-10 left-10">
-                            <span className="text-xs font-bold tracking-[0.3em] uppercase text-secondary">{subtitle}</span>
-                            <h4 className="text-3xl font-bold text-white mt-2">{title}</h4>
-                        </div>
-                    </motion.div>
-                </section>
-            )}
 
             {/* ── Auto-fetching Gallery ── */}
             {galleryImages && galleryImages.length > 0 && (
@@ -140,16 +149,98 @@ export default function FacilityDetailLayout({ title, subtitle, intro, image, ic
                                 <motion.div
                                     key={i}
                                     initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} transition={{ delay: i * 0.05 }}
-                                    className="relative aspect-video rounded-2xl overflow-hidden shadow-sm group bg-slate-200 dark:bg-slate-800"
+                                    className="relative aspect-video rounded-2xl overflow-hidden shadow-sm group bg-slate-200 dark:bg-slate-800 cursor-pointer"
+                                    onClick={() => setLightboxIndex(i)}
                                 >
-                                    <img src={imgUrl} alt={`${title} Gallery ${i + 1}`} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
-                                    <div className="absolute inset-0 bg-primary-900/20 group-hover:bg-transparent transition-colors duration-500" />
+                                    {imgUrl.match(/\.(mp4|webm)$/i) ? (
+                                        <div className="relative w-full h-full">
+                                            <video src={imgUrl} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" autoPlay loop muted playsInline />
+                                            <div className="absolute top-3 right-3 bg-black/60 p-2 rounded-full backdrop-blur-md border border-white/10 text-white text-xs">
+                                                <FaPlay size={10} />
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <img src={imgUrl} alt={`${title} Gallery ${i + 1}`} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                                    )}
+                                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                        <FaSearchPlus className="text-white text-3xl opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-300" />
+                                    </div>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 </section>
             )}
+
+            {/* ── Single Media Lightbox ── */}
+            <AnimatePresence>
+                {lightboxIndex !== null && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 md:p-8 backdrop-blur-xl"
+                    >
+                        <button
+                            className="absolute top-6 right-6 md:top-8 md:right-8 text-white/50 hover:text-white transition-colors bg-white/5 p-4 rounded-full backdrop-blur-md border border-white/10 hover:bg-white/10 z-[105]"
+                            onClick={() => setLightboxIndex(null)}
+                        >
+                            <FaTimes size={24} />
+                        </button>
+
+                        {/* Navigation Arrows */}
+                        <button
+                            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors bg-white/5 p-4 rounded-full backdrop-blur-md border border-white/10 hover:bg-white/10 z-[105]"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setLightboxIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+                            }}
+                        >
+                            <FaArrowLeft size={24} />
+                        </button>
+
+                        <button
+                            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors bg-white/5 p-4 rounded-full backdrop-blur-md border border-white/10 hover:bg-white/10 z-[105]"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setLightboxIndex((prev) => (prev + 1) % galleryImages.length);
+                            }}
+                        >
+                            <FaArrowRight size={24} />
+                        </button>
+
+                        <motion.div
+                            key={lightboxIndex}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.3 }}
+                            className="relative w-full max-w-6xl flex flex-col items-center justify-center h-full"
+                            onClick={() => setLightboxIndex(null)}
+                        >
+                            {galleryImages[lightboxIndex].match(/\.(mp4|webm)$/i) ? (
+                                <video
+                                    src={galleryImages[lightboxIndex]}
+                                    className="max-w-full max-h-[85vh] object-contain drop-shadow-2xl rounded-lg"
+                                    controls
+                                    autoPlay
+                                    onClick={(e) => e.stopPropagation()}
+                                />
+                            ) : (
+                                <img
+                                    src={galleryImages[lightboxIndex]}
+                                    alt={`${title} Gallery ${lightboxIndex + 1}`}
+                                    className="max-w-full max-h-[85vh] object-contain drop-shadow-2xl rounded-lg"
+                                    onClick={(e) => e.stopPropagation()}
+                                />
+                            )}
+                            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/60 px-6 py-2 rounded-full backdrop-blur-md border border-white/10 text-white text-sm tracking-widest font-semibold">
+                                {lightboxIndex + 1} / {galleryImages.length}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             {/* ── CTA ── */}
             <section className="py-28 bg-primary-900 text-white relative overflow-hidden">

@@ -1,11 +1,16 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
-import { FaTimes, FaSearchPlus, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaTimes, FaSearchPlus, FaArrowLeft, FaArrowRight, FaPlay } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 
 const toTitleCase = (str) => str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
 const categoriesMetadata = [
+    {
+        id: "facilities",
+        title: "Facilities Infrastructure",
+        description: "Explore our specialized departments and world-class laboratory facilities through our autofetched media collections."
+    },
     {
         id: "facility-activities",
         title: "Internal Facility Activities",
@@ -23,17 +28,33 @@ const categoriesMetadata = [
     }
 ];
 
+const facilityTitles = {
+    'arf': 'ARF (Animal Research Facility)',
+    'pathology': 'Pathology Lab',
+    'qau': 'Quality Assurance Unit (QAU)',
+    'tico': 'Toxicology & In Vitro Facility',
+    'ehs': 'EHS Department',
+    'in-vitro': 'In Vitro Lab',
+    'analytical': 'Analytical & Bioanalytical Lab',
+    'it': 'IT Infrastructure',
+    'document-control': 'Document Control',
+    'ecotox': 'Ecotoxicology Lab',
+    'archives': 'Archives'
+};
+
 export default function GalleryPage() {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
     
     // Parse directories
     const modules = import.meta.glob('/src/assets/images/gallery/**/*.{png,jpg,jpeg,webp}', { eager: true });
+    const facilityModules = import.meta.glob('/public/images/facilities/*/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
     
     const parsedData = {};
+    
+    // Process gallery images
     Object.keys(modules).forEach((path) => {
         const parts = path.split('/');
-        // Path example: /images/gallery/facility-activities/toxicology-lab/cover.png
         if (parts.length < 4) return;
         
         const categoryId = parts[parts.length - 3];
@@ -51,14 +72,44 @@ export default function GalleryPage() {
         }
     });
 
+    // Process facility images/videos
+    Object.keys(facilityModules).forEach((path) => {
+        const parts = path.split('/');
+        if (parts.length < 4) return;
+        
+        const categoryId = 'facilities';
+        const albumId = parts[parts.length - 2];
+        const fileName = parts[parts.length - 1];
+        let imgUrl = facilityModules[path].default || facilityModules[path];
+        // Clean public prefix if present
+        imgUrl = imgUrl.replace(/^\/public/, '');
+
+        if (!parsedData[categoryId]) parsedData[categoryId] = {};
+        if (!parsedData[categoryId][albumId]) parsedData[categoryId][albumId] = [];
+
+        // Put videos at the end so images are preferred as covers
+        const isVideo = fileName.match(/\.(mp4|webm)$/i);
+        if (isVideo) {
+            parsedData[categoryId][albumId].push(imgUrl);
+        } else {
+            parsedData[categoryId][albumId].unshift(imgUrl);
+        }
+    });
+
     const galleryData = categoriesMetadata.map(cat => {
         const albumsDict = parsedData[cat.id] || {};
-        const albums = Object.keys(albumsDict).map(albumId => ({
-            id: albumId,
-            title: toTitleCase(albumId),
-            images: albumsDict[albumId],
-            cover: albumsDict[albumId][0]
-        }));
+        const albums = Object.keys(albumsDict).map(albumId => {
+            let title = toTitleCase(albumId);
+            if (cat.id === 'facilities') {
+                title = facilityTitles[albumId.toLowerCase()] || albumId.toUpperCase();
+            }
+            return {
+                id: albumId,
+                title,
+                images: albumsDict[albumId],
+                cover: albumsDict[albumId][0]
+            };
+        });
         return { ...cat, albums };
     });
 
@@ -119,7 +170,7 @@ export default function GalleryPage() {
                     </motion.h1>
                     <motion.div 
                         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }}
-                        className="flex flex-col gap-8 items-start mt-12 border-t border-white/20 pt-8 max-w-4xl"
+                        className="flex flex-col md:flex-row gap-8 items-start mt-12 border-t border-white/20 pt-8 max-w-4xl"
                     >
                         <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
                             A curated exhibition of Prado's state-of-the-art facilities, conferences, and achievements.
@@ -156,11 +207,19 @@ export default function GalleryPage() {
                                             className="group relative overflow-hidden cursor-pointer bg-slate-100 dark:bg-slate-800 aspect-[4/3] rounded-[2rem] shadow-sm hover:shadow-2xl transition-all duration-500"
                                             onClick={() => setSelectedAlbum({ ...album, categoryName: category.title })}
                                         >
-                                            <img 
-                                                src={album.cover} 
-                                                alt={album.title} 
-                                                className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-[0.16,1,0.3,1]" 
-                                            />
+                                            {album.cover.match(/\.(mp4|webm)$/i) ? (
+                                                <video 
+                                                    src={album.cover} 
+                                                    className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-[0.16,1,0.3,1]" 
+                                                    autoPlay loop muted playsInline
+                                                />
+                                            ) : (
+                                                <img 
+                                                    src={album.cover} 
+                                                    alt={album.title} 
+                                                    className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-[0.16,1,0.3,1]" 
+                                                />
+                                            )}
                                             
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
                                             
@@ -168,7 +227,7 @@ export default function GalleryPage() {
                                                 <h3 className="text-white font-heading font-bold text-2xl mb-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">{album.title}</h3>
                                                 <div className="flex items-center gap-3 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                                                     <span className="text-secondary font-bold tracking-widest uppercase text-xs">{category.title}</span>
-                                                    <span className="text-slate-300 text-sm bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">{album.images.length} Photos</span>
+                                                    <span className="text-slate-300 text-sm bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">{album.images.length} Items</span>
                                                 </div>
                                             </div>
                                         </motion.div>
@@ -176,7 +235,7 @@ export default function GalleryPage() {
                                 </div>
                             ) : (
                                 <div className="py-12 text-center border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-[2rem]">
-                                    <p className="text-slate-500 dark:text-slate-400">Photos coming soon for this category. (Add them to src/assets/images/gallery/{category.id}/)</p>
+                                    <p className="text-slate-500 dark:text-slate-400">Items coming soon for this category. (Add them to their respective directories)</p>
                                 </div>
                             )}
                         </div>
@@ -197,7 +256,7 @@ export default function GalleryPage() {
                         <div className="sticky top-0 z-[95] w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 p-4 md:px-8 flex justify-between items-center shadow-sm">
                             <div>
                                 <h2 className="text-2xl font-bold font-heading text-slate-900 dark:text-white">{selectedAlbum.title}</h2>
-                                <p className="text-sm text-secondary uppercase tracking-widest font-semibold mt-1">{selectedAlbum.categoryName} • {selectedAlbum.images.length} Photos</p>
+                                <p className="text-sm text-secondary uppercase tracking-widest font-semibold mt-1">{selectedAlbum.categoryName} • {selectedAlbum.images.length} Items</p>
                             </div>
                             <button 
                                 className="text-slate-500 hover:text-primary dark:hover:text-white transition-colors bg-slate-100 dark:bg-slate-800 p-3 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700"
@@ -215,11 +274,20 @@ export default function GalleryPage() {
                                         initial={{ opacity: 0, scale: 0.9 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{ delay: idx * 0.05, duration: 0.4 }}
-                                        className="relative group cursor-pointer overflow-hidden rounded-2xl break-inside-avoid"
+                                        className="relative group cursor-pointer overflow-hidden rounded-2xl break-inside-avoid bg-slate-100 dark:bg-slate-800"
                                         onClick={() => setLightboxImageIndex(idx)}
                                     >
-                                        <img src={imgUrl} alt={`${selectedAlbum.title} ${idx + 1}`} className="w-full h-auto object-cover" loading="lazy" />
-                                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                        {imgUrl.match(/\.(mp4|webm)$/i) ? (
+                                            <div className="relative w-full h-auto overflow-hidden rounded-2xl">
+                                                <video src={imgUrl} className="w-full h-auto object-cover rounded-2xl" autoPlay loop muted playsInline />
+                                                <div className="absolute top-3 right-3 bg-black/60 p-2 rounded-full backdrop-blur-md border border-white/10 text-white text-xs">
+                                                    <FaPlay size={10} />
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <img src={imgUrl} alt={`${selectedAlbum.title} ${idx + 1}`} className="w-full h-auto object-cover rounded-2xl" loading="lazy" />
+                                        )}
+                                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px] rounded-2xl">
                                             <FaSearchPlus className="text-white text-3xl opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-300" />
                                         </div>
                                     </motion.div>
@@ -230,7 +298,7 @@ export default function GalleryPage() {
                 )}
             </AnimatePresence>
 
-            {/* Single Image Lightbox */}
+            {/* Single Image/Video Lightbox */}
             <AnimatePresence>
                 {lightboxImageIndex !== null && selectedAlbum && (
                     <motion.div 
@@ -270,12 +338,22 @@ export default function GalleryPage() {
                             className="relative w-full max-w-6xl flex flex-col items-center justify-center h-full"
                             onClick={() => setLightboxImageIndex(null)}
                         >
-                            <img 
-                                src={selectedAlbum.images[lightboxImageIndex]} 
-                                alt={`${selectedAlbum.title} ${lightboxImageIndex + 1}`} 
-                                className="max-w-full max-h-[85vh] object-contain drop-shadow-2xl" 
-                                onClick={(e) => e.stopPropagation()}
-                            />
+                            {selectedAlbum.images[lightboxImageIndex].match(/\.(mp4|webm)$/i) ? (
+                                <video 
+                                    src={selectedAlbum.images[lightboxImageIndex]} 
+                                    className="max-w-full max-h-[85vh] object-contain drop-shadow-2xl rounded-lg" 
+                                    controls 
+                                    autoPlay 
+                                    onClick={(e) => e.stopPropagation()} 
+                                />
+                            ) : (
+                                <img 
+                                    src={selectedAlbum.images[lightboxImageIndex]} 
+                                    alt={`${selectedAlbum.title} ${lightboxImageIndex + 1}`} 
+                                    className="max-w-full max-h-[85vh] object-contain drop-shadow-2xl rounded-lg" 
+                                    onClick={(e) => e.stopPropagation()}
+                                />
+                            )}
                             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/60 px-6 py-2 rounded-full backdrop-blur-md border border-white/10 text-white text-sm tracking-widest font-semibold">
                                 {lightboxImageIndex + 1} / {selectedAlbum.images.length}
                             </div>

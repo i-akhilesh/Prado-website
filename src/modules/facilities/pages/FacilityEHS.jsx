@@ -2,7 +2,7 @@ import { FaLeaf } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityEHS() {
-    const glob = import.meta.glob('/public/images/facilities/ehs/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/ehs/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -61,6 +61,15 @@ export default function FacilityEHS() {
                     description: 'Mandatory induction, annual refresher, and role-specific safety training for all personnel, fostering a culture of proactive safety leadership across the organization.',
                 }
             ]}
-        />
+        >
+            <div className="max-w-4xl mx-auto space-y-8 text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed">
+                <p>
+                    The Environment, Health & Safety (EHS) department at PRADO manages all aspects of occupational health, biological safety, and environmental protection. We implement rigorous safety protocols to protect our researchers, animal handlers, and the community from chemical, biological, and physical hazards.
+                </p>
+                <p>
+                    Our program includes comprehensive staff training, emergency preparedness, and biosafety cabinet certifications. We are committed to sustainable waste management and environmental monitoring, ensuring that all biomedical and hazardous waste streams are processed in strict compliance with CCSEA and national standards.
+                </p>
+            </div>
+        </FacilityDetailLayout>
     );
 }

@@ -73,6 +73,14 @@ export default function Contact() {
                                 <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-10 border-t border-slate-200 dark:border-slate-800 pt-10">
                                     <div className="group">
                                         <h4 className="text-sm font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase mb-2 group-hover:text-secondary transition-colors">Headquarters</h4>
+                                        <div className="mb-4">
+                                            <span className="text-2xl md:text-3xl font-bold font-heading text-primary dark:text-white bg-secondary/10 dark:bg-secondary/20 px-4 py-2 rounded-lg border-l-4 border-secondary inline-block">
+                                                PRADO Pvt. Ltd.
+                                            </span>
+                                            <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-2 ml-1">
+                                                (Preclinical Research and Development Organization)
+                                            </div>
+                                        </div>
                                         <p className="text-xl md:text-2xl text-slate-900 dark:text-white font-light leading-snug">Survey No. 482, Talegaon-Urse Road,<br/> Urse, Taluka Maval, Pune 410506</p>
                                     </div>
 
@@ -176,14 +184,14 @@ export default function Contact() {
             {/* Expansive Map Section */}
             <section className="h-[60vh] md:h-[80vh] w-full relative">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.650892019799!2d73.68285511538626!3d18.725945887289947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2babeec4eb961%3A0x6b04ebfbaddba88e!2sPrado%20Preclinical%20Research%20and%20Development%20Organization%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1683457182746!5m2!1sen!2sin" 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d717.6556785960811!2d73.64280982704052!3d18.705768106122722!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2af3926a4da79%3A0x214bef5cd558df40!2sPRADO%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1780313028028!5m2!1sen!2sin" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0, filter: 'grayscale(100%) invert(90%) opacity(0.8)' }} 
                     allowFullScreen="" 
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Prado Preclinical Location Map"
+                    title="Prado Pvt. Ltd. Location Map"
                 ></iframe>
                 <div className="absolute inset-0 bg-primary-900 mix-blend-multiply pointer-events-none opacity-20"></div>
             </section>

@@ -7,7 +7,7 @@ export default function ServiceConsultancy() {
             title="Consultancy"
             subtitle="Training & Regulatory Guidance"
             intro="PRADO's consultancy and training division bridges the gap between scientific expertise and regulatory compliance. From GLP certification pathways to academic training programs, we equip organizations and professionals for lasting excellence."
-            image="/images/services/consultancy.png"
+            image="/images/facilities/document-control.png"
             icon={<FaChalkboardTeacher />}
             subServices={[
                 {

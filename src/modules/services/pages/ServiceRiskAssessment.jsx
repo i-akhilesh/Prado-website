@@ -7,7 +7,7 @@ export default function ServiceRiskAssessment() {
             title="Risk Assessment"
             subtitle="Regulatory & Safety Services"
             intro="PRADO provides expert toxicological risk assessment services designed to meet the evolving regulatory expectations of global drug and device manufacturers. With deep scientific expertise, we prepare defensible, submission-ready TRA reports."
-            image="/images/services/risk-assessment.png"
+            image="/images/facilities/qau.png"
             icon={<FaFileAlt />}
             subServices={[
                 {

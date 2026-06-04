@@ -2,7 +2,7 @@ import { FaMicroscope } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityPathology() {
-    const glob = import.meta.glob('/public/images/facilities/pathology/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/pathology/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -24,41 +24,40 @@ export default function FacilityPathology() {
                     title: 'Necropsy & Gross Pathology',
                     description: 'Systematic, thorough macroscopic examination of all organ systems following study completion, performed by trained pathology staff.',
                     bullets: [
-                        'Organ weight measurements (all major organs)',
-                        'Standardized gross lesion scoring and documentation',
-                        'Digital photographic archiving of all gross findings',
+                    
                     ]
                 },
                 {
                     title: 'Histopathology',
                     description: 'Microscopic tissue analysis using a comprehensive suite of staining methods to detect and characterize cellular and structural pathology.',
                     bullets: [
-                        'Routine Haematoxylin & Eosin (H&E)',
-                        'Specialized stains: PAS, Masson\'s Trichrome, Alcian Blue, Sudan IV, Oil Red O',
-                        'Digital slide scanning and image analysis',
-                        'Peer review by qualified pathologists',
+                        
                     ]
                 },
                 {
                     title: 'Immunohistochemistry (IHC)',
                     description: 'Antibody-based detection of specific antigens in tissue sections for biomarker quantification and disease diagnosis.',
                     bullets: [
-                        'Standard and custom antibody panels',
-                        'Quantitative IHC scoring (H-score, Allred score)',
-                        'Adjacent normal tissue controls',
+                        
                     ]
                 },
                 {
                     title: 'Clinical Pathology',
                     description: 'Comprehensive laboratory analysis of biological fluids using fully automated haematology and chemistry analysers.',
                     bullets: [
-                        'Haematology (CBC, differential, reticulocyte count, coagulation)',
-                        'Clinical chemistry (30+ serum biochemical markers)',
-                        'ELISA and immunological assays',
-                        'Urinalysis (dipstick, microscopy, volume, specific gravity)',
+                    
                     ]
                 },
             ]}
-        />
+        >
+            <div className="max-w-4xl mx-auto space-y-8 text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed">
+                <p>
+                    PRADO's Pathology Laboratory provides comprehensive tissue and fluid analysis services. Our certified veterinary pathologists and trained technicians conduct detailed necropsies, macroscopic scoring, and microscopic evaluation of biological samples.
+                </p>
+                <p>
+                    The facility is fully equipped to support safety and efficacy studies with routine histopathology, special staining, and immunohistochemistry. We maintain high standards of quality and rapid turnaround times to deliver reliable diagnostic data for all toxicology and pharmacology investigations.
+                </p>
+            </div>
+        </FacilityDetailLayout>
     );
 }

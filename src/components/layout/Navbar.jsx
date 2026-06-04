@@ -34,12 +34,23 @@ const servicesDropdown = [
     { name: 'Animal Clinical', path: '/services/animal-clinical' },
 ];
 
+const industriesDropdown = [
+    { name: 'Pharmaceutical', path: '/industries/pharmaceutical' },
+    { name: 'Agrochemical', path: '/industries/agrochemicals' },
+    { name: 'Medical Devices', path: '/industries/medical-devices' },
+    { name: 'Biopharma & Biotechnology', path: '/industries/biopharma-biotech' },
+    { name: 'Animal Clinical Trials', path: '/industries/animal-clinical-trials' },
+    { name: 'Risk Assessment', path: '/industries/risk-assessment' },
+    { name: 'Consultancy', path: '/industries/consultancy' },
+];
+
 const companyDropdown = [
     { name: 'Awards', path: '/awards' },
     { name: 'Gallery', path: '/gallery' },
-    { name: 'Events', path: '/events' },
+    // { name: 'Events', path: '/events' },
     { name: 'News', path: '/news' },
     { name: 'Careers', path: '/careers' },
+    { name: 'Brochure', path: '/PRADO brochure - Landscape-Apr 2026.pdf', isDownload: true },
 ];
 
 /* ─── Dropdown component ────────────────────────────── */
@@ -111,15 +122,31 @@ function NavDropdown({ label, items, basePath }) {
                         transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
                         className="absolute top-full left-0 mt-3 min-w-[240px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-800 py-3 z-50 overflow-hidden"
                     >
-                        {items.map((item, i) => (
-                            <Link
-                                key={i}
-                                to={item.path}
-                                className="block px-5 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-secondary dark:hover:text-secondary hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
+                        {items.map((item, i) => {
+                            if (item.isDownload) {
+                                return (
+                                    <a
+                                        key={i}
+                                        href={item.path}
+                                        download
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block px-5 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-secondary dark:hover:text-secondary hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
+                                    >
+                                        {item.name}
+                                    </a>
+                                );
+                            }
+                            return (
+                                <Link
+                                    key={i}
+                                    to={item.path}
+                                    className="block px-5 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-secondary dark:hover:text-secondary hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
+                                >
+                                    {item.name}
+                                </Link>
+                            );
+                        })}
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -196,6 +223,9 @@ export default function Navbar() {
                     {/* Services Dropdown */}
                     <NavDropdown label="Services" items={servicesDropdown} basePath="/services" />
 
+                    {/* Industry Dropdown */}
+                    <NavDropdown label="Industry" items={industriesDropdown} basePath="/industries" />
+
                     {/* Company Dropdown */}
                     <NavDropdown label="Company" items={companyDropdown} basePath={null} />
 
@@ -206,12 +236,12 @@ export default function Navbar() {
                     >
                         {isDarkMode ? <HiSun /> : <HiMoon />}
                     </button>
-                    <a
-                        href="mailto:admin@pradopreclinical.com"
+                    <Link
+                        to="/contact-us"
                         className="bg-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-secondary transition-all duration-300 shadow-md hover:shadow-lg text-sm"
                     >
                         Get in Touch
-                    </a>
+                    </Link>
                 </nav>
 
                 {/* Mobile Toggle */}
@@ -272,7 +302,7 @@ export default function Navbar() {
                                 </AnimatePresence>
                             </div>
 
-                            {/* Mobile Services */}
+                             {/* Mobile Services */}
                             <div className="border-b border-slate-100 dark:border-slate-800">
                                 <div className="flex w-full items-center justify-between py-3 text-lg font-bold uppercase text-slate-700 dark:text-slate-200">
                                     <Link to="/services" className="hover:text-secondary transition-colors flex-grow">Services</Link>
@@ -296,6 +326,30 @@ export default function Navbar() {
                                 </AnimatePresence>
                             </div>
 
+                            {/* Mobile Industry */}
+                            <div className="border-b border-slate-100 dark:border-slate-800">
+                                <div className="flex w-full items-center justify-between py-3 text-lg font-bold uppercase text-slate-700 dark:text-slate-200">
+                                    <Link to="/industries" className="hover:text-secondary transition-colors flex-grow">Industry</Link>
+                                    <button onClick={() => toggleMobile('industries')} className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                                        <HiChevronDown className={clsx('transition-transform', mobileExpanded === 'industries' ? 'rotate-180' : '')} />
+                                    </button>
+                                </div>
+                                <AnimatePresence>
+                                    {mobileExpanded === 'industries' && (
+                                        <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="overflow-hidden">
+                                            <div className="flex flex-col gap-1 pb-4 pl-4">
+                                                <Link to="/industries" className="py-2 text-base font-semibold text-secondary hover:text-primary transition-colors">All Industries →</Link>
+                                                {industriesDropdown.map((item, i) => (
+                                                    <Link key={i} to={item.path} className="py-2 text-base text-slate-500 dark:text-slate-400 hover:text-secondary transition-colors">
+                                                        {item.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+
                             {/* Mobile Company */}
                             <div className="border-b border-slate-100 dark:border-slate-800">
                                 <div className="flex w-full items-center justify-between py-3 text-lg font-bold uppercase text-slate-700 dark:text-slate-200">
@@ -308,11 +362,20 @@ export default function Navbar() {
                                     {mobileExpanded === 'company' && (
                                         <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="overflow-hidden">
                                             <div className="flex flex-col gap-1 pb-4 pl-4">
-                                                {companyDropdown.map((item, i) => (
-                                                    <Link key={i} to={item.path} className="py-2 text-base text-slate-500 dark:text-slate-400 hover:text-secondary transition-colors">
-                                                        {item.name}
-                                                    </Link>
-                                                ))}
+                                                {companyDropdown.map((item, i) => {
+                                                    if (item.isDownload) {
+                                                        return (
+                                                            <a key={i} href={item.path} download target="_blank" rel="noopener noreferrer" className="py-2 text-base text-slate-500 dark:text-slate-400 hover:text-secondary transition-colors">
+                                                                {item.name}
+                                                            </a>
+                                                        );
+                                                    }
+                                                    return (
+                                                        <Link key={i} to={item.path} className="py-2 text-base text-slate-500 dark:text-slate-400 hover:text-secondary transition-colors">
+                                                            {item.name}
+                                                        </Link>
+                                                    );
+                                                })}
                                             </div>
                                         </motion.div>
                                     )}
@@ -320,9 +383,9 @@ export default function Navbar() {
                             </div>
                         </nav>
 
-                        <a href="mailto:admin@pradopreclinical.com" className="mt-8 inline-block bg-primary text-white text-center px-8 py-4 rounded-full font-bold text-lg hover:bg-secondary transition-colors">
+                        <Link to="/contact-us" className="mt-8 inline-block bg-primary text-white text-center px-8 py-4 rounded-full font-bold text-lg hover:bg-secondary transition-colors">
                             Get in Touch
-                        </a>
+                        </Link>
                     </motion.div>
                 )}
             </AnimatePresence>

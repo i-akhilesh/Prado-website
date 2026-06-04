@@ -2,7 +2,7 @@ import { FaServer } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityIT() {
-    const glob = import.meta.glob('/public/images/facilities/it/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/it/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -61,6 +61,15 @@ export default function FacilityIT() {
                     description: 'Dedicated IT support ensures that all systems remain operational, validated, and responsive during critical study phases.',
                 }
             ]}
-        />
+        >
+            <div className="max-w-4xl mx-auto space-y-8 text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed">
+                <p>
+                    PRADO's Information Technology (IT) department manages a secure, validated digital environment that underpins the integrity of all preclinical research data. We deploy enterprise-grade hardware, redundant storage, and automated backup protocols to ensure continuous system availability and prevent data loss.
+                </p>
+                <p>
+                    Our network and software platforms, including LIMS and data capture systems, are operated in strict compliance with FDA 21 CFR Part 11 requirements. Through layered cybersecurity controls, biometric access, and comprehensive audit trails, we maintain absolute confidentiality and traceability for all sponsor data.
+                </p>
+            </div>
+        </FacilityDetailLayout>
     );
 }

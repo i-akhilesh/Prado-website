@@ -94,7 +94,7 @@ export default function Home() {
                                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
                                 className="text-2xl md:text-3xl lg:text-3xl font-heading font-semibold text-slate-900 dark:text-white mb-8 leading-snug tracking-tight"
                             >
-                                PRADO: Preclinical Research and Development Organization Pvt. Ltd. is a <span className="italic font-light text-slate-600 dark:text-slate-400">global preclinical contract research partner</span> helping healthcare innovations reach the market faster and safer.
+                                PRADO, Preclinical Research and Development Organization Pvt. Ltd. is a <span className="italic font-light text-slate-600 dark:text-slate-400">global preclinical contract research partner</span> helping healthcare innovations reach the market faster and safer.
                             </motion.h2>
                             <motion.div
                                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}

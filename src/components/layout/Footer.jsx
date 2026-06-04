@@ -21,6 +21,7 @@ const footerLinks = [
     { name: 'News', path: '/news' },
     { name: 'Events', path: '/events' },
     { name: 'Careers', path: '/careers' },
+    { name: 'Brochure', path: '/PRADO brochure - Landscape-Apr 2026.pdf', isDownload: true },
     { name: 'Contact Us', path: '/contact-us' },
 ];
 
@@ -92,12 +93,22 @@ export default function Footer() {
                     {/* Quick Links */}
                     <div className="lg:col-span-2 flex flex-col gap-4">
                         <h4 className="text-xs font-bold tracking-[0.3em] uppercase text-secondary mb-3">Company</h4>
-                        {footerLinks.map((l, i) => (
-                            <Link key={i} to={l.path} className="text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-200 text-sm font-medium flex items-center gap-2 group">
-                                <span className="w-0 group-hover:w-3 h-[1px] bg-secondary transition-all duration-300 inline-block" />
-                                {l.name}
-                            </Link>
-                        ))}
+                        {footerLinks.map((l, i) => {
+                            if (l.isDownload) {
+                                return (
+                                    <a key={i} href={l.path} download target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-200 text-sm font-medium flex items-center gap-2 group">
+                                        <span className="w-0 group-hover:w-3 h-[1px] bg-secondary transition-all duration-300 inline-block" />
+                                        {l.name}
+                                    </a>
+                                );
+                            }
+                            return (
+                                <Link key={i} to={l.path} className="text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-200 text-sm font-medium flex items-center gap-2 group">
+                                    <span className="w-0 group-hover:w-3 h-[1px] bg-secondary transition-all duration-300 inline-block" />
+                                    {l.name}
+                                </Link>
+                            );
+                        })}
                     </div>
 
                     {/* Services */}

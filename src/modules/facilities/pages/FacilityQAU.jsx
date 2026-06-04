@@ -2,7 +2,7 @@ import { FaClipboardCheck } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityQAU() {
-    const glob = import.meta.glob('/public/images/facilities/qau/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/qau/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -19,48 +19,21 @@ export default function FacilityQAU() {
                 { value: 'FDA', label: 'Acceptable' },
                 { value: 'OECD', label: 'Guidelines' },
             ]}
-            features={[
-                {
-                    title: 'Study & Facility Audits',
-                    description: 'The QAU conducts scheduled and unscheduled audits of all ongoing studies and facility operations to ensure continuous GLP compliance.',
-                    bullets: [
-                        'Protocol and amendment review before study start',
-                        'Experimental phase audits (critical phase inspections)',
-                        'Final report review and data verification',
-                        'Raw data traceability audits',
-                    ]
-                },
-                {
-                    title: 'SOP Management',
-                    description: 'Comprehensive Standard Operating Procedure (SOP) library management ensuring all procedures are documented, version-controlled, and staff-trained.',
-                    bullets: [
-                        'SOP writing, review, and periodic revision',
-                        'Version control and access management',
-                        'Training record management per SOP',
-                    ]
-                },
-                {
-                    title: 'Deviation & CAPA Management',
-                    description: 'Systematic tracking and resolution of GLP deviations through a structured Corrective and Preventive Action (CAPA) process.',
-                },
-                {
-                    title: 'Regulatory Inspection Support',
-                    description: 'The QAU prepares all documentation and coordinates facility operations during regulatory agency inspections (CDSCO, OECD, sponsor audits).',
-                    bullets: [
-                        'Pre-inspection gap assessments',
-                        'Inspection coordination and documentation management',
-                        'Post-inspection response preparation',
-                    ]
-                },
-                {
-                    title: 'Sponsor Audit Facilitation',
-                    description: 'Full facilitation of sponsor-conducted facility audits, including scheduling, documentation provision, tour arrangements, and response to audit findings.',
-                },
-                {
-                    title: 'Training & Certification',
-                    description: 'The QAU oversees all GLP training programs, ensuring that every staff member is certified, current in their training, and operating within their qualified scope.',
-                }
-            ]}
-        />
+        >
+            <div className="max-w-4xl mx-auto space-y-8 text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed">
+                <h3 className="text-2xl font-bold font-heading text-slate-900 dark:text-white">
+                    Quality Assurance Unit (QAU) at PRADO
+                </h3>
+                <p>
+                    All studies and experiments that are conducted at PRADO’s test facility are governed by a Quality Assurance Program. The Quality Assurance Unit (QAU) is a separate department with its autonomous systems and personnel who are experienced, qualified and trained to assure the test facility management on compliance with GLP principles. The unit functions in accordance with the requirements of OECD principles of GLP.
+                </p>
+                <p>
+                    It is responsible for ensuring that the quality assurance program is independently monitored for effectiveness and compliance. It conducts, study-based, facility-based and process-based inspections, as per the standard operating procedures (SOPs).
+                </p>
+                <p>
+                    QAU periodically reviews all SOPs, study plans, reports, master schedules for adequacy and effectiveness. It also conducts vendor qualification on a periodic basis and follows up for actions on any non-compliances observed.
+                </p>
+            </div>
+        </FacilityDetailLayout>
     );
 }

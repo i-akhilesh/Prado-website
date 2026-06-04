@@ -92,7 +92,7 @@ const newsItems = [
         content: (
             <div className="space-y-6 text-slate-600 dark:text-slate-300 font-light leading-relaxed">
                 <p className="text-xl font-medium text-slate-800 dark:text-slate-200 leading-snug">
-                    PRADO Preclinical presents its strategic plan for 2025, deploying cutting-edge technologies to enhance preclinical study capabilities.
+                    PRADO Pvt. Ltd. presents its strategic plan for 2025, deploying cutting-edge technologies to enhance preclinical study capabilities.
                 </p>
                 <p>
                     As part of the upcoming expansion, PRADO will deploy dedicated high-resolution Animal CT imaging systems, enabling non-invasive, longitudinal monitoring of internal structures and disease progression in vivo. This technology reduces the number of animals required for research while delivering highly precise data.

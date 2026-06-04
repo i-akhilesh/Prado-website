@@ -2,7 +2,7 @@ import { FaFolderOpen } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityDocumentControl() {
-    const glob = import.meta.glob('/public/images/facilities/document-control/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/document-control/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -67,6 +67,15 @@ export default function FacilityDocumentControl() {
                     description: 'Fast, secure retrieval of any study document on request, with strict confidentiality agreements (CDA/NDA) ensuring sponsor data protection at all times.',
                 }
             ]}
-        />
+        >
+            <div className="max-w-4xl mx-auto space-y-8 text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed">
+                <p>
+                    The Document Control department at PRADO manages the complete lifecycle of all regulatory and study-related records. From standard operating procedures (SOPs) and study plans to raw data files and final reports, every document is processed through structured workflows to guarantee accuracy and traceability.
+                </p>
+                <p>
+                    We maintain a centralized SOP library and assist study directors with regulatory submission formatting in CTD modules. By enforcing strict version control and secure archiving protocols, Document Control ensures that all research activities remain fully auditable and compliant with GLP and ISO standards.
+                </p>
+            </div>
+        </FacilityDetailLayout>
     );
 }

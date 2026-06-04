@@ -97,34 +97,34 @@ export default function About() {
                         <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-20 mt-16 lg:mt-0">
                             {/* Vision Block */}
                             <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-16 md:pl-24 border-l pointer-events-none border-slate-300 dark:border-slate-700">
-                                <span className="absolute -left-[32px] top-0 text-[4rem] text-slate-300 dark:text-slate-800 font-heading font-bold leading-none select-none">V</span>
+                                <span className="absolute -left-6 top-1 w-12 h-12 flex items-center justify-center rounded-full bg-surface-muted dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-xl font-heading font-bold text-secondary select-none z-10">V</span>
                                 <h4 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Vision</h4>
                                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                                     To establish Prado as the premier global destination for preclinical research, synonymous with scientific excellence, ethical practices, and regulatory mastery, thereby accelerating access to safe healthcare globally.
                                 </p>
                             </motion.div>
-
+ 
                             {/* Mission Block */}
                             <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-16 md:pl-24 border-l pointer-events-none border-slate-300 dark:border-slate-700">
-                                <span className="absolute -left-[32px] top-0 text-[4rem] text-slate-300 dark:text-slate-800 font-heading font-bold leading-none select-none">M</span>
+                                <span className="absolute -left-6 top-1 w-12 h-12 flex items-center justify-center rounded-full bg-surface-muted dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-xl font-heading font-bold text-secondary select-none z-10">M</span>
                                 <h4 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Mission</h4>
                                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                                     To place integrity in everything we do, delivering high quality integrated preclinical services, and fostering an environment of sponsor satisfaction alongside the achievement of economic healthcare product development.
                                 </p>
                             </motion.div>
-
+ 
                             {/* Value Block */}
                             <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-16 md:pl-24 border-l pointer-events-none border-slate-300 dark:border-slate-700">
-                                <span className="absolute -left-[32px] top-0 text-[4rem] text-slate-300 dark:text-slate-800 font-heading font-bold leading-none select-none">V</span>
+                                <span className="absolute -left-6 top-1 w-12 h-12 flex items-center justify-center rounded-full bg-surface-muted dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-xl font-heading font-bold text-secondary select-none z-10">V</span>
                                 <h4 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Value</h4>
                                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                                     We build our reputation in preclinical excellence and wider scope speciality services at PRADO, we combine high quality research services at affordable cost. This is the reason why our sponsor’s have been entrusting values with us for their product development and registration work with confidence.
                                 </p>
                             </motion.div>
-
+ 
                             {/* Quality Policy Block */}
                             <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="relative group pl-16 md:pl-24 border-l pointer-events-none border-slate-300 dark:border-slate-700">
-                                <span className="absolute -left-[32px] top-0 text-[4rem] text-slate-300 dark:text-slate-800 font-heading font-bold leading-none select-none">Q</span>
+                                <span className="absolute -left-6 top-1 w-12 h-12 flex items-center justify-center rounded-full bg-surface-muted dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-xl font-heading font-bold text-secondary select-none z-10">Q</span>
                                 <h4 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Quality Policy</h4>
                                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                                     We are committed to quality as an internal part of our operations with the goal of achieving preclinical excellence and sponsor satisfaction with consideration of safety by consideration of safety by continuous improvement of our capabilities to identify, develop and provide services that adds value to our sponsor in GLP, preclinical services. </p>

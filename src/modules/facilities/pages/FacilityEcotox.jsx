@@ -2,7 +2,7 @@ import { FaLeaf } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityEcotox() {
-    const glob = import.meta.glob('/public/images/facilities/ecotox/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/ecotox/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -54,6 +54,15 @@ export default function FacilityEcotox() {
                     description: 'Comprehensive risk assessments utilizing study data to compile environmental safety reports for global regulatory submissions.',
                 }
             ]}
-        />
+        >
+            <div className="max-w-4xl mx-auto space-y-8 text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed">
+                <p>
+                    PRADO’s Ecotoxicology (ECOTOX) facility conducts specialized environmental safety testing for agrochemicals, pharmaceuticals, and industrial chemicals. We evaluate the acute and chronic impact of substances on key aquatic and terrestrial organisms in compliance with OECD GLP principles.
+                </p>
+                <p>
+                    Our laboratories support standard studies on fish, Daphnia magna, algae, duckweed, earthworms, and soil microorganisms. Through precise ecological risk assessments and biodegradability testing, we provide the essential data required by global regulatory bodies to evaluate environmental fate and safety.
+                </p>
+            </div>
+        </FacilityDetailLayout>
     );
 }

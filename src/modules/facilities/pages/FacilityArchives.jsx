@@ -2,7 +2,7 @@ import { FaArchive } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityArchives() {
-    const glob = import.meta.glob('/public/images/facilities/archives/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/archives/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -19,41 +19,18 @@ export default function FacilityArchives() {
                 { value: '21 CFR', label: 'Part 11 Compliant' },
                 { value: '24/7', label: 'Biometric Security' },
             ]}
-            features={[
-                {
-                    title: 'Climate-Controlled Environments',
-                    description: 'State-of-the-art climate control systems maintaining constant temperature and relative humidity optimized for different media types.',
-                    bullets: [
-                        'Paper records and raw data archives (controlled temperature/humidity)',
-                        'Histopathology blocks, slides, and specimen storage',
-                        'Refrigerated and deep-frozen wet tissue storage capabilities',
-                        'Continuous logging of environment parameters with alert integration',
-                    ]
-                },
-                {
-                    title: 'Multi-Tiered Safety & Security',
-                    description: 'Built-in structural and physical safeguards to prevent access by unauthorized personnel and protect against environmental disasters.',
-                    bullets: [
-                        'Biometric access control systems and authorized-personnel logs',
-                        'Clean-agent gas fire suppression system (non-damaging to documents)',
-                        'Flood-resistant elevated archiving racks',
-                        '24/7 internal and external CCTV monitoring',
-                    ]
-                },
-                {
-                    title: 'Systematic Indexing & Retrieval',
-                    description: 'Meticulous cataloging systems enabling rapid, secure retrieval of archived studies during regulatory audits or sponsor queries.',
-                    bullets: [
-                        'Barcoded labeling for all folders, boxes, slides, and blocks',
-                        'Restricted checkout protocols with electronic logging',
-                        'Archivist-guided chain of custody tracking',
-                    ]
-                },
-                {
-                    title: 'Electronic Data Archiving',
-                    description: 'Secure, digital long-term storage for instrument raw data, metadata, and electronic signatures, fully adhering to 21 CFR Part 11 requirements.',
-                }
-            ]}
-        />
+        >
+            <div className="max-w-4xl mx-auto space-y-8 text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed">
+                <p>
+                    PRADO has created separate and ample space for Wet and Dry Archives. These are suitably designed and constructed to accommodate archived records and material. The safe and secure storage of the facility and study related data are ensured through strict compliance with SOPs and OECD principles of GLP.
+                </p>
+                <p>
+                    Archives are physically secured to prevent unauthorised entry. Storage conditions of archives are maintained to preserve the quality and integrity of retained records from untimely deterioration and risk of fire. The indexing system is followed for the proper storage and retrieval of materials. The movement of material in and out of the archives is properly controlled and well-documented.
+                </p>
+                <p>
+                    All the soft data is stored securely in separate folder maintained on server with secure back-up protocols.
+                </p>
+            </div>
+        </FacilityDetailLayout>
     );
 }

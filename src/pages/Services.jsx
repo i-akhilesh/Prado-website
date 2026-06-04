@@ -201,7 +201,7 @@ export default function Services() {
                 <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center text-center max-w-5xl">
                     <motion.h2
                         initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
-                        className="text-5xl md:text-7xl font-heading font-bold leading-none tracking-tight mb-8"
+                        className="text-5xl md:text-7xl font-heading font-bold leading-none tracking-tight mb-8 text-white"
                     >
                         Need a Custom <br /> Testing Plan?
                     </motion.h2>

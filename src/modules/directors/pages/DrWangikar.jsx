@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaQuoteLeft, FaGraduationCap, FaAward, FaBriefcase } from 'react-icons/fa';
+import { FaArrowLeft, FaQuoteLeft, FaGraduationCap, FaAward, FaBriefcase, FaUserAlt } from 'react-icons/fa';
 
 export default function DrWangikar() {
     const containerRef = useRef(null);
@@ -36,7 +36,7 @@ export default function DrWangikar() {
                             Dr. Pralhad <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-white">Wangikar</span>
                         </h1>
                         <p className="text-xl md:text-3xl text-secondary font-medium tracking-wide flex items-center gap-6">
-                            <span className="w-16 h-[2px] bg-secondary inline-block"></span> Test Facility Management & CEO
+                            <span className="w-16 h-[2px] bg-secondary inline-block"></span> Founder-Director & CEO
                         </p>
                     </motion.div>
                 </div>
@@ -48,6 +48,30 @@ export default function DrWangikar() {
                     
                     {/* Main Content Column */}
                     <div className="lg:col-span-7 space-y-24">
+                        {/* Biography Section */}
+                        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}>
+                            <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-8 flex items-center gap-4">
+                                <FaUserAlt className="text-lg" /> Profile & Biography
+                            </h2>
+                            <div className="prose prose-xl prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 font-light leading-relaxed space-y-6">
+                                <p className="text-xl font-normal text-slate-800 dark:text-slate-200">
+                                    Dr. Pralhad Wangikar is a Veterinary Pathologist and a Diplomate of the American Board of Toxicology (DABT). He has over 24 years of scientific research and project managerial experience with some of the top Indian pharmaceutical companies and CROs.
+                                </p>
+                                <p>
+                                    His key research expertise spans the critical areas of toxicologic pathology, including systemic, reproductive, and genetic toxicity studies. He is highly specialized in conducting toxicological risk assessments such as PDE (Permitted Daily Exposure), OEL (Occupational Exposure Limit), and AI (Acceptable Intake), alongside the development of animal models and comprehensive clinical and histopathological evaluations.
+                                </p>
+                                <p>
+                                    In addition to his research endeavors, Dr. Pralhad Wangikar possesses extensive expertise in industry forecasting and consulting, particularly for designing state-of-the-art animal research facilities and guiding various organizations toward achieving GLP Certification.
+                                </p>
+                                <p>
+                                    As a thought leader and regular speaker at industry events, academic gatherings, and student interactions, Dr. Wangikar has co-authored and published several books and scholarly articles on toxicology, business risk, and quality management matters.
+                                </p>
+                                <p>
+                                    At PRADO, Dr. Pralhad Wangikar serves as the Founder-Director and CEO. In addition to driving business development and providing oversight for all study-related operations, he is the designated Test Facility Manager for the GLP-certified Urse facility.
+                                </p>
+                            </div>
+                        </motion.section>
+
                         {/* Leadership Message */}
                         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}>
                             <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-8 flex items-center gap-4">
@@ -132,8 +156,8 @@ export default function DrWangikar() {
                                             <div className="w-2 h-2 rounded-full bg-transparent group-hover:bg-secondary transition-colors duration-500"></div>
                                         </div>
                                         <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">2010 - Present</p>
-                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Managing Director</h4>
-                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Prado Pvt. Ltd., Pune</p>
+                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Founder-Director & CEO</h4>
+                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">PRADO Preclinical Research, Urse</p>
                                     </div>
 
                                     <div className="group pl-8 relative border-l border-slate-200 dark:border-slate-800">
@@ -141,9 +165,9 @@ export default function DrWangikar() {
                                         <div className="absolute top-1 left-0 w-6 h-6 rounded-full bg-white dark:bg-slate-950 border-4 border-slate-200 dark:border-slate-800 -translate-x-1/2 flex items-center justify-center">
                                             <div className="w-2 h-2 rounded-full bg-transparent group-hover:bg-secondary transition-colors duration-500"></div>
                                         </div>
-                                        <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">Pre-2010</p>
-                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Industry Leadership</h4>
-                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Extensive experience in global CROs</p>
+                                        <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">Over 24 Years Experience</p>
+                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Scientific & Project Leadership</h4>
+                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Top Indian Pharmaceutical Companies & CROs</p>
                                     </div>
 
                                     <div className="group pl-8 relative border-l border-slate-200 dark:border-slate-800">
@@ -151,9 +175,9 @@ export default function DrWangikar() {
                                         <div className="absolute top-1 left-0 w-6 h-6 rounded-full bg-white dark:bg-slate-950 border-4 border-slate-200 dark:border-slate-800 -translate-x-1/2 flex items-center justify-center">
                                             <div className="w-2 h-2 rounded-full bg-transparent group-hover:bg-secondary transition-colors duration-500"></div>
                                         </div>
-                                        <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">Education</p>
-                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Doctorate in Toxicology</h4>
-                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Focus on specialized pathology</p>
+                                        <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">Credentials</p>
+                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Veterinary Pathologist & DABT</h4>
+                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Diplomate of the American Board of Toxicology</p>
                                     </div>
 
                                 </div>
@@ -168,10 +192,10 @@ export default function DrWangikar() {
                                     Key Achievements
                                 </h4>
                                 <ul className="text-slate-300 space-y-4 font-light relative z-10">
-                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Established fully GLP-compliant facility in Pune.</li>
-                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Successfully led 500+ IND enabling studies.</li>
-                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Appointed to national advisory boards for preclinical standards.</li>
-                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Recipient of "Excellence in Research Operations" award.</li>
+                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Diplomate of the American Board of Toxicology (DABT) certification.</li>
+                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Designated Test Facility Manager for GLP-certified Urse facility.</li>
+                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Expert consulting for state-of-the-art animal research facility design.</li>
+                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Authored multiple books & scholarly publications on toxicology & quality management.</li>
                                 </ul>
                             </div>
 

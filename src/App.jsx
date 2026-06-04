@@ -16,6 +16,7 @@ import FacilityDocumentControl from './modules/facilities/pages/FacilityDocument
 import FacilityEcotox from './modules/facilities/pages/FacilityEcotox';
 import FacilityArchives from './modules/facilities/pages/FacilityArchives';
 import Services from './pages/Services';
+import Industries from './pages/Industries';
 import Contact from './pages/Contact';
 import DrWangikar from './modules/directors/pages/DrWangikar';
 import MrsWangikar from './modules/directors/pages/MrsWangikar';
@@ -37,6 +38,15 @@ import ServiceRiskAssessment from './modules/services/pages/ServiceRiskAssessmen
 import ServiceConsultancy from './modules/services/pages/ServiceConsultancy';
 import ServiceAnimalClinical from './modules/services/pages/ServiceAnimalClinical';
 import ServicePhysicalChemical from './modules/services/pages/ServicePhysicalChemical';
+
+// Industry Detail Pages
+import IndustryPharmaceutical from './modules/industries/pages/IndustryPharmaceutical';
+import IndustryAgrochemicals from './modules/industries/pages/IndustryAgrochemicals';
+import IndustryMedicalDevices from './modules/industries/pages/IndustryMedicalDevices';
+import IndustryBiopharmaBiotech from './modules/industries/pages/IndustryBiopharmaBiotech';
+import IndustryAnimalClinicalTrials from './modules/industries/pages/IndustryAnimalClinicalTrials';
+import IndustryRiskAssessment from './modules/industries/pages/IndustryRiskAssessment';
+import IndustryConsultancy from './modules/industries/pages/IndustryConsultancy';
 
 function App() {
   return (
@@ -80,6 +90,16 @@ function App() {
           <Route path="services/consultancy-training" element={<ServiceConsultancy />} />
           <Route path="services/animal-clinical" element={<ServiceAnimalClinical />} />
           <Route path="services/physical-chemical" element={<ServicePhysicalChemical />} />
+
+          {/* Industry Routes */}
+          <Route path="industries" element={<Industries />} />
+          <Route path="industries/pharmaceutical" element={<IndustryPharmaceutical />} />
+          <Route path="industries/agrochemicals" element={<IndustryAgrochemicals />} />
+          <Route path="industries/medical-devices" element={<IndustryMedicalDevices />} />
+          <Route path="industries/biopharma-biotech" element={<IndustryBiopharmaBiotech />} />
+          <Route path="industries/animal-clinical-trials" element={<IndustryAnimalClinicalTrials />} />
+          <Route path="industries/risk-assessment" element={<IndustryRiskAssessment />} />
+          <Route path="industries/consultancy" element={<IndustryConsultancy />} />
 
           <Route path="*" element={
             <div className="container mx-auto px-4 py-32 text-center">

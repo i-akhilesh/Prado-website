@@ -7,7 +7,7 @@ export default function ServicePharmacokineticPage() {
             title="Pharmacokinetic"
             subtitle="ADME & Drug Disposition"
             intro="Comprehensive analysis of how a drug moves through the body. Our PK platform delivers precise, GLP-compliant data that forms the scientific backbone of every IND-enabling submission."
-            image="/images/services/pharmacokinetic.png"
+            image="/images/facilities/analytical.png"
             icon={<FaFlask />}
             subServices={[
                 {

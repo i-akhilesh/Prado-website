@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaQuoteLeft, FaGraduationCap, FaAward, FaBriefcase } from 'react-icons/fa';
+import { FaArrowLeft, FaQuoteLeft, FaGraduationCap, FaAward, FaBriefcase, FaUserAlt } from 'react-icons/fa';
 
 export default function MrsWangikar() {
     const containerRef = useRef(null);
@@ -36,7 +36,7 @@ export default function MrsWangikar() {
                             Mrs. Ila <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-white">Wangikar</span>
                         </h1>
                         <p className="text-xl md:text-3xl text-secondary font-medium tracking-wide flex items-center gap-6">
-                            <span className="w-16 h-[2px] bg-secondary inline-block"></span> Managing Director
+                            <span className="w-16 h-[2px] bg-secondary inline-block"></span> Founder & Managing Director
                         </p>
                     </motion.div>
                 </div>
@@ -48,6 +48,24 @@ export default function MrsWangikar() {
                     
                     {/* Main Content Column */}
                     <div className="lg:col-span-7 space-y-24">
+                        {/* Biography Section */}
+                        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}>
+                            <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-8 flex items-center gap-4">
+                                <FaUserAlt className="text-lg" /> Profile & Biography
+                            </h2>
+                            <div className="prose prose-xl prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 font-light leading-relaxed space-y-6">
+                                <p className="text-xl font-normal text-slate-800 dark:text-slate-200">
+                                    Ms. Ila Wangikar, first qualifying in the area of Commerce and Economics, has spent several years donning numerous entrepreneurial hats in the fields of fashion design and garmenting. 
+                                </p>
+                                <p>
+                                    She has been a keen and avid champion of women’s right to work and financial freedom, striving to include and empower women in all the projects that she has been associated with.
+                                </p>
+                                <p>
+                                    At PRADO, Ms. Ila Wangikar is a Founder and Managing Director and has been instrumental in PRADO’s development. In this role, she is responsible for leading all Finance, HR, and Administration functions, ensuring a robust operational backbone that supports the facility's scientific missions.
+                                </p>
+                            </div>
+                        </motion.section>
+
                         {/* Leadership Message */}
                         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}>
                             <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-8 flex items-center gap-4">
@@ -122,8 +140,8 @@ export default function MrsWangikar() {
                                             <div className="w-2 h-2 rounded-full bg-transparent group-hover:bg-secondary transition-colors duration-500"></div>
                                         </div>
                                         <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">2010 - Present</p>
-                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Director of Operations</h4>
-                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Prado Pvt. Ltd., Pune</p>
+                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Founder & Managing Director</h4>
+                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">PRADO Preclinical Research, Urse</p>
                                     </div>
 
                                     <div className="group pl-8 relative border-l border-slate-200 dark:border-slate-800">
@@ -131,9 +149,9 @@ export default function MrsWangikar() {
                                         <div className="absolute top-1 left-0 w-6 h-6 rounded-full bg-white dark:bg-slate-950 border-4 border-slate-200 dark:border-slate-800 -translate-x-1/2 flex items-center justify-center">
                                             <div className="w-2 h-2 rounded-full bg-transparent group-hover:bg-secondary transition-colors duration-500"></div>
                                         </div>
-                                        <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">Pre-2010</p>
-                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Operations Management</h4>
-                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Pioneering core operational workflows</p>
+                                        <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">Prior Experience</p>
+                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Entrepreneurial Leadership</h4>
+                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Fashion Design & Garmenting Industries</p>
                                     </div>
 
                                     <div className="group pl-8 relative border-l border-slate-200 dark:border-slate-800">
@@ -142,8 +160,8 @@ export default function MrsWangikar() {
                                             <div className="w-2 h-2 rounded-full bg-transparent group-hover:bg-secondary transition-colors duration-500"></div>
                                         </div>
                                         <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">Education</p>
-                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Advanced Administration</h4>
-                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Focus on organizational behavior</p>
+                                        <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Commerce & Economics</h4>
+                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Specialized Administrative Training</p>
                                     </div>
 
                                 </div>
@@ -158,9 +176,9 @@ export default function MrsWangikar() {
                                     Key Contributions
                                 </h4>
                                 <ul className="text-slate-300 space-y-4 font-light relative z-10">
-                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Architected workflows yielding zero-downtime over 5 years.</li>
-                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Championed women-in-STEM initiatives organization-wide.</li>
-                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Integrated comprehensive digital management systems.</li>
+                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Co-Founder instrumental in PRADO’s institutional establishment & layout.</li>
+                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Head and supervisor of all Finance, HR, and Administration departments.</li>
+                                    <li className="flex gap-4"><span className="text-secondary opacity-50">•</span> Dedicated champion for women’s right to work, driving female inclusion across operational domains.</li>
                                 </ul>
                             </div>
 

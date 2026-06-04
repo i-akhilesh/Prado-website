@@ -97,7 +97,7 @@ export default function FacilitiesPage() {
             title: "Archives (ARC)",
             subtitle: "Secure Long-Term GLP Storage",
             description: "Secure, climate-controlled storage for raw study records, tissue blocks, slides, and final reports protecting study integrity for 15+ years.",
-            image: "/images/facilities/document-control.png",
+            image: "/images/facilities/archives.png",
             path: "/facilities/archives",
             number: "11"
         }

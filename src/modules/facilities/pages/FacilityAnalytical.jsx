@@ -2,7 +2,7 @@ import { FaAtom } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityAnalytical() {
-    const glob = import.meta.glob('/public/images/facilities/analytical/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/analytical/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -62,6 +62,15 @@ export default function FacilityAnalytical() {
                     description: 'Leachable and extractable analysis of medical device materials and packaging components to support biocompatibility risk assessments.',
                 }
             ]}
-        />
+        >
+            <div className="max-w-4xl mx-auto space-y-8 text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed">
+                <p>
+                    PRADO's Analytical and Bioanalytical (ABA) laboratory is a specialized facility designed for method development, validation, and sample analysis. Equipped with advanced liquid chromatography-tandem mass spectrometry (LC-MS/MS) and HPLC systems, the laboratory enables highly sensitive and precise quantification of drugs and metabolites in diverse biological matrices.
+                </p>
+                <p>
+                    All bioanalytical services are conducted in full compliance with GLP, ICH, FDA, and EMA guidelines. The team supports pharmacokinetic (PK) and toxicokinetic (TK) studies, dose formulation verification, and chemical characterization to ensure data integrity from study design to regulatory submission.
+                </p>
+            </div>
+        </FacilityDetailLayout>
     );
 }
