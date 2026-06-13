@@ -248,7 +248,7 @@ export default function FacilityDetailLayout({ title, subtitle, intro, image, ic
                 <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-col md:flex-row gap-10 items-center justify-between">
                     <div>
                         <p className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-4">Schedule a Facility Visit</p>
-                        <h2 className="text-4xl md:text-6xl font-bold font-heading tracking-tight">Explore Our<br /><span className="italic font-light text-slate-400">World-Class Labs.</span></h2>
+                        <h2 className="text-4xl md:text-6xl italic font-light text-slate-100">Explore Our<br /><span className="italic font-light text-slate-400">World-Class Labs.</span></h2>
                     </div>
                     <Link to="/contact-us" className="inline-flex items-center gap-4 bg-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-primary-900 transition-colors duration-300 flex-shrink-0">
                         Contact Us <FaArrowRight />

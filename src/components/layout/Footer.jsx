@@ -164,7 +164,7 @@ export default function Footer() {
 
                 {/* Bottom bar */}
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500 text-sm">
-                    <p>© {new Date().getFullYear()} <span className="text-white font-semibold">Prado Pre Clinical Research Ltd.</span> All Rights Reserved.</p>
+                    <p>© {new Date().getFullYear()} <span className="text-white font-semibold">PRADO Pvt. Ltd.</span> All Rights Reserved.</p>
                     <div className="flex items-center gap-6">
                         <span>GLP Certified</span>
                         <span className="text-white/20">|</span>

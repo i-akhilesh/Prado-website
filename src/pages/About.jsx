@@ -147,7 +147,7 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Department Heads Editorial Grid */}
+            {/* Department Heads Editorial Grid
             <section className="py-24 lg:py-32 bg-white dark:bg-slate-900">
                 <div className="container mx-auto px-4 md:px-8">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
@@ -183,7 +183,7 @@ export default function About() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 }

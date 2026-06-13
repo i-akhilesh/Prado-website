@@ -13,86 +13,86 @@ export default function Careers() {
     };
 
     const jobs = [
-        {
-            id: 1,
-            title: "Study Director — Toxicology",
-            department: "Toxicology",
-            location: "Pune, India (On-site)",
-            type: "Full-Time",
-            experience: "3-6 Years",
-            education: "M.V.Sc / Ph.D in Pharmacology or Toxicology",
-            description: "We are seeking an experienced Study Director to lead regulatory toxicology studies (general, inhalation, or developmental) in compliance with GLP guidelines. The ideal candidate will design, oversee, and report preclinical safety studies for global regulatory submissions.",
-            requirements: [
-                "Proven experience as a Study Director in a GLP-certified preclinical CRO.",
-                "Familiarity with OECD, ICH, and FDA regulatory guidelines.",
-                "Excellent scientific writing and verbal communication skills.",
-                "Strong analytical capability and veterinary/pharmacology background."
-            ]
-        },
-        {
-            id: 2,
-            title: "Veterinary Pathologist",
-            department: "Pathology",
-            location: "Pune, India (On-site)",
-            type: "Full-Time",
-            experience: "2-5 Years",
-            education: "M.V.Sc in Veterinary Pathology",
-            description: "Responsible for performing macroscopic and microscopic evaluation of tissue samples from toxicity studies. Interprets histopathology slides, provides expert diagnosis, and author pathology reports for GLP studies.",
-            requirements: [
-                "Master's degree in Veterinary Pathology (M.V.Sc) is mandatory.",
-                "Expertise in tissue processing, slide reading, and histopathological diagnosis.",
-                "Knowledge of standard veterinary nomenclature and GLP documentation rules.",
-                "Detail-oriented team player with strong report authoring skills."
-            ]
-        },
-        {
-            id: 3,
-            title: "Study Director — Ecotoxicology",
-            department: "Ecotoxicology",
-            location: "Pune, India (On-site)",
-            type: "Full-Time",
-            experience: "3-5 Years",
-            education: "M.Sc / Ph.D in Environmental Sciences, Zoology, or Ecotoxicology",
-            description: "Lead ecotoxicological testing services including aquatic, soil, and terrestrial studies. Design study protocols, monitor test systems (algae, daphnia, fish, earthworms), and compile final regulatory dossiers.",
-            requirements: [
-                "Prior experience in conducting ecotoxicological studies under GLP environment.",
-                "Hands-on expertise in culturing and handling test organisms.",
-                "Detailed knowledge of OECD guidelines for ecotox testing.",
-                "Capable of working with analytical chemistry teams for dosing verification."
-            ]
-        },
-        {
-            id: 4,
-            title: "Quality Assurance Auditor",
-            department: "Quality Assurance Unit (QAU)",
-            location: "Pune, India (On-site)",
-            type: "Full-Time",
-            experience: "2-4 Years",
-            education: "B.Sc / M.Sc / B.Pharm / M.Pharm",
-            description: "Join our independent QA Unit to perform audits of study protocols, raw data, phase inspections, and final reports to verify complete compliance with GLP principles.",
-            requirements: [
-                "Strong working knowledge of OECD Principles of GLP.",
-                "Prior auditing experience in a GLP CRO or regulated pharmaceutical QA setting.",
-                "High vigilance and attention to detail.",
-                "Ability to write formal audit reports and interact with study directors."
-            ]
-        },
-        {
-            id: 5,
-            title: "Research Associate — Bioanalytical",
-            department: "Analytical & Bioanalytical (AB)",
-            location: "Pune, India (On-site)",
-            type: "Full-Time",
-            experience: "1-3 Years",
-            education: "M.Sc in Chemistry / Analytical Chemistry or M.Pharm",
-            description: "Responsible for sample preparation, method development, validation, and sample analysis using LC-MS/MS or HPLC instruments to support pharmacokinetic and biocompatibility studies.",
-            requirements: [
-                "Experience operating HPLC and LC-MS/MS instrumentation.",
-                "Understanding of method development and validation parameters under bioanalytical guidelines.",
-                "Meticulous notebook documentation habits.",
-                "Freshers with relevant academic instrument training may also be considered."
-            ]
-        }
+        // {
+        //     id: 1,
+        //     title: "Study Director — Toxicology",
+        //     department: "Toxicology",
+        //     location: "Pune, India (On-site)",
+        //     type: "Full-Time",
+        //     experience: "3-6 Years",
+        //     education: "M.V.Sc / Ph.D in Pharmacology or Toxicology",
+        //     description: "We are seeking an experienced Study Director to lead regulatory toxicology studies (general, inhalation, or developmental) in compliance with GLP guidelines. The ideal candidate will design, oversee, and report preclinical safety studies for global regulatory submissions.",
+        //     requirements: [
+        //         "Proven experience as a Study Director in a GLP-certified preclinical CRO.",
+        //         "Familiarity with OECD, ICH, and FDA regulatory guidelines.",
+        //         "Excellent scientific writing and verbal communication skills.",
+        //         "Strong analytical capability and veterinary/pharmacology background."
+        //     ]
+        // },
+        // {
+        //     id: 2,
+        //     title: "Veterinary Pathologist",
+        //     department: "Pathology",
+        //     location: "Pune, India (On-site)",
+        //     type: "Full-Time",
+        //     experience: "2-5 Years",
+        //     education: "M.V.Sc in Veterinary Pathology",
+        //     description: "Responsible for performing macroscopic and microscopic evaluation of tissue samples from toxicity studies. Interprets histopathology slides, provides expert diagnosis, and author pathology reports for GLP studies.",
+        //     requirements: [
+        //         "Master's degree in Veterinary Pathology (M.V.Sc) is mandatory.",
+        //         "Expertise in tissue processing, slide reading, and histopathological diagnosis.",
+        //         "Knowledge of standard veterinary nomenclature and GLP documentation rules.",
+        //         "Detail-oriented team player with strong report authoring skills."
+        //     ]
+        // },
+        // {
+        //     id: 3,
+        //     title: "Study Director — Ecotoxicology",
+        //     department: "Ecotoxicology",
+        //     location: "Pune, India (On-site)",
+        //     type: "Full-Time",
+        //     experience: "3-5 Years",
+        //     education: "M.Sc / Ph.D in Environmental Sciences, Zoology, or Ecotoxicology",
+        //     description: "Lead ecotoxicological testing services including aquatic, soil, and terrestrial studies. Design study protocols, monitor test systems (algae, daphnia, fish, earthworms), and compile final regulatory dossiers.",
+        //     requirements: [
+        //         "Prior experience in conducting ecotoxicological studies under GLP environment.",
+        //         "Hands-on expertise in culturing and handling test organisms.",
+        //         "Detailed knowledge of OECD guidelines for ecotox testing.",
+        //         "Capable of working with analytical chemistry teams for dosing verification."
+        //     ]
+        // },
+        // {
+        //     id: 4,
+        //     title: "Quality Assurance Auditor",
+        //     department: "Quality Assurance Unit (QAU)",
+        //     location: "Pune, India (On-site)",
+        //     type: "Full-Time",
+        //     experience: "2-4 Years",
+        //     education: "B.Sc / M.Sc / B.Pharm / M.Pharm",
+        //     description: "Join our independent QA Unit to perform audits of study protocols, raw data, phase inspections, and final reports to verify complete compliance with GLP principles.",
+        //     requirements: [
+        //         "Strong working knowledge of OECD Principles of GLP.",
+        //         "Prior auditing experience in a GLP CRO or regulated pharmaceutical QA setting.",
+        //         "High vigilance and attention to detail.",
+        //         "Ability to write formal audit reports and interact with study directors."
+        //     ]
+        // },
+        // {
+        //     id: 5,
+        //     title: "Research Associate — Bioanalytical",
+        //     department: "Analytical & Bioanalytical (AB)",
+        //     location: "Pune, India (On-site)",
+        //     type: "Full-Time",
+        //     experience: "1-3 Years",
+        //     education: "M.Sc in Chemistry / Analytical Chemistry or M.Pharm",
+        //     description: "Responsible for sample preparation, method development, validation, and sample analysis using LC-MS/MS or HPLC instruments to support pharmacokinetic and biocompatibility studies.",
+        //     requirements: [
+        //         "Experience operating HPLC and LC-MS/MS instrumentation.",
+        //         "Understanding of method development and validation parameters under bioanalytical guidelines.",
+        //         "Meticulous notebook documentation habits.",
+        //         "Freshers with relevant academic instrument training may also be considered."
+        //     ]
+        // }
     ];
 
     const handleFormSubmit = (e) => {
