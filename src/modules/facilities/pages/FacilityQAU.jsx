@@ -25,7 +25,7 @@ export default function FacilityQAU() {
                     Quality Assurance Unit (QAU) at PRADO
                 </h3>
                 <p>
-                    All studies and experiments that are conducted at PRADO’s test facility are governed by a Quality Assurance Program. The Quality Assurance Unit (QAU) is a separate department with its autonomous systems and personnel who are experienced, qualified and trained to assure the test facility management on compliance with GLP principles. The unit functions in accordance with the requirements of OECD principles of GLP.
+                    All studies and experiments that are conducted at PRADO’s test facility are governed by a Quality Assurance Program. The Quality Assurance Unit (QAU) is a separate department with its systems and personnel who are experienced, qualified and trained to assure the test facility management on compliance with GLP principles. The unit functions in accordance with the requirements of OECD principles of GLP.
                 </p>
                 <p>
                     It is responsible for ensuring that the quality assurance program is independently monitored for effectiveness and compliance. It conducts, study-based, facility-based and process-based inspections, as per the standard operating procedures (SOPs).

@@ -60,9 +60,8 @@ export default function IndustryPharmaceutical() {
         {
             title: "PDE, OEL, AI Assessments",
             bullets: [
-                "PD50 assessments.",
-                "OEL, NOEL, NOAEL, LOEL, LOAEL determinations.",
-                "Acceptable Daily Exposure (ADE) / Permitted Daily Exposure (PDE) & Acceptable Intake (AI) reports."
+                "Acceptable Daily Exposure (ADE) / Permitted Daily Exposure (PDE) & Acceptable Intake (AI) reports.",
+                "OEL, NOEL, NOAEL, LOEL, LOAEL determinations."
             ]
         }
     ];

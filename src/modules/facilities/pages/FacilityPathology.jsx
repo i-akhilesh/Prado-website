@@ -8,18 +8,25 @@ export default function FacilityPathology() {
     return (
         <FacilityDetailLayout
             title="Pathology"
-            subtitle="Disease & Tissue Analysis Lab"
+            subtitle="Tissue Analysis Lab"
             galleryImages={galleryImages}
-            intro="PRADO's Pathology Laboratory delivers comprehensive evaluation of biological samples through expert histopathology, immunohistochemistry, and clinical pathology services — all interpreted by certified veterinary pathologists to support every toxicology and pharmacology study."
+            intro="PRADO's Pathology Laboratory delivers comprehensive evaluation of biological samples through expert histopathology, immunohistochemistry, and clinical pathology services — all interpreted by certified veterinary pathologists to support toxicology and pharmacology study."
             image="/images/facilities/pathology.png"
             icon={<FaMicroscope />}
             stats={[
                 { value: 'GLP', label: 'Compliant' },
                 { value: 'H&E', label: 'Routine Staining' },
                 { value: 'IHC', label: 'Biomarker Detection' },
-                { value: '48hr', label: 'Slide Turnaround' },
+                { value: 'Special', label: 'Staining' },
             ]}
             features={[
+                {
+                    title: 'Clinical Pathology',
+                    description: 'Comprehensive laboratory analysis of biological fluids using fully automated haematology and chemistry analysers.',
+                    bullets: [
+                    
+                    ]
+                },
                 {
                     title: 'Necropsy & Gross Pathology',
                     description: 'Systematic, thorough macroscopic examination of all organ systems following study completion, performed by trained pathology staff.',
@@ -39,13 +46,6 @@ export default function FacilityPathology() {
                     description: 'Antibody-based detection of specific antigens in tissue sections for biomarker quantification and disease diagnosis.',
                     bullets: [
                         
-                    ]
-                },
-                {
-                    title: 'Clinical Pathology',
-                    description: 'Comprehensive laboratory analysis of biological fluids using fully automated haematology and chemistry analysers.',
-                    bullets: [
-                    
                     ]
                 },
             ]}

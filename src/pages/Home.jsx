@@ -42,7 +42,7 @@ export default function Home() {
                             >
                                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 shadow-sm">
                                     <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-300">Asia's Growing Preclinical CRO</span>
+                                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-300">Asia's Fastest Growing GLP Certified Preclinical CRO</span>
                                 </span>
                                 
                                 <h1 className="text-[8.5vw] md:text-[6vw] lg:text-[4vw] font-bold font-heading leading-[1.1] tracking-tighter mb-8 text-white">
@@ -94,15 +94,15 @@ export default function Home() {
                                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
                                 className="text-2xl md:text-3xl lg:text-3xl font-heading font-semibold text-slate-900 dark:text-white mb-8 leading-snug tracking-tight"
                             >
-                                PRADO, Preclinical Research and Development Organization Pvt. Ltd. is a <span className="italic font-light text-slate-600 dark:text-slate-400">global preclinical contract research partner</span> helping healthcare innovations reach the market faster and safer.
+                                PRADO, Preclinical Research and Development Organization Pvt. Ltd. is a <span className="italic font-light text-slate-600 dark:text-slate-400">global, GLP certified preclinical contract research partner</span> helping healthcare industries reach the market faster.
                             </motion.h2>
                             <motion.div
                                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
                                 className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-12 space-y-4"
                             >
-                                <p>From toxicology and pharmacokinetics to biocompatibility, animal model development, and pathology services, risk assessments and animal clinical trials we deliver data that meets international regulatory standards with exceptional acceptance rates.</p>
                                 <p>Based in Pune, India, PRADO serves pharmaceutical, biotech, biopharma, medical device, agrochemical, food, vaccine, and animal health industries — providing cost-effective, high-quality, and timely results.</p>
-                                <p>With proven expertise and a client-first approach, PRADO is not just a service provider — we’re your strategic partner in preclinical excellence.</p>
+                                <p>From Analytical, pharmacokinetics, animal model development, pathology services, toxicology, Biocompatibility, Ecotoxicology, risk assessment and animal clinical trials we deliver data that meets international regulatory standards with good acceptance rate.</p>
+                                <p>With proven expertise and a client-first approach, PRADO is not just a service provider but a strategic partner in preclinical excellence.</p>
                             </motion.div>
                         </div>
 
@@ -135,7 +135,7 @@ export default function Home() {
                             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}
                             className="text-lg md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-12 max-w-4xl mx-auto"
                         >
-                            Incorporated in 2010 by an experienced team of scientific professionals, PRADO is one of Asia’s fastest growing preclinical CROs with an integrated platform to support a diversified customer base.
+                            Incorporated in 2010 by an experienced team of scientific professionals, PRADO is one of Asia’s fastest growing GLP certified preclinical CROs with an integrated platform to support a diversified customer base.
                         </motion.p>
                     </div>
 
@@ -143,9 +143,9 @@ export default function Home() {
                         {[
                             { icon: FaChartLine, title: "Growing Company", desc: "Fastest Growing Indian Company Excellence Award 2017 by International Achievers Conference. Top 10 CRO 2022, Industry Outlook 2022 Award." },
                             { icon: FaUsers, title: "Diversified Customer Base", desc: "Mix of Pharmaceutical, Biotech, Medical Device, Pesticide, Herbal and Vaccine producing customers from across the globe." },
-                            { icon: FaCogs, title: "Integrated Services", desc: "Offers a range of Preclinical Toxicology, Pharmacokinetics, Biology, Pathology, Biocompatibility Testing for Regulatory submission, Risk Assessment and Animal Clinical field Trials." },
+                            { icon: FaCogs, title: "Integrated Services", desc: "Offers a range of Preclinical Toxicology, Pharmacokinetics, Biology, Pathology, Biocompatibility Testing, Analytical, Ecotoxicology, Risk Assessment and Animal Clinical field Trials." },
                             { icon: FaStar, title: "Best-in-Class Talent", desc: "Experienced scientific and management team having worked with global pharmaceutical, biotech and other companies." },
-                            { icon: FaBuilding, title: "Certificates", desc: "CCSEA Approved Facility (1723/PO/RcBiBt/13/CCSEA) • GLP Certified (GLP/C-235A/2026) • DSIR certified and Recognized." },
+                            { icon: FaBuilding, title: "Certificates", desc: " GLP Certified (GLP/C-235A/2026) • CCSEA Approved Facility (1723/PO/RcBiBt/13/CCSEA) • DSIR certified and Recognized." },
                             { icon: FaTrophy, title: "Awards", desc: "‘Preclinical Research Excellence Award’ organized by DocRoSh Global Solutions, 2019 • ‘Indian Leadership Award for Industrial Development’ to Our CEO and Director, 2017." }
                         ].map((feature, idx) => (
                             <motion.div
@@ -178,7 +178,7 @@ export default function Home() {
                                     Why <br /> PRADO?
                                 </h3>
                                 <p className="text-xl text-slate-500 dark:text-slate-400 font-light max-w-md">
-                                    We combine 15+ years of Pre-clinical rigorousness with unmatched cost-effectiveness and strict GLP compliance.
+                                    We combine 15+ years of Preclinical services with unmatched cost-effectiveness and GLP compliance.
                                 </p>
                             </div>
                         </div>
@@ -186,8 +186,8 @@ export default function Home() {
                         {/* Scrolling Right Column (Cards) */}
                         <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-8 md:gap-16 mt-8 lg:mt-0">
                             {[
-                                { num: "01", title: "GLP-Certified", desc: "Ensuring strict compliance with OECD Good Laboratory Practices (GLP) and other international regulatory guidelines. Accurate and reliable data generation.", img: "/images/home/strength-1.png" },
-                                { num: "02", title: "Uncompromising Data", desc: "High fidelity analytical precision delivering data with exceptional regulatory acceptance rates worldwide.", img: "/images/home/strength-2.png" },
+                                { num: "01", title: "GLP-Certified", desc: "Ensuring compliance with OECD Good Laboratory Practices (GLP) and other international regulatory guidelines.", img: "/images/home/strength-1.png" },
+                                { num: "02", title: "Uncompromising Data", desc: "High fidelity analytical precision delivering data with exceptional regulatory acceptance rates worldwide. Accurate and reliable data generation.", img: "/images/home/strength-2.png" },
                                 { num: "03", title: "15+ Years of Expertise", desc: "Proven track record in delivering scientifically, reliable preclinical solutions globally.", img: "/images/home/strength-1.png" },
 
                             ].map((item, idx) => (

@@ -55,7 +55,7 @@ export default function DrWangikar() {
                             </h2>
                             <div className="prose prose-xl prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 font-light leading-relaxed space-y-6">
                                 <p className="text-xl font-normal text-slate-800 dark:text-slate-200">
-                                    Dr. Pralhad Wangikar is a Veterinary Pathologist and a Diplomate of the American Board of Toxicology (DABT). He has over 24 years of scientific research and project managerial experience with some of the top Indian pharmaceutical companies and CROs.
+                                    Dr. Pralhad Wangikar is a Veterinary Pathologist and a Diplomate of the American Board of Toxicology (DABT). He has over 28 years of scientific research and project managerial experience with some of the top Indian pharmaceutical companies and CROs.
                                 </p>
                                 <p>
                                     His key research expertise spans the critical areas of toxicologic pathology, including systemic, reproductive, and genetic toxicity studies. He is highly specialized in conducting toxicological risk assessments such as PDE (Permitted Daily Exposure), OEL (Occupational Exposure Limit), and AI (Acceptable Intake), alongside the development of animal models and comprehensive clinical and histopathological evaluations.
@@ -117,10 +117,10 @@ export default function DrWangikar() {
                             <h3 className="text-sm font-bold tracking-[0.2em] uppercase text-slate-400 mb-8 relative z-10">Strategic Goals</h3>
                             <ul className="space-y-6 relative z-10">
                                 {[
-                                    "Achieve and maintain global regulatory accreditations uniformly across all facilities.",
-                                    "Pioneer the integration of alternative in-vitro testing models.",
+                                    "Achieve and maintain global regulatory accreditations.",
+                                    "Pioneer the integration of alternative to animal testing models.",
                                     "Foster a culture of continuous learning and scientific innovation among our researchers.",
-                                    "Expand our geographic footprint to serve a wider array of pharmaceutical and biotech innovators."
+                                    "Expand our geographic footprint to serve a wider array of industries globally."
                                 ].map((goal, index) => (
                                     <li key={index} className="flex items-start gap-6 group/item">
                                         <div className="mt-2 text-secondary flex-shrink-0 group-hover/item:translate-x-2 transition-transform">
@@ -157,7 +157,7 @@ export default function DrWangikar() {
                                         </div>
                                         <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">2010 - Present</p>
                                         <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Founder-Director & CEO</h4>
-                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">PRADO Preclinical Research, Urse</p>
+                                        <p className="text-lg text-slate-500 dark:text-slate-400 font-light">PRADO Pvt. Ltd., Urse</p>
                                     </div>
 
                                     <div className="group pl-8 relative border-l border-slate-200 dark:border-slate-800">
@@ -165,7 +165,7 @@ export default function DrWangikar() {
                                         <div className="absolute top-1 left-0 w-6 h-6 rounded-full bg-white dark:bg-slate-950 border-4 border-slate-200 dark:border-slate-800 -translate-x-1/2 flex items-center justify-center">
                                             <div className="w-2 h-2 rounded-full bg-transparent group-hover:bg-secondary transition-colors duration-500"></div>
                                         </div>
-                                        <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">Over 24 Years Experience</p>
+                                        <p className="text-xs font-bold tracking-[0.2em] uppercase text-secondary mb-3">Over 28 Years Experience</p>
                                         <h4 className="text-2xl font-bold font-heading text-slate-900 dark:text-white mb-2 tracking-tight">Scientific & Project Leadership</h4>
                                         <p className="text-lg text-slate-500 dark:text-slate-400 font-light">Top Indian Pharmaceutical Companies & CROs</p>
                                     </div>

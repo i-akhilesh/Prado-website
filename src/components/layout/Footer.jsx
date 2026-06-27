@@ -67,7 +67,7 @@ export default function Footer() {
                             />
                         </Link>
                         <p className="text-slate-400 leading-relaxed text-base max-w-sm">
-                            PRADO is a GLP-certified Contract Research Organisation with 15+ years of excellence in preclinical research. Delivering uncompromising science for global biopharma innovation.
+                            PRADO is a GLP-certified Contract Research Organisation with 15+ years of excellence in preclinical research. Delivering uncompromising preclinical services globally.
                         </p>
 
                         {/* Social */}
