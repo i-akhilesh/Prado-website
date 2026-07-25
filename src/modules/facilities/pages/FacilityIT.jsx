@@ -2,7 +2,7 @@ import { FaServer } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityIT() {
-    const glob = import.meta.glob('/public/images/facilities/it/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/it/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -13,12 +13,12 @@ export default function FacilityIT() {
             intro="PRADO's Information Technology department provides a secure, validated, and reliable digital infrastructure that underpins the integrity of all preclinical research data across the organization — from laboratory instruments to regulatory submission systems."
             image="/images/facilities/it.png"
             icon={<FaServer />}
-            stats={[
-                { value: '99.9%', label: 'System Uptime' },
-                { value: '21 CFR', label: 'Part 11 Compliant' },
-                { value: 'RAID', label: 'Redundant Storage' },
-                { value: 'AES-256', label: 'Encryption' },
-            ]}
+            // stats={[
+            //     { value: '99.9%', label: 'System Uptime' },
+            //     { value: '21 CFR', label: 'Part 11 Compliant' },
+            //     { value: 'RAID', label: 'Redundant Storage' },
+            //     { value: 'AES-256', label: 'Encryption' },
+            // ]}
             features={[
                 {
                     title: '21 CFR Part 11 Compliant Systems',

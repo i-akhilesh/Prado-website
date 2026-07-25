@@ -188,7 +188,7 @@ export default function Home() {
                             {[
                                 { num: "01", title: "GLP-Certified", desc: "Ensuring compliance with OECD Good Laboratory Practices (GLP) and other international regulatory guidelines.", img: "/images/home/strength-1.png" },
                                 { num: "02", title: "Uncompromising Data", desc: "High fidelity analytical precision delivering data with exceptional regulatory acceptance rates worldwide. Accurate and reliable data generation.", img: "/images/home/strength-2.png" },
-                                { num: "03", title: "15+ Years of Expertise", desc: "Proven track record in delivering scientifically, reliable preclinical solutions globally.", img: "/images/home/strength-1.png" },
+                                { num: "03", title: "15+ Years of Expertise", desc: "Proven track record in delivering scientifically, reliable preclinical solutions globally.", img: "/images/home/15+years.png" },
 
                             ].map((item, idx) => (
                                 <motion.div
@@ -236,18 +236,21 @@ export default function Home() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
                         {/* GLP Certification */}
-                        <motion.div 
+                        <motion.a 
+                            href="/GLP Certificate-PRADO.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="bg-white dark:bg-slate-950 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                            className="bg-white dark:bg-slate-950 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-xl hover:border-secondary/40 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden cursor-pointer group"
                         >
-                            <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                            <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
                                 <FaBuilding className="text-3xl text-secondary" />
                             </div>
                             <div>
-                                <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-3">GLP Certified</h4>
+                                <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-3 group-hover:text-secondary transition-colors">GLP Certified</h4>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 font-light mb-6">
                                     OECD Good Laboratory Practice compliance certified for preclinical regulatory safety studies (GLP/C-235A/2026).
                                 </p>
@@ -255,21 +258,24 @@ export default function Home() {
                             <span className="text-xs font-semibold px-3 py-1 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 rounded-full border border-emerald-100 dark:border-emerald-900/55">
                                 Certified
                             </span>
-                        </motion.div>
+                        </motion.a>
 
                         {/* CCSEA Approved */}
-                        <motion.div 
+                        <motion.a 
+                            href="/IAEC Certificate.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="bg-white dark:bg-slate-950 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                            className="bg-white dark:bg-slate-950 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-xl hover:border-secondary/40 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden cursor-pointer group"
                         >
-                            <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                            <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
                                 <FaBuilding className="text-3xl text-secondary" />
                             </div>
                             <div>
-                                <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-3">CCSEA Approved</h4>
+                                <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-3 group-hover:text-secondary transition-colors">CCSEA Approved</h4>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 font-light mb-6">
                                     Approved Animal Breeding and Trading facility under CCSEA India guidelines (1723/PO/RcBiBt/13/CCSEA).
                                 </p>
@@ -277,21 +283,24 @@ export default function Home() {
                             <span className="text-xs font-semibold px-3 py-1 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 rounded-full border border-emerald-100 dark:border-emerald-900/55">
                                 Approved
                             </span>
-                        </motion.div>
+                        </motion.a>
 
                         {/* DSIR Recognized */}
-                        <motion.div 
+                        <motion.a 
+                            href="/DSIR Certificate 2026.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.3 }}
-                            className="bg-white dark:bg-slate-950 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                            className="bg-white dark:bg-slate-950 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-xl hover:border-secondary/40 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden cursor-pointer group"
                         >
-                            <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                            <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
                                 <FaBuilding className="text-3xl text-secondary" />
                             </div>
                             <div>
-                                <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-3">DSIR Recognized</h4>
+                                <h4 className="text-xl font-bold font-heading text-slate-900 dark:text-white mb-3 group-hover:text-secondary transition-colors">DSIR Recognized</h4>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 font-light mb-6">
                                     Officially certified and recognized by the Department of Scientific and Industrial Research, Govt of India.
                                 </p>
@@ -299,7 +308,7 @@ export default function Home() {
                             <span className="text-xs font-semibold px-3 py-1 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 rounded-full border border-emerald-100 dark:border-emerald-900/55">
                                 Recognized
                             </span>
-                        </motion.div>
+                        </motion.a>
 
                         {/* D-U-N-S Registered */}
                         <motion.div 

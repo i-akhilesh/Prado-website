@@ -76,7 +76,7 @@ export default function FacilityDetailLayout({ title, subtitle, intro, image, ic
             </section>
 
             {/* ── Stats Bar ── */}
-            {stats.length > 0 && (
+            {/* {stats.length > 0 && (
                 <section className="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
                     <div className="container mx-auto px-4 md:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-slate-100 dark:divide-slate-800">
                         {stats.map((s, i) => (
@@ -92,7 +92,8 @@ export default function FacilityDetailLayout({ title, subtitle, intro, image, ic
                         ))}
                     </div>
                 </section>
-            )}
+            )
+            } */}
 
             {/* ── Content Section ── */}
             <section className="py-20 lg:py-28 bg-white dark:bg-slate-900">

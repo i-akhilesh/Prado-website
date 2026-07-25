@@ -49,7 +49,6 @@ const companyDropdown = [
     { name: 'Gallery', path: '/gallery' },
     // { name: 'Events', path: '/events' },
     { name: 'News', path: '/news' },
-    { name: 'Careers', path: '/careers' },
     { name: 'Brochure', path: '/PRADO brochure - Landscape-Apr 2026.pdf', isDownload: true },
 ];
 
@@ -187,7 +186,7 @@ export default function Navbar() {
                     <img
                         src="/images/logo/logo.png"
                         alt="Prado Preclinical"
-                        className="h-10 md:h-12 w-auto object-contain"
+                        className="h-10 md:h-12 w-auto max-w-[160px] md:max-w-none object-contain"
                     />
                 </Link>
 
@@ -226,6 +225,18 @@ export default function Navbar() {
                     {/* Industry Dropdown */}
                     <NavDropdown label="Industry" items={industriesDropdown} basePath="/industries" />
 
+                    {/* Careers Link */}
+                    <Link
+                        to="/careers"
+                        className={twMerge(clsx(
+                            'text-sm font-semibold uppercase tracking-wider transition-all duration-300 relative group',
+                            location.pathname === '/careers' ? 'text-primary dark:text-white' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'
+                        ))}
+                    >
+                        Careers
+                        <span className={clsx('absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300', location.pathname === '/careers' ? 'w-full' : 'w-0 group-hover:w-full')} />
+                    </Link>
+
                     {/* Company Dropdown */}
                     <NavDropdown label="Company" items={companyDropdown} basePath={null} />
 
@@ -263,7 +274,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: '100%' }}
                         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                        className="lg:hidden fixed inset-0 bg-white dark:bg-slate-950 z-40 flex flex-col pt-24 px-8 overflow-y-auto"
+                        className="lg:hidden fixed inset-0 bg-white dark:bg-slate-950 z-[60] flex flex-col pt-24 px-8 overflow-y-auto"
                     >
                         <button className="absolute top-6 right-5 text-3xl text-primary dark:text-gray-200 hover:text-secondary" onClick={() => setIsOpen(false)}>
                             <HiX />
@@ -273,6 +284,7 @@ export default function Navbar() {
                             {[
                                 { name: 'Home', path: '/' },
                                 { name: 'About', path: '/about-us' },
+                                { name: 'Careers', path: '/careers' },
                             ].map(link => (
                                 <Link key={link.name} to={link.path} className="text-lg font-bold uppercase py-3 border-b border-slate-100 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-secondary transition-colors">
                                     {link.name}

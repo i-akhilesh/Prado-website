@@ -48,7 +48,7 @@ export default function GalleryPage() {
     
     // Parse directories
     const modules = import.meta.glob('/src/assets/images/gallery/**/*.{png,jpg,jpeg,webp}', { eager: true });
-    const facilityModules = import.meta.glob('/public/images/facilities/*/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
+    const facilityModules = import.meta.glob('/public/images/facilities/*/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
     
     const parsedData = {};
     
@@ -94,6 +94,41 @@ export default function GalleryPage() {
         } else {
             parsedData[categoryId][albumId].unshift(imgUrl);
         }
+    });
+
+    // Manually add facility videos since they are excluded from Vite's bundling to prevent duplication in dist/assets
+    const facilityVideos = {
+        arf: [
+            '/images/facilities/arf/Animal House.mp4',
+            '/images/facilities/arf/Animal House Clip 2.mp4',
+            '/images/facilities/arf/ARF clip 2.mp4',
+            '/images/facilities/arf/VID_20210730_163630.mp4',
+            '/images/facilities/arf/Animal House 5 Clip 1.mp4',
+            '/images/facilities/arf/VID_20210730_163449.mp4'
+        ],
+        archives: [
+            '/images/facilities/archives/VID_20210730_132035.mp4',
+            '/images/facilities/archives/ARC Clip 3.mp4',
+            '/images/facilities/archives/VID_20210730_132535.mp4'
+        ],
+        pathology: [
+            '/images/facilities/pathology/Histo Clip 3_1.mp4',
+            '/images/facilities/pathology/histo clip3.mp4',
+            '/images/facilities/pathology/Histo clip 1.mp4',
+            '/images/facilities/pathology/Urine Analysis.mp4',
+            '/images/facilities/pathology/Histo Clip 2.mp4',
+            '/images/facilities/pathology/CC Clip 5.mp4',
+            '/images/facilities/pathology/Histto Clip 4.mp4',
+            '/images/facilities/pathology/Hemats.mp4'
+        ]
+    };
+
+    Object.keys(facilityVideos).forEach(albumId => {
+        const categoryId = 'facilities';
+        if (!parsedData[categoryId]) parsedData[categoryId] = {};
+        if (!parsedData[categoryId][albumId]) parsedData[categoryId][albumId] = [];
+        // Put videos at the end
+        parsedData[categoryId][albumId].push(...facilityVideos[albumId]);
     });
 
     const galleryData = categoriesMetadata.map(cat => {

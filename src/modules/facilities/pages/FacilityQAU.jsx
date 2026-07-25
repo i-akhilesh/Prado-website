@@ -2,7 +2,7 @@ import { FaClipboardCheck } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityQAU() {
-    const glob = import.meta.glob('/public/images/facilities/qau/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/qau/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -13,12 +13,12 @@ export default function FacilityQAU() {
             intro="PRADO's Quality Assurance Unit (QAU) is an independent body that ensures every study conducted at our facility rigorously conforms to Good Laboratory Practice (GLP) principles and international regulatory requirements. Absolute data integrity starts here."
             image="/images/facilities/qau.png"
             icon={<FaClipboardCheck />}
-            stats={[
-                { value: 'GLP', label: 'Certified' },
-                { value: '100%', label: 'Study Coverage' },
-                { value: 'FDA', label: 'Acceptable' },
-                { value: 'OECD', label: 'Guidelines' },
-            ]}
+            // stats={[
+            //     { value: 'GLP', label: 'Certified' },
+            //     { value: '100%', label: 'Study Coverage' },
+            //     { value: 'FDA', label: 'Acceptable' },
+            //     { value: 'OECD', label: 'Guidelines' },
+            // ]}
         >
             <div className="max-w-4xl mx-auto space-y-8 text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed">
                 <h3 className="text-2xl font-bold font-heading text-slate-900 dark:text-white">

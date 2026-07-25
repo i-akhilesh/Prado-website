@@ -2,8 +2,16 @@ import { FaPaw } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityARF() {
-    const glob = import.meta.glob('/public/images/facilities/arf/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
-    const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
+    const glob = import.meta.glob('/public/images/facilities/arf/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const galleryImages = [
+        ...Object.values(glob).map(path => path.replace(/^\/public/, '')),
+        '/images/facilities/arf/Animal House.mp4',
+        '/images/facilities/arf/Animal House Clip 2.mp4',
+        '/images/facilities/arf/ARF clip 2.mp4',
+        '/images/facilities/arf/VID_20210730_163630.mp4',
+        '/images/facilities/arf/Animal House 5 Clip 1.mp4',
+        '/images/facilities/arf/VID_20210730_163449.mp4'
+    ];
 
     return (
         <FacilityDetailLayout
@@ -13,11 +21,11 @@ export default function FacilityARF() {
             intro="PRADO's Animal Research Facility (ARF) is a CCSEA-approved, ARF environment built to the highest global standards for ethical and scientific animal studies. Our infrastructure ensures environmental control, superior animal welfare, and data integrity."
             image="/images/facilities/arf/aa.JPG"
             icon={<FaPaw />}
-            stats={[
-                { value: 'CCSEA', label: 'Approved' },
-                { value: 'IVC', label: 'Cage Systems' },
-                { value: '24/7', label: 'Monitoring' },
-            ]}
+            // stats={[
+            //     { value: 'CCSEA', label: 'Approved' },
+            //     { value: 'IVC', label: 'Cage Systems' },
+            //     { value: '24/7', label: 'Monitoring' },
+            // ]}
         >
             <div className="max-w-4xl mx-auto space-y-8 text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed">
                 <p>

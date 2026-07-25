@@ -2,8 +2,18 @@ import { FaMicroscope } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityPathology() {
-    const glob = import.meta.glob('/public/images/facilities/pathology/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
-    const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
+    const glob = import.meta.glob('/public/images/facilities/pathology/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+    const galleryImages = [
+        ...Object.values(glob).map(path => path.replace(/^\/public/, '')),
+        '/images/facilities/pathology/Histo Clip 3_1.mp4',
+        '/images/facilities/pathology/histo clip3.mp4',
+        '/images/facilities/pathology/Histo clip 1.mp4',
+        '/images/facilities/pathology/Urine Analysis.mp4',
+        '/images/facilities/pathology/Histo Clip 2.mp4',
+        '/images/facilities/pathology/CC Clip 5.mp4',
+        '/images/facilities/pathology/Histto Clip 4.mp4',
+        '/images/facilities/pathology/Hemats.mp4'
+    ];
 
     return (
         <FacilityDetailLayout
@@ -13,12 +23,12 @@ export default function FacilityPathology() {
             intro="PRADO's Pathology Laboratory delivers comprehensive evaluation of biological samples through expert histopathology, immunohistochemistry, and clinical pathology services — all interpreted by certified veterinary pathologists to support toxicology and pharmacology study."
             image="/images/facilities/pathology.png"
             icon={<FaMicroscope />}
-            stats={[
-                { value: 'GLP', label: 'Compliant' },
-                { value: 'H&E', label: 'Routine Staining' },
-                { value: 'IHC', label: 'Biomarker Detection' },
-                { value: 'Special', label: 'Staining' },
-            ]}
+            // stats={[
+            //     { value: 'GLP', label: 'Compliant' },
+            //     { value: 'H&E', label: 'Routine Staining' },
+            //     { value: 'IHC', label: 'Biomarker Detection' },
+            //     { value: 'Special', label: 'Staining' },
+            // ]}
             features={[
                 {
                     title: 'Clinical Pathology',

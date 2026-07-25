@@ -2,7 +2,7 @@ import { FaAtom } from 'react-icons/fa';
 import FacilityDetailLayout from '../components/FacilityDetailLayout';
 
 export default function FacilityAnalytical() {
-    const glob = import.meta.glob('/public/images/facilities/analytical/*.{png,jpg,jpeg,webp,mp4}', { eager: true, query: '?url', import: 'default' });
+    const glob = import.meta.glob('/public/images/facilities/analytical/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
     const galleryImages = Object.values(glob).map(path => path.replace(/^\/public/, ''));
 
     return (
@@ -13,12 +13,12 @@ export default function FacilityAnalytical() {
             intro="PRADO's Analytical and Bioanalytical (ABA) Laboratory is equipped with cutting-edge instrumentation for the precise quantification of drugs and metabolites in biological matrices. Every method is developed and validated in full compliance with ICH, FDA, and EMA guidelines."
             image="/images/facilities/analytical.png"
             icon={<FaAtom />}
-            stats={[
-                { value: 'LC-MS/MS', label: 'Platform' },
-                { value: 'HPLC', label: 'UV/DAD' },
-                { value: 'GLP', label: 'Validated Methods' },
-                { value: 'ICH', label: 'Compliant' },
-            ]}
+            // stats={[
+            //     { value: 'LC-MS/MS', label: 'Platform' },
+            //     { value: 'HPLC', label: 'UV/DAD' },
+            //     { value: 'GLP', label: 'Validated Methods' },
+            //     { value: 'ICH', label: 'Compliant' },
+            // ]}
             features={[
                 {
                     title: 'LC-MS/MS Bioanalysis',

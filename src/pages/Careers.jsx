@@ -13,96 +13,115 @@ export default function Careers() {
     };
 
     const jobs = [
-        // {
-        //     id: 1,
-        //     title: "Study Director — Toxicology",
-        //     department: "Toxicology",
-        //     location: "Pune, India (On-site)",
-        //     type: "Full-Time",
-        //     experience: "3-6 Years",
-        //     education: "M.V.Sc / Ph.D in Pharmacology or Toxicology",
-        //     description: "We are seeking an experienced Study Director to lead regulatory toxicology studies (general, inhalation, or developmental) in compliance with GLP guidelines. The ideal candidate will design, oversee, and report preclinical safety studies for global regulatory submissions.",
-        //     requirements: [
-        //         "Proven experience as a Study Director in a GLP-certified preclinical CRO.",
-        //         "Familiarity with OECD, ICH, and FDA regulatory guidelines.",
-        //         "Excellent scientific writing and verbal communication skills.",
-        //         "Strong analytical capability and veterinary/pharmacology background."
-        //     ]
-        // },
-        // {
-        //     id: 2,
-        //     title: "Veterinary Pathologist",
-        //     department: "Pathology",
-        //     location: "Pune, India (On-site)",
-        //     type: "Full-Time",
-        //     experience: "2-5 Years",
-        //     education: "M.V.Sc in Veterinary Pathology",
-        //     description: "Responsible for performing macroscopic and microscopic evaluation of tissue samples from toxicity studies. Interprets histopathology slides, provides expert diagnosis, and author pathology reports for GLP studies.",
-        //     requirements: [
-        //         "Master's degree in Veterinary Pathology (M.V.Sc) is mandatory.",
-        //         "Expertise in tissue processing, slide reading, and histopathological diagnosis.",
-        //         "Knowledge of standard veterinary nomenclature and GLP documentation rules.",
-        //         "Detail-oriented team player with strong report authoring skills."
-        //     ]
-        // },
-        // {
-        //     id: 3,
-        //     title: "Study Director — Ecotoxicology",
-        //     department: "Ecotoxicology",
-        //     location: "Pune, India (On-site)",
-        //     type: "Full-Time",
-        //     experience: "3-5 Years",
-        //     education: "M.Sc / Ph.D in Environmental Sciences, Zoology, or Ecotoxicology",
-        //     description: "Lead ecotoxicological testing services including aquatic, soil, and terrestrial studies. Design study protocols, monitor test systems (algae, daphnia, fish, earthworms), and compile final regulatory dossiers.",
-        //     requirements: [
-        //         "Prior experience in conducting ecotoxicological studies under GLP environment.",
-        //         "Hands-on expertise in culturing and handling test organisms.",
-        //         "Detailed knowledge of OECD guidelines for ecotox testing.",
-        //         "Capable of working with analytical chemistry teams for dosing verification."
-        //     ]
-        // },
-        // {
-        //     id: 4,
-        //     title: "Quality Assurance Auditor",
-        //     department: "Quality Assurance Unit (QAU)",
-        //     location: "Pune, India (On-site)",
-        //     type: "Full-Time",
-        //     experience: "2-4 Years",
-        //     education: "B.Sc / M.Sc / B.Pharm / M.Pharm",
-        //     description: "Join our independent QA Unit to perform audits of study protocols, raw data, phase inspections, and final reports to verify complete compliance with GLP principles.",
-        //     requirements: [
-        //         "Strong working knowledge of OECD Principles of GLP.",
-        //         "Prior auditing experience in a GLP CRO or regulated pharmaceutical QA setting.",
-        //         "High vigilance and attention to detail.",
-        //         "Ability to write formal audit reports and interact with study directors."
-        //     ]
-        // },
-        // {
-        //     id: 5,
-        //     title: "Research Associate — Bioanalytical",
-        //     department: "Analytical & Bioanalytical (AB)",
-        //     location: "Pune, India (On-site)",
-        //     type: "Full-Time",
-        //     experience: "1-3 Years",
-        //     education: "M.Sc in Chemistry / Analytical Chemistry or M.Pharm",
-        //     description: "Responsible for sample preparation, method development, validation, and sample analysis using LC-MS/MS or HPLC instruments to support pharmacokinetic and biocompatibility studies.",
-        //     requirements: [
-        //         "Experience operating HPLC and LC-MS/MS instrumentation.",
-        //         "Understanding of method development and validation parameters under bioanalytical guidelines.",
-        //         "Meticulous notebook documentation habits.",
-        //         "Freshers with relevant academic instrument training may also be considered."
-        //     ]
-        // }
+        {
+            id: 1,
+            title: "Document Control & Archives Executive",
+            department: "Document Control & QA",
+            location: "Pune, India (On-site)",
+            type: "Full-Time",
+            experience: "1-3 Years",
+            education: "B.Sc / M.Sc / B.Pharm or equivalent",
+            description: "We are seeking a detail-oriented and organized Document Control & Archives Executive to manage laboratory and quality-related documentation in a GLP-compliant environment. The candidate will be responsible for document control activities, archival management, record retention, retrieval of documents, and ensuring compliance with GLP requirements, internal procedures, and regulatory standards.",
+            requirements: [
+                "Maintain, issue, distribute, and control controlled documents including SOPs, specifications, protocols, reports, forms, logbooks, and manuals.",
+                "Ensure proper document numbering, version control, review, approval, and issuance processes.",
+                "Maintain master lists of controlled documents and records.",
+                "Coordinate periodic review and revision of documents as per established procedures.",
+                "Manage document change requests and document lifecycle activities.",
+                "Ensure obsolete documents are appropriately withdrawn, archived, and controlled.",
+                "Maintain issuance logs, document tracking records, and document retention schedules.",
+                "Maintain physical and electronic archives of laboratory, quality assurance, and GLP records.",
+                "Organize, index, label, and store records to ensure easy retrieval and traceability.",
+                "Monitor record retention periods and support secure disposal of records as per retention policies.",
+                "Retrieve archived records during audits, inspections, investigations, and internal reviews.",
+                "Ensure archival areas comply with storage and security requirements.",
+                "Verify completeness of study files, analytical records, calibration records, and training records before archival.",
+                "Coordinate with laboratory, QA, and other departments for document collection and archival activities."
+            ]
+        },
+        {
+            id: 2,
+            title: "Ecotoxicology Study Personnel",
+            department: "Ecotoxicology",
+            location: "Pune, India (On-site)",
+            type: "Full-Time",
+            experience: "1-2 Years",
+            education: "Bachelor's/Master's degree in Zoology, Environmental Science, Life Sciences, Biotechnology, Toxicology, or related field",
+            description: "We are seeking a motivated and detail-oriented Study Personnel to support the execution of ecotoxicology studies conducted under Good Laboratory Practice (GLP) principles. The candidate will be responsible for performing study-related activities, maintaining test systems, recording raw data, and ensuring compliance with study protocols, SOPs, and regulatory requirements.",
+            requirements: [
+                "Perform study activities as assigned by the Study Director or Principal Investigator in accordance with approved protocols and SOPs.",
+                "Prepare test solutions, dosing formulations, and dilution series for study conduct.",
+                "Conduct observations, measurements, sampling, and data collection during study periods.",
+                "Assist in exposure, treatment, and monitoring of test organisms.",
+                "Record study observations accurately and contemporaneously in raw data records.",
+                "Maintain and monitor aquatic and terrestrial test organisms used in ecotoxicology studies (routine feeding, culturing, cleaning, health assessments).",
+                "Monitor and record environmental conditions such as temperature, pH, dissolved oxygen, humidity, and photoperiod.",
+                "Prepare study materials, glassware, reagents, and consumables required for study conduct.",
+                "Operate laboratory equipment and instruments according to approved procedures.",
+                "Assist in equipment cleaning, calibration checks, and routine maintenance.",
+                "Ensure proper storage and handling of test substances, reference substances, and study samples.",
+                "Maintain accurate, complete, and legible raw data records in compliance with GLP requirements.",
+                "Follow approved SOPs, study protocols, and laboratory procedures.",
+                "Document deviations, incidents, and unexpected observations promptly.",
+                "Assist in compiling study data and supporting study report preparation.",
+                "Support Quality Assurance inspections and regulatory audits by providing required study documentation.",
+                "Basic understanding of ecotoxicology studies and OECD test guidelines.",
+                "Preferred: Experience with aquatic and terrestrial ecotoxicology studies.",
+                "Preferred: Familiarity with test organisms such as algae, daphnia, fish, earthworms, honeybees, and birds."
+            ]
+        },
+        {
+            id: 3,
+            title: "Analytical Chemistry (Physical & Chemical Parameter Testing)",
+            department: "Analytical & Bioanalytical (AB)",
+            location: "Pune, India (On-site)",
+            type: "Full-Time",
+            experience: "1-2 Years",
+            education: "Bachelor's or Master's degree in Chemistry, Analytical Chemistry, Industrial Chemistry, or related field",
+            description: "We are seeking a motivated and detail-oriented Analyst with 1–2 years of experience in GLP-compliant analytical laboratories. The candidate will be responsible for performing physical and chemical parameter testing of agrochemical products, including technical grade materials, formulations, intermediates, and raw materials. The role requires adherence to Good Laboratory Practices (GLP), analytical method execution, data integrity, and documentation standards.",
+            requirements: [
+                "Conduct physical and chemical testing of agrochemical products as per approved specifications, test methods, and SOPs.",
+                "Perform routine analyses of technical, formulations and finished products (AI content/Purity, pH, moisture, density, viscosity, specific gravity, suspendibility, wettability, emulsion stability, particle size, bulk density, explodivity, oxidizing properties, corrosivity, persistent foam, compatibility).",
+                "Operate and maintain analytical instruments including HPLC, GC, UV-Visible Spectrophotometer, Karl Fischer Titrator, Analytical Balance, pH Meter, etc.",
+                "Prepare reagents, standard solutions, and calibration standards as per procedures.",
+                "Ensure compliance with GLP, laboratory safety requirements, and data integrity guidelines.",
+                "Record, review, and maintain analytical data, logbooks, and test reports accurately.",
+                "Participate in method validation, verification, and troubleshooting activities.",
+                "Support laboratory investigations related to Out-of-Specification (OOS) and Out-of-Trend (OOT) results.",
+                "Maintain laboratory housekeeping and ensure equipment calibration and preventive maintenance activities are completed on schedule.",
+                "Coordinate with QAU and R&D teams for sample testing and technical support.",
+                "Hands-on experience with HPLC, GC, UV-Vis, and routine wet chemistry analysis."
+            ]
+        }
     ];
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        
+        // Prepare mailto link details
+        const subject = encodeURIComponent(`Job Application: ${selectedJob.title} - ${formData.name}`);
+        const body = encodeURIComponent(
+            `Dear HR Team,\n\n` +
+            `I would like to apply for the position of "${selectedJob.title}".\n\n` +
+            `My Application Details:\n` +
+            `- Full Name: ${formData.name}\n` +
+            `- Email Address: ${formData.email}\n` +
+            `- Phone Number: ${formData.phone}\n` +
+            `- Experience: ${formData.experience || 'Not specified'}\n\n` +
+            `Please find attached my resume (attached manually).\n\n` +
+            `Best regards,\n` +
+            `${formData.name}`
+        );
+        
+        // Open default email client
+        window.location.href = `mailto:hr@pradopreclinical.com?subject=${subject}&body=${body}`;
+
         setFormSubmitted(true);
         setTimeout(() => {
             setFormSubmitted(false);
             setSelectedJob(null);
             setFormData({ name: '', email: '', phone: '', experience: '', resume: null });
-        }, 2000);
+        }, 4000);
     };
 
     return (
@@ -205,7 +224,7 @@ export default function Careers() {
                         </p>
                     </div>
                     <a
-                        href="mailto:admin@pradopreclinical.com?subject=General Career Inquiry - CV Submission"
+                        href="mailto:hr@pradopreclinical.com?subject=General Career Inquiry - CV Submission"
                         className="inline-flex items-center gap-4 bg-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-primary-900 transition-colors duration-300 flex-shrink-0"
                     >
                         Send General Application
@@ -287,10 +306,16 @@ export default function Careers() {
                                             <input required type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl focus:outline-none focus:border-secondary transition-colors text-slate-950 dark:text-white text-sm" />
                                         </div>
                                         <div className="flex flex-col gap-2">
+                                            <label className="text-xs font-bold uppercase text-slate-500">Experience (in years)</label>
+                                            <input required type="text" value={formData.experience} onChange={(e) => setFormData({...formData, experience: e.target.value})} placeholder="e.g. 2 years" className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl focus:outline-none focus:border-secondary transition-colors text-slate-950 dark:text-white text-sm" />
+                                        </div>
+                                        <div className="flex flex-col gap-2 md:col-span-2">
                                             <label className="text-xs font-bold uppercase text-slate-500">Resume/CV (PDF/Doc)</label>
                                             <div className="relative border border-dashed border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 bg-slate-50 dark:bg-slate-800 flex items-center justify-center gap-2 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
                                                 <FaFileUpload className="text-slate-400" />
-                                                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">Choose File</span>
+                                                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 truncate max-w-full">
+                                                    {formData.resume ? formData.resume.name : "Choose File"}
+                                                </span>
                                                 <input required type="file" onChange={(e) => setFormData({...formData, resume: e.target.files[0]})} className="absolute inset-0 opacity-0 cursor-pointer" />
                                             </div>
                                         </div>
